@@ -1,0 +1,196 @@
+.CMS-matchBox{
+    &.football{                
+        .CMS-match__teamInfo{
+            min-width: 0;
+            flex: 1 1 0%;
+            text-align: center;
+        }
+    }
+}
+.CMS-FB-matchHeader{
+    padding: 8px 10px 10px;
+    .CMS-FB-matchTitle{
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .CMS-matchPoints{
+        background-color: $CMS-FB-matchHeader-matchPoints__bg;
+        color: $CMS-FB-matchHeader-matchPoints__color;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .CMS-matchLive{
+        color: $CMS-FB-matchHeader-matchLive__color;
+        font-size: 10px;
+        font-weight: 600;
+        span{
+            display: inline-block;
+            background-color: $CMS-FB-matchHeader-matchLive__color;
+            color: $CMS-FB-matchHeader-matchPoints__color;
+            padding: 0 4px;
+            border-radius: 2px;
+            margin-left: 6px;
+        }
+    }
+}
+.CMS-FB-matchFixtureInfo{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 10px;
+    .CMS-match__teamLogo{
+        text-align: center;
+        img{
+            height: 44px;
+        }
+    }
+    .CMS-match__teamName{
+        font-weight: 600;
+    }
+    .CMS-match__teamScoreInfo{
+        font-weight: bold;
+        font-size: 26px;
+        display: flex;
+        height: 46px;
+        margin: 0 8px;
+        margin-bottom: 44px;
+        .CMS-teamScore{
+            width: $CMS-teamScore__dimension;
+            height: $CMS-teamScore__dimension;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: $CMS-teamScore__bg;
+            &.active{
+                background-color: $CMS-teamScore__bgActive;
+            }
+        }
+        .CMS-teamScore__separator{
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+        }
+    }
+    .CMS-match__scoreControls{
+        display: flex;
+        justify-content: center;
+        margin: 6px 0 10px;
+        .CMS-scoreControls__low,.CMS-scoreControls__high{
+            background-color: $CMS-scoreControls__lowHigh__bg;
+            width: $CMS-scoreControls__lowHigh__width;
+            height: $CMS-scoreControls__lowHigh__height;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+            cursor: pointer;
+            &.active{
+                background-color: $CMS-scoreControls__lowHigh__active;
+            }
+            &.disabled{
+                pointer-events: none;
+                user-select: none;
+            }
+        }
+        .CMS-scoreControls__low{
+            border-radius: 20px 0 0 20px;
+            border-right: 1px solid $CMS-scoreControls__lowHigh__border;
+        }
+        .CMS-scoreControls__high{
+            border-radius: 0 20px 20px 0;
+            border-left: 1px solid $CMS-scoreControls__lowHigh__border;
+        }
+
+    }
+}
+
+.CMS-match__predictionAndResults{
+    text-align: center;
+    padding-bottom: 15px;
+    .CMS-yourPrediction__score, .CMS-finalResult__score{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .CMS-yourPrediction__label, .CMS-finalResult__label{
+        font-size: 11px;
+        font-weight: 500;
+        margin-bottom: 4px;
+        color: $CMS-yourPrediction__lblColor;
+    }
+    .CMS-finalResult__label{
+        margin-bottom: 0;
+    }
+    .CMS-yourPrediction__score{
+        margin-bottom: 12px;
+        .CMS-teamScore{
+            height: $CMS-yourPrediction__teamScore__dimension;
+            width: $CMS-yourPrediction__teamScore__dimension;
+            border-radius: 50%;
+            background-color: $CMS-yourPrediction__teamScore__bg;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+    .CMS-finalResult__score{
+        font-size: 16px;
+        font-weight: 600;
+        .CMS-teamScore__separator::after{
+            font-size: 16px;
+        }
+    }
+    .CMS-teamScore__separator::after{
+        content: ":";
+        padding: 0 10px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .CMS-yourPrediction {
+        &.win-score {
+            .CMS-teamScore {
+                background-color: $CMS-yourPrediction__teamScore__winScore__bg;
+                color: $CMS-yourPrediction__teamScore__winScore__color;
+            }
+        }
+
+        &.win-result {
+            .CMS-teamScore {
+                border: 1px solid $CMS-yourPrediction__teamScore__winResult__border;
+                background-color: $CMS-yourPrediction__teamScore__winResult__bg;
+                color: $CMS-yourPrediction__teamScore__winResult__color;
+            }
+        }
+        &.win-score, &.win-result {
+            .CMS-teamScore__separator{
+                &::after{
+                    content: "\e90e";
+                    font-family: 'pick6';
+                    font-size: 11px;
+                    color: $CMS-success__color;
+                }
+            }
+        }
+        &.loss {
+            .CMS-teamScore {
+                border: 1px solid $CMS-yourPrediction__teamScore__loss__border;
+                background-color: $CMS-yourPrediction__teamScore__loss__bg;
+            }
+            .CMS-teamScore__separator{
+                &::after{
+                    content: "\e90f";
+                    font-family: 'pick6';
+                    font-size: 11px;
+                    color: $CMS-error__color;
+                }
+            }
+        }
+    }
+}

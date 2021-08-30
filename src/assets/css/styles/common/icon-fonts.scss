@@ -1,0 +1,184 @@
+@font-face {
+  font-family: 'sb-cms';
+  src:  url('#{$fonts-path}/sb-cms.eot?66fyf5');
+  src:  url('#{$fonts-path}/sb-cms.eot?66fyf5#iefix') format('embedded-opentype'),
+    url('#{$fonts-path}/sb-cms.woff?66fyf5') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sb-cms' !important;
+  //speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  // vertical-align: -10%;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cms-icon_accounting:before {
+  content: "\e900";
+}
+.cms-icon_admin:before {
+  content: "\e901";
+}
+.cms-icon_arrow-down:before {
+  content: "\e902";
+}
+.cms-icon_bonus:before {
+  content: "\e903";
+}
+.cms-icon_compliance:before {
+  content: "\e904";
+}
+.cms-icon_cross:before {
+  content: "\e905";
+}
+// .cms-icon_hamburger:before {
+//   content: "\e906";
+// }
+.cms-icon_logo-brand:before {
+  content: "\e907";
+}
+.cms-icon_operations:before {
+  content: "\e908";
+}
+.cms-icon_payments:before {
+  content: "\e909";
+}
+.cms-icon_search:before {
+  content: "\e90a";
+}
+.cms-icon_settings:before {
+  content: "\e90b";
+}
+.cms-icon_users:before {
+  content: "\e90c";
+}
+.cms-icon_jackpot:before {
+  content: "\e90d";
+}
+.cms-icon_trading:before {
+  content: "\e90e";
+}
+.cms-icon_arrow-up:before {
+  content: "\e90f";
+}
+.cms-icon_user-menu:before {
+  content: "\e910";
+}
+.cms-icon_edit:before {
+  content: "\e911";
+}
+.cms-icon_hand:before {
+  content: "\e912";
+}
+.cms-icon_fullscreen:before {
+  content: "\e913";
+}
+.cms-icon_download:before {
+  content: "\e914";
+}
+.cms-icon_left:before {
+  content: "\2039";
+}
+.cms-icon_right:before {
+  content: "\203A";
+}
+.cms-icon_double-left:before {
+  content: "\00AB";
+}
+.cms-icon_double-right:before {
+  content: "\00BB";
+}
+.cms-icon_back:before {
+  content: "\1F818";
+}
+.cms-icon_down:before {
+  content: "\2193";
+}
+.cms-icon_info:before {
+  content: "\2139";
+}
+
+
+
+// Material icons
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+// .material-icons {
+//   font-family: 'Material Icons';
+//   font-weight: normal;
+//   font-style: normal;
+//   font-size: 24px; 
+//   display: inline-block;
+//   line-height: 1;
+//   text-transform: none;
+//   letter-spacing: normal;
+//   word-wrap: normal;
+//   white-space: nowrap;
+//   direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  // -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  // text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  // -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+//   font-feature-settings: 'liga';
+// }
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+
+.material-icons:after {
+  content: attr(data-icon);
+}
+.expand_more:after {
+  content: "expand_less";
+}
+
+// .arrow_drop_down {
+//   position: absolute;
+//   top: 0px;
+//   right: 5px;
+//   pointer-events: none;
+//   &::after {
+//     content: "arrow_drop_down";
+//   }
+// }
+
+

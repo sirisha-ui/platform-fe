@@ -1,0 +1,97 @@
+.CMS-sideMenu{
+    background-color: $CMS-sideMenu-bg;
+    // min-width: $CMS-sideMenu-width;
+    width: $CMS-sideMenu-width;
+    transition: all 0.3s ease;
+    height: 100%;
+    .CMS-sideMenu-content{
+        height: calc(100% - 80px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+.CMS-sideMenu-header{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        height: 34px;
+    }
+}
+.CMS-sideMenu-content{
+    padding: 0px 0 12px;
+    color: #84888b;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.CMS-categoryListItem{
+    // height: 46px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    position: relative;
+    color: $white;
+    text-transform: uppercase;
+    cursor: pointer;
+    &.CMS-accordion-header{
+       color: #84888b;
+       cursor: pointer;
+    }
+    i{
+        margin-right: 5px;
+        font-size: 22px;
+    }
+    span{
+        margin-right: 5px;
+    }
+    &.active{
+        color: #2f8ff1 !important;
+    }
+    .CMS-categoryListItem-content{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        .CMS-menuHeading{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+}
+.CMS-accordion{
+    .CMS-accordion-header{
+        background-color: #2a354d;
+        color: #2f8ff1;
+        font-weight: 700;
+        font-size: 14px;
+        i{
+            color: #2f8ff1;
+        }
+        &::after{
+            color: #2f8ff1;
+        }
+    }
+    &.collapsed{
+        .CMS-accordion-header{
+            color: #ddd;
+            border-bottom: solid 1px #404e6e;
+            font-weight: 400;
+            font-size: 15px;
+            i{
+                color: #84888b;
+            }
+            &::after{
+                color: #84888b;
+            }
+        }
+    }
+}
+.CMS-accordion-content{
+    .CMS-categoryListItem{
+        font-size: 14px;
+        color: #84888b;
+    }
+}
+

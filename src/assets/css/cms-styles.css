@@ -1,0 +1,2835 @@
+/*------- Brand Colors ----------------*/
+/*------- Global Variables ----------------*/
+/*----- SideMenu-----*/
+/*----- Header-----*/
+/*----- Main Navbar-----*/
+/* ==========================================================================
+   Normalize.scss settings
+   ========================================================================== */
+/**
+ * Includes legacy browser support IE6/7
+ *
+ * Set to false if you want to drop support for IE6 and IE7
+ */
+/* Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ * 3. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
+ *  `em` units.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap");
+@import url(styles/vendors/bootstrap-grid.css);
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+a:active, a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Addresses styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * 1. Remove border when inside `a` element in IE 8/9/10.
+ * 2. Improves image quality when scaled in IE 7.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ * Correct font family set oddly in IE 6, Safari 4/5, and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *  Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ * 4. Improves appearance and consistency in all browsers.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *  and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *  `input` and others.
+ * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
+ *  Known issue: inner spacing remains in IE 6.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ *  Known issue: excess padding remains in IE 6.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */ }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ * 3. Corrects text not wrapping in Firefox 3.
+ * 4. Corrects alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  height: 100%; }
+
+body {
+  background-color: #ebf1f6;
+  font-family: "Barlow", sans-serif;
+  font-size: 14px;
+  color: #000;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  user-select: none;
+  height: 100%; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  text-underline-position: under; }
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  max-width: 100%; }
+
+ul {
+  padding: 0;
+  margin: 0; }
+  ul li {
+    list-style: none;
+    list-style-image: none;
+    list-style-type: none; }
+
+input,
+textarea {
+  font-family: inherit;
+  outline: none;
+  width: 100%; }
+
+select {
+  background-image: none;
+  outline: none;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+.btn {
+  cursor: pointer;
+  padding: 0 6px;
+  border: none;
+  white-space: nowrap;
+  background-image: none; }
+  .btn:focus {
+    outline: none;
+    box-shadow: none; }
+
+.text-right {
+  text-align: right !important; }
+
+.text-left {
+  text-align: left !important; }
+
+.text-center {
+  text-align: center !important; }
+
+.text-justify {
+  text-align: justify !important; }
+
+.w-100 {
+  width: 100% !important; }
+
+.d-none {
+  display: none !important; }
+
+.d-block {
+  display: block !important; }
+
+.truncate {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.space-2 {
+  margin: 2px auto;
+  padding: 1px 0; }
+
+.space-5 {
+  margin: 5px auto;
+  padding: 2px 0; }
+
+.space-10 {
+  margin: 10px auto;
+  padding: 5px 0; }
+
+.mb-0 {
+  margin-bottom: 0 !important; }
+
+.mr-5 {
+  margin-right: 5px !important; }
+
+.ml-5 {
+  margin-left: 5px !important; }
+
+.mt-10 {
+  margin-top: 10px !important; }
+
+.mb-10 {
+  margin-bottom: 10px !important; }
+
+.mb-20 {
+  margin-bottom: 20px !important; }
+
+.mt-20 {
+  margin-top: 20px !important; }
+
+.mr-20 {
+  margin-right: 20px; }
+
+.plr-10 {
+  padding: 0 8px !important; }
+
+table {
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse !important; }
+
+body.CMS-sideMenu-open {
+  margin: 0 auto; }
+
+.bg-primary {
+  background-color: #2f8ff1; }
+
+.bg-secondary {
+  background-color: #192239; }
+
+.flex-right {
+  display: flex;
+  justify-content: flex-end; }
+
+.flex-nowrap {
+  flex-wrap: nowrap !important; }
+
+.pick6-mobile {
+  overflow-x: hidden;
+  height: 100%; }
+
+.CMS-icon-fav {
+  color: #999; }
+  .CMS-icon-fav.active {
+    color: #2f8ff1; }
+
+.CMS-tabs-content .CMS-tab-panel {
+  display: none; }
+  .CMS-tabs-content .CMS-tab-panel.active {
+    display: block; }
+
+.CMS-page-tabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  border-bottom: solid 1px #ccc;
+  margin-left: -20px; }
+  .CMS-page-tabs.CMS-page-internalTabs {
+    margin-left: 0px;
+    padding: 2px 2px 0 2px; }
+    .CMS-page-tabs.CMS-page-internalTabs ul li {
+      min-width: 75px; }
+      .CMS-page-tabs.CMS-page-internalTabs ul li:first-child {
+        margin-left: 0px; }
+    .CMS-page-tabs.CMS-page-internalTabs ul .active {
+      background-color: #192239;
+      border: solid 1px #192239;
+      top: 0px; }
+      .CMS-page-tabs.CMS-page-internalTabs ul .active a {
+        color: #fff; }
+  .CMS-page-tabs ul {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    height: 100%; }
+    .CMS-page-tabs ul li {
+      white-space: nowrap;
+      margin-right: 10px;
+      vertical-align: middle;
+      border: solid 1px #ccc;
+      border-radius: 4px 4px 0 0;
+      border-bottom: 0; }
+      .CMS-page-tabs ul li:first-child {
+        margin-left: 20px; }
+      .CMS-page-tabs ul li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 4px 10px;
+        color: #000;
+        border-radius: 4px 4px 0 0;
+        height: 30px; }
+      .CMS-page-tabs ul li.active {
+        border: 1px solid #ccc;
+        border-bottom: 0;
+        border-radius: 4px 4px 0 0;
+        background-color: #ebf1f6;
+        position: relative;
+        top: 1px; }
+        .CMS-page-tabs ul li.active a {
+          color: #000;
+          font-weight: 600; }
+
+/* Tabs ----- */
+.CMS-tabs-data {
+  height: auto;
+  border-radius: 8px 8px 0 0; }
+
+.tabby-tab {
+  flex: 1; }
+
+.tabby-tab label {
+  display: block;
+  box-sizing: border-box;
+  /* tab content must clear this */
+  height: 40px;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  color: #000; }
+
+.tabby-tab label:hover {
+  background: #fff;
+  color: #000; }
+
+.tabby-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* clear the tab labels */
+  top: 40px;
+  padding: 20px;
+  border-radius: 0 0 8px 8px;
+  background: #fff;
+  opacity: 0;
+  transform: scale(0.1);
+  transform-origin: top left; }
+
+.tabby-content img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 8px; }
+
+/* MAKE IT WORK ----- */
+.tabby-tab [type="radio"] {
+  display: none; }
+
+[type="radio"]:checked ~ label {
+  background: #fff;
+  z-index: 2;
+  font-weight: 600;
+  color: #000;
+  float: left;
+  border-radius: 4px 4px 0 0; }
+
+[type="radio"]:checked ~ label ~ .tabby-content {
+  z-index: 1;
+  /* show/hide */
+  opacity: 1;
+  transform: scale(1); }
+
+/* BREAKPOINTS ----- */
+@media screen and (max-width: 767px) {
+  .CMS-tabs-data {
+    min-height: 400px; } }
+@media screen and (max-width: 480px) {
+  .CMS-tabs-data {
+    min-height: 580px; }
+
+  .tabby-tab label {
+    height: 60px; }
+
+  .tabby-content {
+    top: 60px; }
+
+  .tabby-content img {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 20px; } }
+.CMS-filterBtnList {
+  min-height: 40px; }
+  .CMS-filterBtnList ul {
+    display: table;
+    table-layout: fixed;
+    width: auto;
+    height: 100%; }
+    .CMS-filterBtnList ul li {
+      display: table-cell;
+      padding-right: 12px;
+      min-width: 110px; }
+      .CMS-filterBtnList ul li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 10px;
+        height: 40px;
+        background-color: #FFF;
+        border-radius: 4px;
+        text-align: center;
+        border: 1px solid #ddd;
+        line-height: 16px; }
+      .CMS-filterBtnList ul li.active a {
+        background-color: #192239;
+        border-color: #192239;
+        font-weight: 600;
+        color: #FFF; }
+      .CMS-filterBtnList ul li:last-child {
+        padding-right: 0; }
+  .CMS-filterBtnList.CMS-scrollableArea, .CMS-filterBtnList.CMS-horizontal ul {
+    table-layout: auto; }
+    .CMS-filterBtnList.CMS-scrollableArea ul, .CMS-filterBtnList.CMS-horizontal ul ul {
+      width: 100%; }
+
+.CMS-scrollableArea.CMS-horizontal {
+  overflow-x: auto; }
+
+.CMS-box-tabs ul {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  width: 100%;
+  height: 100%; }
+  .CMS-box-tabs ul li {
+    flex: 1;
+    text-align: center;
+    border: 1px solid #dadada; }
+    .CMS-box-tabs ul li:first-child {
+      border-right: 1px solid #dadada; }
+    .CMS-box-tabs ul li a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 34px;
+      padding: 4px 10px;
+      background-color: #f6f6f6; }
+    .CMS-box-tabs ul li i.CMS-icon-ticket {
+      font-size: 16px; }
+    .CMS-box-tabs ul li.active a {
+      background-color: #FFF;
+      font-weight: 500; }
+    .CMS-box-tabs ul li:not(.active) {
+      border-bottom: 1px solid #dadada; }
+
+.CMS-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.CMS-table {
+  overflow-x: auto; }
+  .CMS-table th {
+    color: #2f8ff1;
+    font-weight: 600; }
+  .CMS-table thead tr {
+    background-color: #f0f8ff; }
+  .CMS-table thead th {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 16px 15px; }
+    .CMS-table thead th:first-child {
+      text-align: left; }
+  .CMS-table thead:last-child th {
+    border-top: 1px solid #e0e0e0; }
+  .CMS-table th,
+  .CMS-table td {
+    padding: 12px 15px;
+    text-align: center; }
+  .CMS-table a {
+    text-decoration: none !important;
+    color: #2f8ff1; }
+  .CMS-table tbody th:first-child {
+    text-align: left; }
+  .CMS-table tbody td:first-child {
+    text-align: left; }
+  .CMS-table tbody tr:nth-child(even) {
+    background-color: #f6f6f6; }
+  .CMS-table .CMS-negative-value {
+    color: #f30909; }
+  .CMS-table .CMS-positive-value {
+    color: #1ba81b; }
+  .CMS-table .CMS-select-value {
+    color: #2f8ff1; }
+  .CMS-table.CMS-betTicker td {
+    border: solid 1px #eee; }
+  .CMS-table.CMS-betTicker a {
+    color: #0000CD; }
+  .CMS-table.CMS-betTicker .CMS-stakeFactor-more-than-1 {
+    background-color: #00B050; }
+  .CMS-table.CMS-betTicker .CMS-stakeFactor-less-than-1 {
+    background-color: red; }
+  .CMS-table.CMS-betTicker .CMS-stakeFactor-1 {
+    background-color: transparent; }
+  .CMS-table.CMS-betTicker .CMS-declined {
+    background-color: #FFC000; }
+  .CMS-table.CMS-betTicker .CMS-biggerBets {
+    background-color: #8EAADC; }
+  .CMS-table.tableHeght {
+    min-height: 300px; }
+  .CMS-table .textLeft {
+    text-align: left;
+    min-width: 100px; }
+
+.CMS-hr {
+  margin: 20px 0;
+  height: 1px;
+  width: 100%;
+  background-color: #DADDDF;
+  background: radial-gradient(circle, #ddd 0%, #fff 100%); }
+
+.CMS-accordion > .CMS-accordion-header {
+  justify-content: space-between; }
+.CMS-accordion.collapsed > .CMS-accordion-content {
+  display: none; }
+.CMS-accordion.collapsed .expand_more:after {
+  content: "expand_more"; }
+.CMS-accordion .CMS-accordion-content {
+  background-color: #1c212c;
+  padding-left: 28px; }
+
+.CMS-box__title {
+  text-align: left; }
+  .CMS-box__title .CMS-back-button {
+    float: left;
+    padding: 2px 20px 0 0;
+    font-size: 20px; }
+
+.CMS-box {
+  border-radius: 6px;
+  padding: 1px;
+  padding-bottom: 0;
+  background-color: #FFF;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.1); }
+  .CMS-box .CMS-box__header {
+    background-color: #FFF;
+    color: #1c9cd8;
+    height: auto;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .CMS-box .CMS-box__header .CMS-box__header-right {
+      display: flex;
+      align-items: center; }
+  .CMS-box.CMS-box-content {
+    padding: 20px 10px; }
+    .CMS-box.CMS-box-content .CMS-box__header {
+      padding: 0px 5px 10px;
+      margin-bottom: 10px; }
+  .CMS-box .CMS-box__tableHeader {
+    background-color: #192239;
+    color: #1c9cd8;
+    height: auto;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px 6px 0 0; }
+
+.CMS-box-content {
+  padding: 20px 10px; }
+
+.CMS-page-header {
+  font-size: 24px;
+  font-weight: 600;
+  padding-bottom: 20px;
+  color: #0e1321; }
+
+.CMS-page-secondary-header {
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 5px;
+  color: #0e1321;
+  border-bottom: solid 1px #ddd; }
+
+.CMS-page-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px; }
+
+.CMS-tabContent {
+  padding: 20px 0; }
+
+.CMS-internal-tabContent {
+  padding: 20px 0; }
+
+.CMS-graph-content {
+  display: flex;
+  justify-content: center;
+  padding: 10px 10px 20px; }
+  .CMS-graph-content img {
+    width: 92%; }
+
+.CMS-box__actionIcons {
+  margin-right: 6px; }
+  .CMS-box__actionIcons ul {
+    display: flex; }
+    .CMS-box__actionIcons ul li {
+      padding: 6px 8px;
+      display: flex;
+      align-items: center;
+      margin-right: 4px;
+      cursor: pointer;
+      color: #192239; }
+      .CMS-box__actionIcons ul li:last-child {
+        font-size: 15px; }
+
+.details-of-reports {
+  width: 160px; }
+
+.close {
+  font-size: 10px;
+  color: #192239;
+  margin-left: 15px;
+  margin-top: 3px; }
+
+.CMS-filter-result .CMS-pagination {
+  padding: 15px 0; }
+  .CMS-filter-result .CMS-pagination .CMS-pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; }
+    .CMS-filter-result .CMS-pagination .CMS-pagination-container .CMS-pagination-list {
+      display: flex;
+      align-items: center; }
+      .CMS-filter-result .CMS-pagination .CMS-pagination-container .CMS-pagination-list ul {
+        display: inline-block;
+        padding: 0;
+        margin: 0; }
+      .CMS-filter-result .CMS-pagination .CMS-pagination-container .CMS-pagination-list ul li {
+        display: inline; }
+      .CMS-filter-result .CMS-pagination .CMS-pagination-container .CMS-pagination-list ul li a {
+        display: flex;
+        color: #000;
+        line-height: 24px;
+        float: left;
+        padding: 4px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        border: 1px solid #bbb;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        margin-right: 2px; }
+      .CMS-filter-result .CMS-pagination .CMS-pagination-container .CMS-pagination-list ul li a.active {
+        background-color: #192239;
+        color: white;
+        border: 1px solid #192239; }
+      .CMS-filter-result .CMS-pagination .CMS-pagination-container .CMS-pagination-list ul li a:hover:not(.active) {
+        background-color: #ddd; }
+  .CMS-filter-result .CMS-pagination .CMS-page-slection {
+    display: flex;
+    align-items: center; }
+    .CMS-filter-result .CMS-pagination .CMS-page-slection .CMS-number-of-files {
+      margin: 0 5px; }
+    .CMS-filter-result .CMS-pagination .CMS-page-slection .CMS-file-type {
+      margin: 0 5px; }
+    .CMS-filter-result .CMS-pagination .CMS-page-slection .CMS-download-icon {
+      margin: 0 5px;
+      border-radius: 4px;
+      border: solid 1px #192239;
+      padding: 6px 8px;
+      background-color: #192239;
+      color: #fff;
+      height: 33px; }
+  .CMS-filter-result .CMS-pagination .CMS-page-results {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 180px;
+    margin: 0 5px; }
+    .CMS-filter-result .CMS-pagination .CMS-page-results .refresh-page {
+      margin-left: 20px; }
+  .CMS-filter-result .CMS-pagination .CMS-select {
+    min-width: 120px; }
+
+.CMS-sideMenu-collapsed .CMS-sideMenu {
+  width: 0;
+  overflow: hidden;
+  transition: all 0.3s ease; }
+
+.CMS-sideMenu-collapsed ~ .CMS-layout-content {
+  margin-left: 0;
+  width: 100%; }
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ddd; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #999; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #666; }
+
+/* Sprite image flags */
+.CMS-flags {
+  background-image: url(../images/country_flags/spritesheet.png);
+  background-repeat: no-repeat;
+  display: inline-block; }
+  .CMS-flags.CMS-001-ethiopia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5px; }
+  .CMS-flags.CMS-002-oman {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -35px; }
+  .CMS-flags.CMS-003-tanzania {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -65px; }
+  .CMS-flags.CMS-004-slovenia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -95px; }
+  .CMS-flags.CMS-005-puerto-rico {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -125px; }
+  .CMS-flags.CMS-006-mozambique {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -155px; }
+  .CMS-flags.CMS-007-iraq {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -185px; }
+  .CMS-flags.CMS-008-lebanon {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -215px; }
+  .CMS-flags.CMS-009-uganda {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -245px; }
+  .CMS-flags.CMS-010-nigeria {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -275px; }
+  .CMS-flags.CMS-011-italy {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -305px; }
+  .CMS-flags.CMS-012-malta {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -335px; }
+  .CMS-flags.CMS-013-tunisia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -365px; }
+  .CMS-flags.CMS-014-nicaragua {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -395px; }
+  .CMS-flags.CMS-015-el-salvador {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -425px; }
+  .CMS-flags.CMS-016-zambia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -455px; }
+  .CMS-flags.CMS-017-wales {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -485px; }
+  .CMS-flags.CMS-018-dominican-republic {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -515px; }
+  .CMS-flags.CMS-019-qatar {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -545px; }
+  .CMS-flags.CMS-020-namibia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -575px; }
+  .CMS-flags.CMS-021-mauritius {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -605px; }
+  .CMS-flags.CMS-022-european-union {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -635px; }
+  .CMS-flags.CMS-023-luxembourg {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -665px; }
+  .CMS-flags.CMS-024-hawaii {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -695px; }
+  .CMS-flags.CMS-025-lithuania {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -725px; }
+  .CMS-flags.CMS-026-jamaica {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -755px; }
+  .CMS-flags.CMS-027-honduras {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -785px; }
+  .CMS-flags.CMS-028-myanmar {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -815px; }
+  .CMS-flags.CMS-029-kenya {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -845px; }
+  .CMS-flags.CMS-030-cyprus {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -875px; }
+  .CMS-flags.CMS-031-pakistan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -905px; }
+  .CMS-flags.CMS-032-latvia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -935px; }
+  .CMS-flags.CMS-033-japan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -965px; }
+  .CMS-flags.CMS-034-kazakhstan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -995px; }
+  .CMS-flags.CMS-035-serbia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1025px; }
+  .CMS-flags.CMS-036-scotland {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1055px; }
+  .CMS-flags.CMS-037-north-korea {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1085px; }
+  .CMS-flags.CMS-038-uruguay {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1115px; }
+  .CMS-flags.CMS-039-syria {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1145px; }
+  .CMS-flags.CMS-040-guatemala {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1175px; }
+  .CMS-flags.CMS-041-iceland {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1205px; }
+  .CMS-flags.CMS-042-jordan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1235px; }
+  .CMS-flags.CMS-043-monaco {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1265px; }
+  .CMS-flags.CMS-044-spain {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1295px; }
+  .CMS-flags.CMS-045-slovakia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1325px; }
+  .CMS-flags.CMS-046-united-nations {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1355px; }
+  .CMS-flags.CMS-047-panama {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1385px; }
+  .CMS-flags.CMS-048-new-zealand {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1415px; }
+  .CMS-flags.CMS-049-ecuador {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1445px; }
+  .CMS-flags.CMS-050-romania {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1475px; }
+  .CMS-flags.CMS-051-chile {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1505px; }
+  .CMS-flags.CMS-052-finland {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1535px; }
+  .CMS-flags.CMS-053-hungary {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1565px; }
+  .CMS-flags.CMS-054-belgium {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1595px; }
+  .CMS-flags.CMS-055-south-korea {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1625px; }
+  .CMS-flags.CMS-056-malaysia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1655px; }
+  .CMS-flags.CMS-057-venezuela {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1685px; }
+  .CMS-flags.CMS-058-norway {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1715px; }
+  .CMS-flags.CMS-059-saudi-arabia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1745px; }
+  .CMS-flags.CMS-060-israel {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1775px; }
+  .CMS-flags.CMS-061-czech-republic {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1805px; }
+  .CMS-flags.CMS-062-colombia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1835px; }
+  .CMS-flags.CMS-063-iran {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1865px; }
+  .CMS-flags.CMS-064-argentina {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1895px; }
+  .CMS-flags.CMS-065-ukraine {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1925px; }
+  .CMS-flags.CMS-066-germany {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1955px; }
+  .CMS-flags.CMS-067-hong-kong {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -1985px; }
+  .CMS-flags.CMS-068-united-arab-emirates {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2015px; }
+  .CMS-flags.CMS-069-laos {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2045px; }
+  .CMS-flags.CMS-070-ireland {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2075px; }
+  .CMS-flags.CMS-071-greece {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2105px; }
+  .CMS-flags.CMS-072-denmark {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2135px; }
+  .CMS-flags.CMS-073-sweden {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2165px; }
+  .CMS-flags.CMS-074-peru {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2195px; }
+  .CMS-flags.CMS-075-south-africa {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2225px; }
+  .CMS-flags.CMS-076-philippines {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2255px; }
+  .CMS-flags.CMS-077-france {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2285px; }
+  .CMS-flags.CMS-078-indonesia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2315px; }
+  .CMS-flags.CMS-079-egypt {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2345px; }
+  .CMS-flags.CMS-080-taiwan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2375px; }
+  .CMS-flags.CMS-081-cook-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2405px; }
+  .CMS-flags.CMS-082-cocos-island {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2435px; }
+  .CMS-flags.CMS-083-christmas-island {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2465px; }
+  .CMS-flags.CMS-084-ceuta {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2495px; }
+  .CMS-flags.CMS-085-american-samoa {
+    width: 29px;
+    height: 20px;
+    background-position: -5px -2525px; }
+  .CMS-flags.CMS-086-morocco {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2555px; }
+  .CMS-flags.CMS-087-anguilla {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2585px; }
+  .CMS-flags.CMS-088-corsica {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2615px; }
+  .CMS-flags.CMS-089-canary-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2645px; }
+  .CMS-flags.CMS-090-comoros {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2675px; }
+  .CMS-flags.CMS-091-central-african-republic {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2705px; }
+  .CMS-flags.CMS-092-cayman-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2735px; }
+  .CMS-flags.CMS-093-british-indian-ocean-territory {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2765px; }
+  .CMS-flags.CMS-094-bhutan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2795px; }
+  .CMS-flags.CMS-095-chad {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2825px; }
+  .CMS-flags.CMS-096-cape-verde {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2855px; }
+  .CMS-flags.CMS-097-switzerland {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2885px; }
+  .CMS-flags.CMS-098-benin {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2915px; }
+  .CMS-flags.CMS-099-aruba {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2945px; }
+  .CMS-flags.CMS-101-balearic-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -2975px; }
+  .CMS-flags.CMS-102-andorra {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3005px; }
+  .CMS-flags.CMS-103-burundi {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3035px; }
+  .CMS-flags.CMS-104-antigua-and-barbuda {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3065px; }
+  .CMS-flags.CMS-105-aland-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3095px; }
+  .CMS-flags.CMS-106-cameroon {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3125px; }
+  .CMS-flags.CMS-107-brunei {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3155px; }
+  .CMS-flags.CMS-108-poland {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3185px; }
+  .CMS-flags.CMS-109-bonaire {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3215px; }
+  .CMS-flags.CMS-110-belarus {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3245px; }
+  .CMS-flags.CMS-111-barbados {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3275px; }
+  .CMS-flags.CMS-112-british-virgin-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3305px; }
+  .CMS-flags.CMS-113-bosnia-and-herzegovina {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3335px; }
+  .CMS-flags.CMS-114-bermuda {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3365px; }
+  .CMS-flags.CMS-115-belize {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3395px; }
+  .CMS-flags.CMS-116-bahrain {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3425px; }
+  .CMS-flags.CMS-117-albania {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3455px; }
+  .CMS-flags.CMS-118-burkina-faso {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3485px; }
+  .CMS-flags.CMS-119-turkey {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3515px; }
+  .CMS-flags.CMS-120-basque-country {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3545px; }
+  .CMS-flags.CMS-121-armenia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3575px; }
+  .CMS-flags.CMS-122-afghanistan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3605px; }
+  .CMS-flags.CMS-123-british-columbia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3635px; }
+  .CMS-flags.CMS-124-angola {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3665px; }
+  .CMS-flags.CMS-125-azerbaijan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3695px; }
+  .CMS-flags.CMS-126-algeria {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3725px; }
+  .CMS-flags.CMS-127-botswana {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3755px; }
+  .CMS-flags.CMS-128-bangladesh {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3785px; }
+  .CMS-flags.CMS-129-cuba {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3815px; }
+  .CMS-flags.CMS-130-australia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3845px; }
+  .CMS-flags.CMS-131-costa-rica {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3875px; }
+  .CMS-flags.CMS-132-cambodia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3905px; }
+  .CMS-flags.CMS-133-bolivia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3935px; }
+  .CMS-flags.CMS-134-croatia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3965px; }
+  .CMS-flags.CMS-135-bulgaria {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -3995px; }
+  .CMS-flags.CMS-136-galapagos-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4025px; }
+  .CMS-flags.CMS-137-martinique {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4055px; }
+  .CMS-flags.CMS-138-tonga {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4085px; }
+  .CMS-flags.CMS-139-st-lucia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4115px; }
+  .CMS-flags.CMS-140-rapa-nui {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4145px; }
+  .CMS-flags.CMS-141-singapore {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4175px; }
+  .CMS-flags.CMS-142-palau {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4205px; }
+  .CMS-flags.CMS-143-niue {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4235px; }
+  .CMS-flags.CMS-144-macao {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4265px; }
+  .CMS-flags.CMS-145-fiji {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4295px; }
+  .CMS-flags.CMS-146-faroe-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4325px; }
+  .CMS-flags.CMS-147-dominica {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4355px; }
+  .CMS-flags.CMS-148-vanuatu {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4385px; }
+  .CMS-flags.CMS-149-sierra-leone {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4415px; }
+  .CMS-flags.CMS-150-seychelles {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4445px; }
+  .CMS-flags.CMS-151-kosovo {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4475px; }
+  .CMS-flags.CMS-152-england {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4505px; }
+  .CMS-flags.CMS-153-united-states-of-america {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4535px; }
+  .CMS-flags.CMS-154-guinea {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4565px; }
+  .CMS-flags.CMS-155-orkney-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4595px; }
+  .CMS-flags.CMS-156-turks-and-caicos {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4625px; }
+  .CMS-flags.CMS-157-transnistria {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4655px; }
+  .CMS-flags.CMS-158-tokelau {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4685px; }
+  .CMS-flags.CMS-159-gambia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4715px; }
+  .CMS-flags.CMS-160-st-vincent-and-the-grenadines {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4745px; }
+  .CMS-flags.CMS-161-south-sudan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4775px; }
+  .CMS-flags.CMS-162-somaliland {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4805px; }
+  .CMS-flags.CMS-163-solomon-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4835px; }
+  .CMS-flags.CMS-164-vietnam {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4865px; }
+  .CMS-flags.CMS-165-sint-maarten {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4895px; }
+  .CMS-flags.CMS-166-sint-eustatius {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4925px; }
+  .CMS-flags.CMS-167-saint-kitts-and-nevis {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4955px; }
+  .CMS-flags.CMS-168-saba-island {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -4985px; }
+  .CMS-flags.CMS-169-pitcairn-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5015px; }
+  .CMS-flags.CMS-170-palestine {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5045px; }
+  .CMS-flags.CMS-171-ossetia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5075px; }
+  .CMS-flags.CMS-172-northern-marianas-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5105px; }
+  .CMS-flags.CMS-173-nauru {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5135px; }
+  .CMS-flags.CMS-174-portugal {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5165px; }
+  .CMS-flags.CMS-175-montserrat {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5195px; }
+  .CMS-flags.CMS-176-melilla {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5225px; }
+  .CMS-flags.CMS-177-mauritania {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5255px; }
+  .CMS-flags.CMS-178-kuwait {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5285px; }
+  .CMS-flags.CMS-179-kiribati {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5315px; }
+  .CMS-flags.CMS-180-guernsey {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5345px; }
+  .CMS-flags.CMS-181-guam {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5375px; }
+  .CMS-flags.CMS-182-grenada {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5405px; }
+  .CMS-flags.CMS-183-greenland {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5435px; }
+  .CMS-flags.CMS-184-thailand {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5465px; }
+  .CMS-flags.CMS-185-gibraltar {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5495px; }
+  .CMS-flags.CMS-186-gabon {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5525px; }
+  .CMS-flags.CMS-187-falkland-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5555px; }
+  .CMS-flags.CMS-188-virgin-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5585px; }
+  .CMS-flags.CMS-189-austria {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5615px; }
+  .CMS-flags.CMS-190-vatican-city {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5645px; }
+  .CMS-flags.CMS-191-tubalu {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5675px; }
+  .CMS-flags.CMS-192-turkmenistan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5705px; }
+  .CMS-flags.CMS-193-togo {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5735px; }
+  .CMS-flags.CMS-194-bahamas {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5765px; }
+  .CMS-flags.CMS-195-netherlands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5795px; }
+  .CMS-flags.CMS-196-azores-islands {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5825px; }
+  .CMS-flags.CMS-197-suriname {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5855px; }
+  .CMS-flags.CMS-198-somalia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5885px; }
+  .CMS-flags.CMS-199-sicily {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5915px; }
+  .CMS-flags.CMS-200-sardinia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5945px; }
+  .CMS-flags.CMS-201-sao-tome-and-principe {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -5975px; }
+  .CMS-flags.CMS-202-norfolk-island {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6005px; }
+  .CMS-flags.CMS-203-niger {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6035px; }
+  .CMS-flags.CMS-204-micronesia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6065px; }
+  .CMS-flags.CMS-205-marshall-island {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6095px; }
+  .CMS-flags.CMS-206-canada {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6125px; }
+  .CMS-flags.CMS-207-mali {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6155px; }
+  .CMS-flags.CMS-208-kyrgyzstan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6185px; }
+  .CMS-flags.CMS-209-guinea-bissau {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6215px; }
+  .CMS-flags.CMS-210-eritrea {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6245px; }
+  .CMS-flags.CMS-211-djibouti {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6275px; }
+  .CMS-flags.CMS-212-curacao {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6305px; }
+  .CMS-flags.CMS-213-st-barts {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6335px; }
+  .CMS-flags.CMS-214-san-marino {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6365px; }
+  .CMS-flags.CMS-215-northen-cyprus {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6395px; }
+  .CMS-flags.CMS-216-liechtenstein {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6425px; }
+  .CMS-flags.CMS-217-india {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6455px; }
+  .CMS-flags.CMS-218-liberia {
+    width: 29px;
+    height: 20px;
+    background-position: -5px -6485px; }
+  .CMS-flags.CMS-219-yemen {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6515px; }
+  .CMS-flags.CMS-220-uzbekistn {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6545px; }
+  .CMS-flags.CMS-221-sudan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6575px; }
+  .CMS-flags.CMS-222-sahrawi-arab-democratic-republic {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6605px; }
+  .CMS-flags.CMS-223-republic-of-macedonia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6635px; }
+  .CMS-flags.CMS-224-otan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6665px; }
+  .CMS-flags.CMS-225-libya {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6695px; }
+  .CMS-flags.CMS-226-east-timor {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6725px; }
+  .CMS-flags.CMS-227-tibet {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6755px; }
+  .CMS-flags.CMS-228-russia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6785px; }
+  .CMS-flags.CMS-229-papua-new-guinea {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6815px; }
+  .CMS-flags.CMS-230-montenegro {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6845px; }
+  .CMS-flags.CMS-231-moldova {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6875px; }
+  .CMS-flags.CMS-232-maldives {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6905px; }
+  .CMS-flags.CMS-233-madeira {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6935px; }
+  .CMS-flags.CMS-234-french-polynesia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6965px; }
+  .CMS-flags.CMS-235-trinidad-and-tobago {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -6995px; }
+  .CMS-flags.CMS-236-tajikistan {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7025px; }
+  .CMS-flags.CMS-237-swaziland {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7055px; }
+  .CMS-flags.CMS-238-sri-lanka {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7085px; }
+  .CMS-flags.CMS-239-mexico {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7115px; }
+  .CMS-flags.CMS-240-republic-of-the-congo {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7145px; }
+  .CMS-flags.CMS-241-equatorial-guinea {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7175px; }
+  .CMS-flags.CMS-242-zimbabwe {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7205px; }
+  .CMS-flags.CMS-243-rwanda {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7235px; }
+  .CMS-flags.CMS-244-lesotho {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7265px; }
+  .CMS-flags.CMS-245-ivory-coast {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7295px; }
+  .CMS-flags.CMS-246-isle-of-man {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7325px; }
+  .CMS-flags.CMS-247-haiti {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7355px; }
+  .CMS-flags.CMS-248-samoa {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7385px; }
+  .CMS-flags.CMS-249-nepal {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7415px; }
+  .CMS-flags.CMS-250-brazil {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7445px; }
+  .CMS-flags.CMS-251-mongolia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7475px; }
+  .CMS-flags.CMS-252-malawi {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7505px; }
+  .CMS-flags.CMS-253-madagascar {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7535px; }
+  .CMS-flags.CMS-254-jersey {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7565px; }
+  .CMS-flags.CMS-255-ghana {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7595px; }
+  .CMS-flags.CMS-256-georgia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7625px; }
+  .CMS-flags.CMS-257-estonia {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7655px; }
+  .CMS-flags.CMS-258-democratic-republic-of-congo {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7685px; }
+  .CMS-flags.CMS-259-senegal {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7715px; }
+  .CMS-flags.CMS-261-china {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7745px; }
+  .CMS-flags.CMS-262-united-kingdom {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7775px; }
+  .CMS-flags.CMS-Chinese--Taipei {
+    width: 30px;
+    height: 20px;
+    background-position: -5px -7805px; }
+  .CMS-flags.CMS-github {
+    width: 30px;
+    height: 30px;
+    background-position: -5px -7835px; }
+  .CMS-flags.CMS-gmail {
+    width: 30px;
+    height: 30px;
+    background-position: -5px -7875px; }
+  .CMS-flags.CMS-linkedin {
+    width: 30px;
+    height: 30px;
+    background-position: -5px -7915px; }
+  .CMS-flags.CMS-stackoverflow {
+    width: 30px;
+    height: 30px;
+    background-position: -5px -7955px; }
+  .CMS-flags.CMS-tumblr {
+    width: 30px;
+    height: 30px;
+    background-position: -5px -7995px; }
+  .CMS-flags.CMS-twitter {
+    width: 30px;
+    height: 30px;
+    background-position: -5px -8035px; }
+
+#CMS-generalDetails .CMS-tabContent {
+  padding: 0; }
+  #CMS-generalDetails .CMS-tabContent .CMS-box-content {
+    padding: 20px 10px 3px 10px; }
+  #CMS-generalDetails .CMS-tabContent .general-detailsFooter {
+    background-color: #d7e8f5;
+    border-radius: 0 0 4px 4px;
+    display: flex;
+    align-items: center;
+    border-top: solid 1px #2f8ff1; }
+
+.CMS-formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px; }
+  .CMS-formGroup.formGroup-inline {
+    flex-direction: row;
+    align-items: center; }
+
+.CMS-formLabel {
+  margin: 0 10px 2px 0;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  min-width: 110px;
+  display: flex;
+  align-items: center; }
+
+.CMS-formControl input {
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  font-weight: 400;
+  background-color: #FFF;
+  color: #000;
+  height: 35px;
+  border: 1px solid #ccc;
+  padding: 4px 2px 4px 8px; }
+.CMS-formControl::placeholder {
+  color: #ccc;
+  font-weight: normal; }
+.CMS-formControl.CMS-slectLarge .CMS-select {
+  min-width: 200px; }
+.CMS-formControl.CMS-slectLarge .CMS-dropdown {
+  min-width: 200px; }
+.CMS-formControl .CMS-tableRow {
+  display: flex;
+  flex-direction: row; }
+
+.CMS-formControl-group {
+  position: relative; }
+  .CMS-formControl-group .CMS-formAddon {
+    min-width: 30px;
+    max-width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    bottom: 0; }
+  .CMS-formControl-group .CMS-formControl {
+    flex: 1 1 auto; }
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; }
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block; }
+
+input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right; }
+
+input[type="submit"]:hover {
+  background-color: #45a049; }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0; } }
+.CMS-form-group {
+  line-height: 30px; }
+  .CMS-form-group .CMS-checkbox {
+    display: flex;
+    align-items: center;
+    padding-left: 6px; }
+    .CMS-form-group .CMS-checkbox .SB-checkboxLabel {
+      padding-left: 10px;
+      position: relative;
+      top: 0px;
+      color: #000; }
+    .CMS-form-group .CMS-checkbox input[type="radio"],
+    .CMS-form-group .CMS-checkbox input[type="checkbox"] {
+      display: none; }
+    .CMS-form-group .CMS-checkbox label {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      margin-bottom: 0;
+      padding-left: 0;
+      float: left;
+      position: relative;
+      top: 5px; }
+      .CMS-form-group .CMS-checkbox label::before {
+        content: "";
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background-color: #fff;
+        border: solid 1px #999;
+        border-radius: 3px; }
+    .CMS-form-group .CMS-checkbox input[type="checkbox"]:checked + label:before {
+      font-family: "Material Icons";
+      text-align: center;
+      line-height: 15px;
+      color: #fff;
+      content: "\e5ca";
+      font-size: 10px;
+      border: 0;
+      background-color: #2f8ff1; }
+    .CMS-form-group .CMS-checkbox a {
+      text-decoration: underline; }
+
+.CMS-btnContainer {
+  margin: 0 auto;
+  max-width: 400px;
+  display: flex; }
+  .CMS-btnContainer :nth-child(n+1) {
+    margin-right: 20px; }
+  .CMS-btnContainer :last-child {
+    margin-right: 0; }
+
+.CMS-btn {
+  background-color: #ddd;
+  cursor: pointer;
+  padding: 0 6px;
+  border: none;
+  white-space: nowrap;
+  border-radius: 4px; }
+  .CMS-btn:focus {
+    outline: none;
+    box-shadow: none; }
+  .CMS-btn.CMS-btnDefault {
+    background-color: transparent;
+    border: 1px solid #DDD;
+    color: #DDD;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: 600; }
+    .CMS-btn.CMS-btnDefault.active {
+      background-color: #DDD;
+      color: #000; }
+  .CMS-btn.CMS-btnPrimary {
+    background-color: transparent;
+    border: 1px solid #2f8ff1;
+    color: #2f8ff1;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: 600; }
+    .CMS-btn.CMS-btnPrimary.active {
+      background-color: #2f8ff1;
+      color: #FFF; }
+  .CMS-btn.CMS-btnSecondary {
+    background-color: transparent;
+    border: 1px solid #192239;
+    color: #192239;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: 600; }
+    .CMS-btn.CMS-btnSecondary.active {
+      background-color: #192239;
+      color: #fff; }
+  .CMS-btn.CMS-btnTertiary {
+    background-color: transparent;
+    border: 1px solid #2EA469;
+    color: #2EA469;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: 600; }
+    .CMS-btn.CMS-btnTertiary.active {
+      background-color: #2EA469;
+      color: #000; }
+  .CMS-btn.CMS-btnQuaternary {
+    background-color: transparent;
+    border: 1px solid #EB5757;
+    color: #192239;
+    border-radius: 4px;
+    width: 100%;
+    font-weight: 600; }
+    .CMS-btn.CMS-btnQuaternary.active {
+      background-color: #EB5757;
+      color: #fff; }
+  .CMS-btn.CMS-btnSmall {
+    height: 24px;
+    font-size: 12px; }
+  .CMS-btn.CMS-btnMedium {
+    height: 34px;
+    font-size: 14px; }
+  .CMS-btn.CMS-btnLarge {
+    height: 44px;
+    font-size: 16px; }
+  .CMS-btn.CMS-btnExtraLarge {
+    height: 54px;
+    font-size: 18px; }
+
+.CMS-btnStatus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  min-width: 100px;
+  color: #000;
+  cursor: default;
+  padding: 2px 6px;
+  border: none;
+  white-space: nowrap;
+  border-radius: 4px;
+  font-size: 12px; }
+  .CMS-btnStatus.CMS-statusActive {
+    background-color: #00B050; }
+  .CMS-btnStatus.CMS-statusLapsed_14 {
+    background-color: #E2EFD9; }
+  .CMS-btnStatus.CMS-statusLapsed_30 {
+    background-color: #00B0F0; }
+  .CMS-btnStatus.CMS-statusLapsed_90 {
+    background-color: #8EAADC; }
+  .CMS-btnStatus.CMS-statusTime-out {
+    background-color: #FFFF00; }
+  .CMS-btnStatus.CMS-statusSelf-excluded {
+    background-color: #FFC000; }
+  .CMS-btnStatus.CMS-statusSuspended {
+    background-color: #F8CBB2; }
+  .CMS-btnStatus.CMS-statusClosed {
+    background-color: #FF0000; }
+
+.CMS-statusInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  min-width: 100px;
+  cursor: default;
+  padding: 2px 6px;
+  border: none;
+  white-space: nowrap;
+  border-radius: 4px; }
+  .CMS-statusInfo.CMS-online {
+    background-color: #00B050; }
+  .CMS-statusInfo.CMS-offline {
+    background-color: #FF0000; }
+
+.CMS-select {
+  background-color: #FFF;
+  height: 35px;
+  color: #222;
+  font-weight: 500;
+  position: relative;
+  font-size: 14px;
+  width: auto; }
+  .CMS-select::after {
+    font-family: 'Material Icons';
+    content: "expand_more";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 8px;
+    border: 0;
+    pointer-events: none;
+    color: #c6c6c6;
+    font-size: 24px;
+    color: #444; }
+  .CMS-select select {
+    padding: 6px 24px 6px 8px;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    min-width: 75px;
+    font-weight: 400; }
+  .CMS-select.select-width {
+    width: 100%; }
+
+.CMS-dropdown {
+  position: relative; }
+
+.CMS-dropdown > .CMS-dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 999; }
+
+.CMS-dropdown.active > .CMS-dropdown-menu {
+  display: block; }
+
+.CMS-dropdown {
+  font-size: 14px; }
+  .CMS-dropdown ul {
+    min-width: unset;
+    width: 100%; }
+    .CMS-dropdown ul li {
+      padding: 6px 0;
+      display: flex;
+      align-items: center; }
+  .CMS-dropdown.CMS-manage-dropdown {
+    width: 240px; }
+    .CMS-dropdown.CMS-manage-dropdown .CMS-dropdown-menu {
+      padding: 6px 10px; }
+      .CMS-dropdown.CMS-manage-dropdown .CMS-dropdown-menu .CMS-dropdown-btn {
+        padding: 5px 50px 5px 10px;
+        border-radius: 4px; }
+    .CMS-dropdown.CMS-manage-dropdown .CMS-select {
+      width: 100%; }
+    .CMS-dropdown.CMS-manage-dropdown .CMS-formGroup {
+      width: 100%; }
+      .CMS-dropdown.CMS-manage-dropdown .CMS-formGroup .CMS-checkbox {
+        padding-left: 0px; }
+  .CMS-dropdown input {
+    width: auto;
+    margin: 0 8px 0 8px; }
+
+.CMS-dropdown .CMS-dropdown-btn {
+  width: 100%;
+  cursor: pointer;
+  display: inline-block;
+  padding: 6px 50px 6px 10px;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  background-color: #fff;
+  white-space: nowrap; }
+  .CMS-dropdown .CMS-dropdown-btn::after {
+    font-family: 'Material Icons';
+    content: "expand_more";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 8px;
+    border: 0;
+    pointer-events: none;
+    color: #444;
+    font-size: 24px; }
+.CMS-dropdown .CMS-dropdown-menu {
+  padding: 6px 3px;
+  margin: 0;
+  border: 1px solid #d7d7d7;
+  border-top: none;
+  background-color: #fff;
+  width: 100%; }
+
+@font-face {
+  font-family: 'sb-cms';
+  src: url("../fonts/sb-cms.eot?66fyf5");
+  src: url("../fonts/sb-cms.eot?66fyf5#iefix") format("embedded-opentype"), url("../fonts/sb-cms.woff?66fyf5") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'sb-cms' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.cms-icon_accounting:before {
+  content: "\e900"; }
+
+.cms-icon_admin:before {
+  content: "\e901"; }
+
+.cms-icon_arrow-down:before {
+  content: "\e902"; }
+
+.cms-icon_bonus:before {
+  content: "\e903"; }
+
+.cms-icon_compliance:before {
+  content: "\e904"; }
+
+.cms-icon_cross:before {
+  content: "\e905"; }
+
+.cms-icon_logo-brand:before {
+  content: "\e907"; }
+
+.cms-icon_operations:before {
+  content: "\e908"; }
+
+.cms-icon_payments:before {
+  content: "\e909"; }
+
+.cms-icon_search:before {
+  content: "\e90a"; }
+
+.cms-icon_settings:before {
+  content: "\e90b"; }
+
+.cms-icon_users:before {
+  content: "\e90c"; }
+
+.cms-icon_jackpot:before {
+  content: "\e90d"; }
+
+.cms-icon_trading:before {
+  content: "\e90e"; }
+
+.cms-icon_arrow-up:before {
+  content: "\e90f"; }
+
+.cms-icon_user-menu:before {
+  content: "\e910"; }
+
+.cms-icon_edit:before {
+  content: "\e911"; }
+
+.cms-icon_hand:before {
+  content: "\e912"; }
+
+.cms-icon_fullscreen:before {
+  content: "\e913"; }
+
+.cms-icon_download:before {
+  content: "\e914"; }
+
+.cms-icon_left:before {
+  content: "\2039"; }
+
+.cms-icon_right:before {
+  content: "\203A"; }
+
+.cms-icon_double-left:before {
+  content: "\00AB"; }
+
+.cms-icon_double-right:before {
+  content: "\00BB"; }
+
+.cms-icon_back:before {
+  content: "\1F818"; }
+
+.cms-icon_down:before {
+  content: "\2193"; }
+
+.cms-icon_info:before {
+  content: "\2139"; }
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"), url(https://example.com/MaterialIcons-Regular.woff) format("woff"), url(https://example.com/MaterialIcons-Regular.ttf) format("truetype"); }
+/* Support for all WebKit browsers. */
+/* Support for Safari and Chrome. */
+/* Support for Firefox. */
+/* Support for IE. */
+/* Rules for sizing the icon. */
+.material-icons.md-18 {
+  font-size: 18px; }
+
+.material-icons.md-24 {
+  font-size: 24px; }
+
+.material-icons.md-36 {
+  font-size: 36px; }
+
+.material-icons.md-48 {
+  font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54); }
+
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: white; }
+
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3); }
+
+.material-icons:after {
+  content: attr(data-icon); }
+
+.expand_more:after {
+  content: "expand_less"; }
+
+.CMS-layout-header {
+  height: 80px;
+  background-color: #FFF;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.2);
+  min-width: calc(1280px - 290px); }
+  .CMS-layout-header .CMS-header-right {
+    flex: 1 1 auto; }
+  .CMS-layout-header .CMS-header-left {
+    display: flex;
+    align-items: center; }
+    .CMS-layout-header .CMS-header-left .cms-icon_hamburger {
+      padding: 20px;
+      margin-right: 5px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #2f8ff1; }
+    .CMS-layout-header .CMS-header-left .CMS-header-logo .CMS-header-logo__brand {
+      height: 34px; }
+  .CMS-layout-header .CMS-header-right {
+    padding-right: 20px;
+    display: flex;
+    justify-content: flex-end; }
+    .CMS-layout-header .CMS-header-right .CMS-userProfile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #2f8ff1;
+      padding: 6px 8px;
+      border-radius: 50px;
+      color: #FFF;
+      width: 80px; }
+      .CMS-layout-header .CMS-header-right .CMS-userProfile i {
+        flex: 1 1 0%;
+        text-align: center;
+        color: #FFF; }
+
+.CMS-search {
+  width: 600px; }
+  .CMS-search.CMS-formControl-group .CMS-formAddon {
+    left: 0;
+    color: #8d8f91;
+    font-size: 18px;
+    padding-left: 15px; }
+    .CMS-search.CMS-formControl-group .CMS-formAddon ::after {
+      content: "search"; }
+  .CMS-search.CMS-formControl-group .CMS-formControl {
+    padding: 0 8px 0 50px;
+    min-height: 44px;
+    max-height: 44px; }
+
+.CMS-sideMenu {
+  background-color: #192239;
+  width: 290px;
+  transition: all 0.3s ease;
+  height: 100%; }
+  .CMS-sideMenu .CMS-sideMenu-content {
+    height: calc(100% - 80px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; }
+
+.CMS-sideMenu-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .CMS-sideMenu-header img {
+    height: 34px; }
+
+.CMS-sideMenu-content {
+  padding: 0px 0 12px;
+  color: #84888b;
+  font-size: 16px;
+  font-weight: 500; }
+
+.CMS-categoryListItem {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  position: relative;
+  color: #FFF;
+  text-transform: uppercase;
+  cursor: pointer; }
+  .CMS-categoryListItem.CMS-accordion-header {
+    color: #84888b;
+    cursor: pointer; }
+  .CMS-categoryListItem i {
+    margin-right: 5px;
+    font-size: 22px; }
+  .CMS-categoryListItem span {
+    margin-right: 5px; }
+  .CMS-categoryListItem.active {
+    color: #2f8ff1 !important; }
+  .CMS-categoryListItem .CMS-categoryListItem-content {
+    display: flex;
+    align-items: center;
+    width: 100%; }
+    .CMS-categoryListItem .CMS-categoryListItem-content .CMS-menuHeading {
+      display: flex;
+      justify-content: space-between;
+      width: 100%; }
+
+.CMS-accordion .CMS-accordion-header {
+  background-color: #2a354d;
+  color: #2f8ff1;
+  font-weight: 700;
+  font-size: 14px; }
+  .CMS-accordion .CMS-accordion-header i {
+    color: #2f8ff1; }
+  .CMS-accordion .CMS-accordion-header::after {
+    color: #2f8ff1; }
+.CMS-accordion.collapsed .CMS-accordion-header {
+  color: #ddd;
+  border-bottom: solid 1px #404e6e;
+  font-weight: 400;
+  font-size: 15px; }
+  .CMS-accordion.collapsed .CMS-accordion-header i {
+    color: #84888b; }
+  .CMS-accordion.collapsed .CMS-accordion-header::after {
+    color: #84888b; }
+
+.CMS-accordion-content .CMS-categoryListItem {
+  font-size: 14px;
+  color: #84888b; }
+
+.CMS-platform {
+  display: flex;
+  height: 100%;
+  max-width: 100%;
+  margin: 0 auto; }
+  .CMS-platform.sideMenu-open .CMS-sideMenu {
+    min-width: 60px;
+    max-width: 60px; }
+    .CMS-platform.sideMenu-open .CMS-sideMenu .CMS-categoryListItem-content .CMS-categoryListItem-title {
+      display: none; }
+    .CMS-platform.sideMenu-open .CMS-sideMenu .CMS-accordion .CMS-arrowAfter:after {
+      content: ""; }
+
+.CMS-layout-content {
+  height: 100%;
+  flex: 1 1 0%;
+  overflow-x: scroll; }
+
+[class*="row-"],
+[class~="row"] {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 -8px; }
+
+.col {
+  flex: 1 1 0%;
+  max-width: 100%;
+  padding: 0 8px; }
+
+@media (max-width: 1024px) {
+  [class*="_md-2"] > [class*="col-"],
+  [class*="_md-2"] > [class*="col_"],
+  [class*="_md-2"] > [class~="col"] {
+    flex-basis: 50%;
+    max-width: 50%; } }
+@media (max-width: 576px) {
+  [class*="_xs-1"] > [class*="col-"],
+  [class*="_xs-1"] > [class*="col_"],
+  [class*="_xs-1"] > [class~="col"] {
+    flex-basis: 100%;
+    max-width: 100%; } }
+.CMS-layout-innerContent {
+  height: calc(100% - 80px);
+  overflow: auto;
+  min-width: calc(1280px - 290px); }
+
+.CMS-page {
+  padding: 20px; }
+
+.CMS-page-content {
+  display: flex; }
+  .CMS-page-content .CMS-page-content__left {
+    flex: 1 1 auto;
+    margin-right: 20px; }
+  .CMS-page-content .CMS-full-page-content {
+    width: 100%; }
+  .CMS-page-content .CMS-page-content__right {
+    max-width: 460px; }
+
+.CMS-yellow {
+  color: #e2c600 !important; }
+
+.CMS-red {
+  color: #fb4d55 !important; }
+
+.CMS-green {
+  color: #05a457 !important; }
+
+.CMS-black {
+  color: #000 !important; }
+
+.highcharts-figure, .highcharts-data-table table {
+  min-width: 360px;
+  max-width: 800px;
+  margin: 1em auto; }
+
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #EBEBEB;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px; }
+
+.highcharts-data-table caption {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555; }
+
+.highcharts-data-table th {
+  font-weight: 600;
+  padding: 0.5em; }
+
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+  padding: 0.5em; }
+
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+  background: #f8f8f8; }
+
+.highcharts-data-table tr:hover {
+  background: #f1f7ff; }
+
+#revenueBy-StakeFactor {
+  width: 100%; }
+
+#revenueBy-brand {
+  width: 350px; }
+
+#bet-count {
+  width: 100%; }
+
+#cashStakes-revenue {
+  width: 100%; }
+
+#cashRevenue-sport {
+  width: 100%; }
+
+/*# sourceMappingURL=cms-styles.css.map */

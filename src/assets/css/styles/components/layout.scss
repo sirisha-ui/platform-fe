@@ -1,0 +1,131 @@
+// ==================================================
+// Content Layout CSS
+// ==================================================
+.CMS-platform {
+    display: flex;
+    height: 100%;
+    // overflow: hidden;
+    max-width: $page__maxWidth;
+    // min-width: $page__minWidth;
+    margin: 0 auto;
+    &.sideMenu-open {
+        .CMS-sideMenu {
+            min-width: 60px;
+            max-width: 60px;
+            .CMS-categoryListItem-content {
+                .CMS-categoryListItem-title {
+                    display: none;
+                }
+            }
+            .CMS-accordion .CMS-arrowAfter:after {
+                content: "";
+            }
+        }
+    }
+}
+.CMS-layout-content {
+    height: 100%;
+    flex: 1 1 0%;
+    overflow-x: scroll;
+   
+}
+
+// Responsive Grid
+[class*="row-"],
+[class~="row"] {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    // margin: 0 -.5rem;
+    margin: 0 -8px;
+}
+
+.col {
+    flex: 1 1 0%;
+    max-width: 100%;
+    padding: 0 8px;
+}
+
+@media (max-width: $md-width) {
+    [class*="_md-2"] > [class*="col-"],
+    [class*="_md-2"] > [class*="col_"],
+    [class*="_md-2"] > [class~="col"] {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: $sm-width) {
+    [class*="_xs-1"] > [class*="col-"],
+    [class*="_xs-1"] > [class*="col_"],
+    [class*="_xs-1"] > [class~="col"] {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+.CMS-layout-innerContent {
+    // padding: 20px;
+    height: calc(100% - 80px);
+    overflow: auto;
+    min-width: calc(#{$page__minWidth} - #{$CMS-sideMenu-width});
+}
+.CMS-page{
+    padding: 20px;
+    .CMS-dashboard{
+
+    }
+    .CMS-reports{
+        
+    }
+    .CMS-playerActivity{
+
+    }
+    .CMS-betHistory{
+
+    }
+    .CMS-betTicker{
+
+    }
+    .CMS-playerSearch{
+
+    }
+    .CMS-betLiability{
+
+    }
+    .CMS-marketType{
+
+    }
+    .CMS-individualDetails{
+
+    }
+    .CMS-sportsOverview{
+
+    }
+    .CMS-downloadReports{
+
+    }
+    &.CMS-primaryPlayer{
+        // .row{
+        //     margin: 0 -15px;
+        // }
+        
+    }
+    .CMS-newPlayer
+    {
+
+    }
+}
+.CMS-page-content {
+    display: flex;
+    .CMS-page-content__left {
+        flex: 1 1 auto;
+        margin-right: 20px;
+    }
+    .CMS-full-page-content {
+        width: 100%;
+    }
+    .CMS-page-content__right {
+        // min-width: 460px;
+        max-width: 460px;
+    }
+}

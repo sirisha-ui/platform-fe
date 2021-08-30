@@ -1,0 +1,77 @@
+.CMS-layout-header{
+    height: $CMS-header__height;
+    background-color: $CMS-header__bgColor;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.2);
+    min-width: calc(#{$page__minWidth} - #{$CMS-sideMenu-width});
+    .CMS-header-right{
+        flex: 1 1 auto;
+    }
+    .CMS-header-left{
+        display: flex;
+        align-items: center;
+        .cms-icon_hamburger{
+            padding: 20px;
+            margin-right: 5px;
+            font-size: 24px;
+            cursor: pointer;
+            color: $brand-primaryColor;
+        }
+        .CMS-header-logo{
+            .CMS-header-logo__brand{
+                height: 34px;
+            }
+        }
+    }
+    .CMS-header-right{
+        padding-right: 20px;
+        display: flex;
+        justify-content: flex-end;
+        .CMS-userProfile{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: $brand-primaryColor;
+            padding: 6px 8px;
+            border-radius: 50px;
+            color: $CMS-userProfile__txtColor;
+            width: 80px;
+            // img{
+            //     height: 24px;
+            // }
+            // .CMS-iconSvg.icon-user{
+            //     svg{
+            //         fill: $CMS-userProfile__iconColor;
+            //     }
+            // }
+            i{
+                flex: 1 1 0%;
+                text-align: center;
+                color: $white;
+            }
+        }
+    }
+
+}
+
+.CMS-search{
+    width: 600px;
+    &.CMS-formControl-group{
+        .CMS-formAddon{
+            left: 0;
+            color: #8d8f91;
+            font-size: 18px;
+            padding-left: 15px;
+            ::after {
+                content: "search";
+            }
+        }
+        .CMS-formControl{
+            padding: 0 8px 0 50px;
+            min-height: 44px;
+            max-height: 44px;
+        }
+    } 
+}

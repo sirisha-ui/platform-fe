@@ -1,0 +1,168 @@
+.CMS-btnContainer{
+    margin: 0 auto;
+    max-width: 400px;
+    display: flex;
+    :nth-child(n+1) {
+        margin-right: 20px;
+     }
+    :last-child{
+        margin-right: 0;
+    }
+}
+.CMS-btn {
+    background-color: #ddd;
+    cursor: pointer;
+    padding: 0 6px;
+    border: none;
+    white-space: nowrap;
+    border-radius: 4px;
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    &.CMS-btnDefault {
+        background-color: transparent;
+        border: $CMS-btnDefault__borderColor;
+        color: $CMS-btnDefault__txtColor;
+        border-radius: $CMS-borderRadius;
+        width: 100%;
+        font-weight: 600;
+        &.active {
+            background-color: $CMS-btnDefault-active__bg;
+            color:$CMS-btnDefault-active__txtColor;
+    
+        }
+    }
+    &.CMS-btnPrimary {
+        background-color: transparent;
+        border: $CMS-btnPrimary__borderColor;
+        color: $CMS-btnPrimary__textColor;
+        border-radius: $CMS-borderRadius;
+        width: 100%;
+        font-weight: 600;
+        &.active {
+            background-color: $brand-primaryColor;
+            color:$CMS-btnPrimary__active-txtColor;
+    
+        }
+    }
+    &.CMS-btnSecondary {
+        background-color: transparent;
+        border: $CMS-btnSecondary__borderColor;
+        color: $CMS-btnSecondary__textColor;
+        border-radius: $CMS-borderRadius;
+        width: 100%;
+        font-weight: 600;
+        &.active {
+            background-color: $brand-secondaryColor;
+            color:$CMS-btnSecondary__active-txtColor;
+    
+        }
+    }
+    &.CMS-btnTertiary {
+        background-color: transparent;
+        border: $CMS-btnTertiary__borderColor;
+        color: $CMS-btnTertiary__textColor;
+        border-radius: $CMS-borderRadius;
+        width: 100%;
+        font-weight: 600;
+        &.active {
+            background-color: $brand-tertiaryColor;
+            color:$CMS-btnTertiary__active-txtColor;
+    
+        }
+    }
+    &.CMS-btnQuaternary {
+        background-color: transparent;
+        border: $CMS-btnQuaternary__borderColor;
+        color: $CMS-btnQuaternary__textColor;
+        border-radius: $CMS-borderRadius;
+        width: 100%;
+        font-weight: 600;
+        &.active {
+            background-color: $brand-quaternaryColor;
+            color:$CMS-btnQuaternary__active-txtColor;
+    
+        }
+    }
+    &.CMS-btnSmall {
+        height: 24px;
+        font-size: 12px;
+    }
+    &.CMS-btnMedium {
+        height: 34px;
+        font-size: 14px;
+    }
+    &.CMS-btnLarge {
+        height: 44px;
+        font-size: 16px;
+    }
+    &.CMS-btnExtraLarge {
+        height: 54px;
+        font-size: 18px;
+    }
+    // &.CMS-btnError {
+    //     border: solid 1px red;
+    // }
+    
+}
+
+.CMS-btnStatus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    // font-size: 13px;
+    min-width: 100px;
+    color: #000;
+    cursor: default;
+    padding: 2px 6px;
+    border: none;
+    white-space: nowrap;
+    border-radius: 4px;
+    font-size: 12px;
+    
+    &.CMS-statusActive{
+        background-color: #00B050;
+    }
+    &.CMS-statusLapsed_14{
+        background-color:#E2EFD9;
+    }
+    &.CMS-statusLapsed_30{
+        background-color:#00B0F0;
+    }
+    &.CMS-statusLapsed_90{
+        background-color:#8EAADC;
+    }
+    &.CMS-statusTime-out{
+        background-color:#FFFF00;
+    }
+    &.CMS-statusSelf-excluded{
+        background-color: #FFC000;
+    }
+    &.CMS-statusSuspended{
+        background-color:#F8CBB2;
+    }
+    &.CMS-statusClosed{
+        background-color: #FF0000;
+    }
+   
+}
+.CMS-statusInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    min-width: 100px;
+    cursor: default;
+    padding: 2px 6px;
+    border: none;
+    white-space: nowrap;
+    border-radius: 4px;
+&.CMS-online{
+    background-color: #00B050;
+}
+&.CMS-offline{
+    background-color: #FF0000;
+}
+}

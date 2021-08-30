@@ -1,0 +1,133 @@
+.CMS-select {
+  background-color: $white;
+  // border-radius: 6px;
+  height: 35px;
+  color: #222;
+  font-weight: 500;
+  position: relative;
+  // border: 1px solid #d7d7d7;
+  // padding: 6px 8px;
+  font-size: 14px;
+  width: auto;
+  // min-width: 160px;
+  &::after {
+    font-family: 'Material Icons';
+    content: "expand_more";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 8px;
+    border: 0;
+    pointer-events: none;
+    color: #c6c6c6;
+    font-size: 24px;
+    color: #444;
+  }
+  // &::after {
+  //   content: "\e902";
+  //   font-family: "sb-cms" !important;
+  //   position: absolute;
+  //   top: 50%;
+  //   transform: translate(0, -50%);
+  //   right: 8px;
+  //   border: 0;
+  //   pointer-events: none;
+  //   color: #444;
+  //   font-size: 12px;
+  // }
+  select {
+    padding: 6px 24px 6px 8px;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    min-width: 75px;
+    font-weight: 400;
+  }
+  &.select-width {
+    width: 100%;
+  }
+}
+
+.CMS-dropdown {
+  position: relative;
+  // min-width: 160px;
+}
+.CMS-dropdown > .CMS-dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 999;
+}
+.CMS-dropdown.active > .CMS-dropdown-menu {
+  display: block;
+}
+
+.CMS-dropdown {
+  // width: 110px;
+  //position: relative;
+  // margin-bottom: 20px;
+  font-size: 14px;
+  ul {
+    min-width: unset;
+    width: 100%;
+    li {
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &.CMS-manage-dropdown {
+    width: 240px;
+    .CMS-dropdown-menu {
+      padding: 6px 10px;
+      .CMS-dropdown-btn {
+        padding: 5px 50px 5px 10px;
+        border-radius: 4px;
+      }
+    }
+    .CMS-select {
+      width: 100%;
+    }
+    .CMS-formGroup{
+      width: 100%;
+      .CMS-checkbox{
+        padding-left: 0px;
+      }
+    }
+  }
+  input {
+    width: auto;
+    margin: 0 8px 0 8px;
+  }
+}
+
+.CMS-dropdown {
+  .CMS-dropdown-btn {
+    width: 100%;
+    cursor: pointer;
+    display: inline-block;
+    padding: 6px 50px 6px 10px;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    background-color: #fff;
+    white-space: nowrap;
+    &::after {
+      font-family: 'Material Icons';
+      content: "expand_more";
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      right: 8px;
+      border: 0;
+      pointer-events: none;
+      color: #444;
+      font-size: 24px;
+    }
+  }
+  .CMS-dropdown-menu {
+    padding: 6px 3px;
+    margin: 0;
+    border: 1px solid #d7d7d7;
+    border-top: none;
+    background-color: #fff;
+    width: 100%;
+  }
+}

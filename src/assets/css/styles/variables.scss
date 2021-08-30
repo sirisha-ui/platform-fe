@@ -1,0 +1,160 @@
+/*------- Brand Colors ----------------*/
+$brand-primaryColor: #2f8ff1;
+$brand-secondaryColor: #192239;
+$brand-tertiaryColor: #2EA469;
+$brand-quaternaryColor: #EB5757;
+
+/*------- Global Variables ----------------*/
+$font-name:'Barlow', sans-serif;
+$white: #FFF;
+$black: #000;
+
+$body-bg: #ebf1f6;
+$body-txtColor: $black;
+$body-fontSize: 14px;
+
+$CMS-borderColor: #222;
+$border-radius: 6px;
+
+$CMS-error__color: #fb4d55;
+$CMS-success__color: #05a457;
+
+$imgPath: "../images";
+$fonts-path: "../fonts";
+
+$md-width: 1024px;
+$sm-width: 576px;
+
+/*----- SideMenu-----*/
+$CMS-sideMenu-bg: $brand-secondaryColor;
+$CMS-sideMenu-width: 290px;
+
+/*----- Header-----*/
+$CMS-header__height: 80px;
+$CMS-header__bgColor: $white;
+
+$CMS-layout-header-hamburger-color: #fff;
+$CMS-userProfile__txtColor: $white;
+$CMS-userProfile__iconColor: $brand-primaryColor;
+
+
+/*----- Main Navbar-----*/
+$CMS-tabs__height: 50px;
+$CMS-tabs__bgColor: $white;
+$CMS-tabs-active_borderColor: $brand-primaryColor;
+$CMS-tabs__fontSize: 12px;
+$CMS-tabs-a__txtColor: $black;
+$CMS-tabs-a-active__txtColor: $black;
+
+// Forms
+$CMS-formControl__border: #d7d7d7;
+$CMS-formControl__height: 30px;
+$CMS-formControl__bg: $white;
+$CMS-formControl__txtColor: $black;
+
+// Filter Tabs
+$CMS-filterBtnList-item__height: 40px;
+$CMS-filterBtnList-item__bg: $white;
+$CMS-filterBtnList-item__activeBg: $brand-secondaryColor;
+$CMS-filterBtnList-item__activeBorder: $brand-secondaryColor;
+
+// CMS-box-tabs
+$CMS-box-tabs-item__height: 34px;
+$CMS-box-tabs-item__border: #dadada;
+$CMS-box-tabs-item__bg: #f6f6f6;
+
+// CMS-box
+$CMS-box__bg: $white;
+$CMS-box__shadow: 0 0 5px 3px rgba(0,0,0,0.05);
+$CMS-box-border-radius: $border-radius;
+
+// CMS-matchBox
+$CMS-matchBox-matchTitle__bg: $white;
+$CMS-matchBox-matchTitle__color: #666;
+$CMS-matchBox-matchTitle__height: 24px;
+$CMS-matchBox-matchTitle__border: $white;
+
+$CMS-match__teamLogo__size: 80px;
+$CMS-match__teamLogo__bg: $white;
+$CMS-match__teamLogo__imgWidth: 65px;
+$CMS-match__teamSelect__bg: $white;
+$CMS-match__teamSelect__border: $white;
+$CMS-match__teamSelect__color: #dfdfdf;
+$CMS-match__teamLogo__activeBorder: $CMS-success__color;
+$CMS-match__teamSelect__activeColor: $CMS-success__color;
+$CMS-match__teamName__color: #333;
+$CMS-matchInfo__width: 110px;
+$CMS-matchInfo__color: #999;
+$CMS-matchKickOff__color: #666;
+$CMS-topScorer__label__color: #333;
+
+$CMS-badge__color: $white;
+$CMS-badge__bg: $CMS-success__color;
+
+$CMS-weekCarousel-select__width: 130px;
+$CMS-select__bg: $white;
+$CMS-select-select__bg: transparent;
+
+// Leaderboard
+$CMS-leaderboardBox-position__size: 100px;
+$CMS-leaderboardBox-position__bg: $white;
+$CMS-leaderboardBox-position__labelColor: #999;
+$CMS-leaderboardBox-playerName__color: $black;
+$CMS-leaderboardBox-total-points__txtColor: $black;
+$CMS-leaderboardBox-total-points__bg:#FFF6D6;
+$CMS-leaderboardBox-total-points__border: $brand-primaryColor;
+$CMS-icon-fav__color: #999;
+$CMS-icon-fav-active__color: $brand-primaryColor;
+
+// CMS-Table
+$CMS-table-header__border: #e0e0e0;
+$CMS-table-caption__bg: $white;
+$CMS-table-caption__color: #1c9cd8;
+$CMS-table-caption__height: auto;
+
+$CMS-hr__color: #DADDDF;
+
+// CMS-Play-Submit
+$CMS-result-submit__iconColor: $CMS-success__color;
+$CMS-shareLinks__imgHeight: 24px;
+
+$CMS-btnOdds__width: 60px;
+$CMS-btnOdds__height: 40px;
+$CMS-btnOdds__bg: #DADADA;
+$CMS-btnOdds__bgActive: $brand-primaryColor;
+
+$tabactiveColor: #ffffff;
+$tabunactiveColor: #eeeeee;
+$tabunactiveHoverColor: #dddddd;
+
+$page__maxWidth: 100%;
+$page__minWidth: 1280px;
+
+// CMS-buttons 
+$CMS-borderRadius: 4px;
+
+$CMS-btnDefault__borderColor: 1px solid #DDD;
+$CMS-btnDefault__txtColor: #DDD;
+$CMS-btnDefault-active__bg: #DDD;
+$CMS-btnDefault-active__txtColor: #000;
+
+$CMS-btnPrimary__borderColor:1px solid $brand-primaryColor;
+$CMS-btnPrimary__textColor: $brand-primaryColor;
+$CMS-btnPrimary__active-bg: $brand-primaryColor;
+$CMS-btnPrimary__active-txtColor: #FFF;
+
+$CMS-btnSecondary__borderColor: 1px solid $brand-secondaryColor;
+$CMS-btnSecondary__textColor: $brand-secondaryColor;
+$CMS-btnSecondary__active-bg: $brand-secondaryColor;
+$CMS-btnSecondary__active-txtColor: #fff;
+
+$CMS-btnTertiary__borderColor: 1px solid $brand-tertiaryColor;
+$CMS-btnTertiary__textColor: $brand-tertiaryColor;
+$CMS-btnTertiary__active-bg: $brand-tertiaryColor;
+$CMS-btnTertiary__active-txtColor: #000;
+
+$CMS-btnQuaternary__borderColor: 1px solid $brand-quaternaryColor;
+$CMS-btnQuaternary__textColor: $brand-secondaryColor;
+$CMS-btnQuaternary__active-bg: $brand-secondaryColor;
+$CMS-btnQuaternary__active-txtColor: #fff;
+// End of CMS-buttons
