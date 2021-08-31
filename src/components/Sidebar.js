@@ -6,9 +6,8 @@ import * as AiIcons from "react-icons/ai";
 import { SidebarData } from "./SidebarData"; 
 import SubMenu from "./SubMenu"; 
 import { IconContext } from "react-icons/lib"; 
-
+import image from "../assets/images/truewave-logos.svg"
 const Nav = styled.div` 
-background: #192239; 
 height: 80px; 
 display: flex; 
 justify-content: flex-start; 
@@ -31,8 +30,7 @@ height: 100vh;
 display: flex; 
 justify-content: center; 
 position: fixed; 
-top: 0; 
-left: ${({ sidebar }) => (sidebar ? "0" : "-100%")}; 
+
 transition: 350ms; 
 z-index: 10; 
 `; 
@@ -46,23 +44,55 @@ const [sidebar, setSidebar] = useState(false);
 
 const showSidebar = () => setSidebar(!sidebar); 
 
+const buttonclick =() =>    
+{    
+    var menuList = document.getElementById("menu");    
+    if (menuList.className == "menuOff")    
+    {    
+    
+        menuList.className = "menuOn";    
+    } else    
+    {    
+    
+        menuList.className = "menuOff";    
+    }    
+} 
 return (
 	<> 
 	<IconContext.Provider value={{ color: "#fff" }}> 
 		<Nav> 
-		<NavIcon to="#"> 
-			<FaIcons.FaBars onClick={showSidebar} /> 
+
+		
+		
+		<div class="CMS-layout-header">
+                <div class="CMS-header-left">
+                    <div class="CMS-hambergur menuOff menuOn" id="menu">
+					<NavIcon to="#"> 
+			<FaIcons.FaBars onClick={buttonclick} /> 
 		</NavIcon> 
-		<h1 className="CMS-formAddon"
-			style={{ textAlign: "center", 
-					marginLeft: "200px", 
-					color: "green" }} 
-		> <span className="material-icons search"></span>
-		<input className="CMS-formControl" type="text" placeholder="Search" style={{ width: "600px", 
-					height: "50px", 
-					 }} ></input>
-		</h1> 
-	
+                    </div>
+					<div class="CMS-sideMenu-header">
+                     <a href="#" class="">
+                        <img class="CMS-header-logo__brand" src={`${image}`} alt="Logo Brand" />
+                    </a> 
+                </div>
+                    <div class="CMS-search CMS-formControl-group">
+                        <div class="CMS-formAddon">
+                            <span class="material-icons search"></span>
+                        </div>
+                        <input class="CMS-formControl" type="text" placeholder="Search" />
+                    </div>
+                </div>
+                <div class="CMS-header-right">
+                    <div class="CMS-userProfile">
+                        <span class="material-icons" data-icon="widgets"></span>
+                        <div class="CMS-iconSvg icon-user">
+
+                            <img src="images/user.png" alt="Profile"/>
+                    </div>
+                </div>
+            </div>
+			</div>
 		</Nav> 
 		<SidebarNav sidebar={sidebar}> 
 		<SidebarWrap> 

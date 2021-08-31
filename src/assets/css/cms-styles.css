@@ -2593,7 +2593,11 @@ i {
   flex-wrap: nowrap;
   align-items: center;
   box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.2);
-  min-width: calc(1280px - 290px); }
+  min-width: calc(1280px - 290px);
+  position: fixed;
+  z-index: 999;
+    width: 100%;
+ }
   .CMS-layout-header .CMS-header-right {
     flex: 1 1 auto; }
   .CMS-layout-header .CMS-header-left {
@@ -2626,7 +2630,18 @@ i {
         color: #FFF; }
 
 .CMS-search {
-  width: 600px; }
+  width: 600px;
+  margin-left: 265px;
+ }
+ .menuOff     
+{    
+    display: none;    
+}    
+    
+.menuOn    
+{    
+    display: block;    
+}  
   .CMS-search.CMS-formControl-group .CMS-formAddon {
     left: 0;
     color: #8d8f91;
