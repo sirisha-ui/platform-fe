@@ -1,75 +1,76 @@
 import React from "react"; 
+
 export const Dashboard = () => { 
 return ( 
 	<> 
-    <main class="CMS-layout-content">
-			<div class="CMS-layout-innerContent">
-                <div class="CMS-page CMS-dashboard">
-                    <div class="CMS-page-header">
+    <div className="CMS-layout-content">
+			<div className="CMS-layout-innerContent">
+                <div className="CMS-page CMS-dashboard">
+                    <div className="CMS-page-header">
                         Dashboard
                     </div>
-                    <div class="CMS-page-content">
-                        <div class="CMS-page-content__left">
-                            <div class="CMS-page-filters mb-0">
-                                <div class="CMS-dropdown CMS-brands-dropdown">
-                                    <div class="CMS-dropdown-btn">Brand</div>
-                                    <div class="CMS-dropdown-menu CMS-form-group">
+                    <div className="CMS-page-content">
+                        <div className="CMS-page-content__left">
+                            <div className="CMS-page-filters mb-0">
+                                <div className="CMS-dropdown CMS-brands-dropdown">
+                                    <div className="CMS-dropdown-btn">Brand</div>
+                                    <div className="CMS-dropdown-menu CMS-form-group">
 
-                                        <div class="CMS-checkbox">
+                                        <div className="CMS-checkbox">
                                             <input id="Kenya" type="checkbox" value="value2"/>
                                             <label for="Kenya"></label>
-                                            <span class="SB-checkboxLabel">Ken</span>
+                                            <span className="SB-checkboxLabel">Ken</span>
                                         </div>
-                                        <div class="CMS-checkbox">
+                                        <div className="CMS-checkbox">
                                             <input id="UG" type="checkbox" value="value2"/>
                                             <label for="UG"></label>
-                                            <span class="SB-checkboxLabel">UG</span>
+                                            <span className="SB-checkboxLabel">UG</span>
                                         </div>
-                                        <div class="CMS-checkbox">
+                                        <div className="CMS-checkbox">
                                             <input id="NG" type="checkbox" value="value2"/>
                                             <label for="NG"></label>
-                                            <span class="SB-checkboxLabel">NG</span>
+                                            <span className="SB-checkboxLabel">NG</span>
                                         </div>
-                                        <div class="CMS-checkbox">
+                                        <div className="CMS-checkbox">
                                             <input id="ZM" type="checkbox" value="value2"/>
                                             <label for="ZM"></label>
-                                            <span class="SB-checkboxLabel">ZM</span>
+                                            <span className="SB-checkboxLabel">ZM</span>
                                         </div>
-                                        <div class="CMS-checkbox">
+                                        <div className="CMS-checkbox">
                                             <input id="TZ" type="checkbox" value="value2"/>
                                             <label for="TZ"></label>
-                                            <span class="SB-checkboxLabel">TZ</span>
+                                            <span className="SB-checkboxLabel">TZ</span>
                                         </div>
 
                                     </div>
                                 </div>
 
-                                <div class="CMS-filterBtnList flex-right">
+                                <div className="CMS-filterBtnList flex-right">
                                     <ul>
-                                        <li class="active"><a href="CMS-allBets">All Bets</a></li>
+                                        <li className="active"><a href="CMS-allBets">All Bets</a></li>
                                         <li><a href="CMS-preMatch">Pre-Match</a></li>
                                         <li><a href="CMS-inPlay">In-Play</a></li>
                                     </ul>
                                 </div>
                             </div>
 
-                            <div class="CMS-tabs-content">
-                                <div class="CMS-tab-panel active" id="CMS-allBets">
-                                    <div class="CMS-tabContent">
-                                        <div class="CMS-box">
-                                            <div class="CMS-table CMS-table-triped">
+                            <div className="CMS-tabs-content">
+                                <div className="CMS-tab-panel active" id="CMS-allBets">
+                                    <div className="CMS-tabContent">
+                                        <div className="CMS-box">
+                                            <div className="CMS-table CMS-table-triped">
                                                 <table>
                                                     <thead>
                                                         <tr>
                                                             <th>
-                                                                <div class="CMS-select ">
+                                                                <div className="CMS-select ">
                                                                     <select>
                                                                         <option>Today</option>
                                                                         <option>Yesterday</option>
                                                                         <option>This Week</option>
                                                                         <option>This Month</option>
                                                                     </select>
-                                                                     {/* <span class="material-icons arrow_drop_down md-36"></span>  */}
+                                                                     {/* <span className="material-icons arrow_drop_down md-36"></span>  */}
 
                                                                 </div>
                                                             </th>
@@ -135,15 +136,15 @@ return (
                                         </div>
                                     </div>
                                 </div>
-                                <div class="CMS-tab-panel" id="CMS-preMatch">
-                                    <div class="CMS-tabContent">
-                                        <div class="CMS-box">
-                                            <div class="CMS-table CMS-table-triped">
+                                <div className="CMS-tab-panel" id="CMS-preMatch">
+                                    <div className="CMS-tabContent">
+                                        <div className="CMS-box">
+                                            <div className="CMS-table CMS-table-triped">
                                                 <table>
                                                     <thead>
                                                         <tr>
                                                             <th>
-                                                                <div class="CMS-select">
+                                                                <div className="CMS-select">
                                                                     <select>
                                                                         <option>Today</option>
                                                                         <option>Yesterday</option>
@@ -214,15 +215,15 @@ return (
                                         </div>
                                     </div>
                                 </div>
-                                <div class="CMS-tab-panel" id="CMS-inPlay">
-                                    <div class="CMS-tabContent">
-                                        <div class="CMS-box">
-                                            <div class="CMS-table CMS-table-triped">
+                                <div className="CMS-tab-panel" id="CMS-inPlay">
+                                    <div className="CMS-tabContent">
+                                        <div className="CMS-box">
+                                            <div className="CMS-table CMS-table-triped">
                                                 <table>
                                                     <thead>
                                                         <tr>
                                                             <th>
-                                                                <div class="CMS-select">
+                                                                <div className="CMS-select">
                                                                     <select>
                                                                         <option>Today</option>
                                                                         <option>Yesterday</option>
@@ -294,15 +295,15 @@ return (
                                     </div>
                                 </div>
                             </div>
-                            <div class="CMS-page-filters">
-                                <div class="CMS-dropdown CMS-manage-dropdown">
-                                    <div class="CMS-dropdown-btn">Manage Graphs</div>
-                                    <ul class="CMS-dropdown-menu">
+                            <div className="CMS-page-filters">
+                                <div className="CMS-dropdown CMS-manage-dropdown">
+                                    <div className="CMS-dropdown-btn">Manage Graphs</div>
+                                    <ul className="CMS-dropdown-menu">
                                         <li>
-                                            <div class="CMS-formGroup">
-                                                <div class="CMS-formLabel">Select Data for Graph:</div>
+                                            <div className="CMS-formGroup">
+                                                <div className="CMS-formLabel">Select Data for Graph:</div>
 
-                                                <div class="CMS-select">
+                                                <div className="CMS-select">
                                                     <select>
                                                         <option>Cash Stakes by Sport </option>
                                                         <option>Bet Count by Sport</option>
@@ -319,36 +320,36 @@ return (
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="CMS-formGroup">
-                                                <div class="CMS-formLabel">Brand:</div>
-                                                <div class="CMS-dropdown CMS-brands-dropdown CMS-formControl">
-                                                    <div class="CMS-dropdown-btn">Brand</div>
-                                                    <div class="CMS-dropdown-menu CMS-form-group dashBoard">
+                                            <div className="CMS-formGroup">
+                                                <div className="CMS-formLabel">Brand:</div>
+                                                <div className="CMS-dropdown CMS-brands-dropdown CMS-formControl">
+                                                    <div className="CMS-dropdown-btn">Brand</div>
+                                                    <div className="CMS-dropdown-menu CMS-form-group dashBoard">
 
-                                                        <div class="CMS-checkbox">
+                                                        <div className="CMS-checkbox">
                                                             <input id="Kenya1" type="checkbox" value="value2"/>
                                                             <label for="Kenya1"></label>
-                                                            <span class="SB-checkboxLabel">Ken</span>
+                                                            <span className="SB-checkboxLabel">Ken</span>
                                                         </div>
-                                                        <div class="CMS-checkbox">
+                                                        <div className="CMS-checkbox">
                                                             <input id="UG1" type="checkbox" value="value2"/>
                                                             <label for="UG1"></label>
-                                                            <span class="SB-checkboxLabel">UG</span>
+                                                            <span className="SB-checkboxLabel">UG</span>
                                                         </div>
-                                                        <div class="CMS-checkbox">
+                                                        <div className="CMS-checkbox">
                                                             <input id="NG1" type="checkbox" value="value2"/>
                                                             <label for="NG1"></label>
-                                                            <span class="SB-checkboxLabel">NG</span>
+                                                            <span className="SB-checkboxLabel">NG</span>
                                                         </div>
-                                                        <div class="CMS-checkbox">
+                                                        <div className="CMS-checkbox">
                                                             <input id="ZM1" type="checkbox" value="value2"/>
                                                             <label for="ZM1"></label>
-                                                            <span class="SB-checkboxLabel">ZM</span>
+                                                            <span className="SB-checkboxLabel">ZM</span>
                                                         </div>
-                                                        <div class="CMS-checkbox">
+                                                        <div className="CMS-checkbox">
                                                             <input id="TZ1" type="checkbox" value="value2"/>
                                                             <label for="TZ1"></label>
-                                                            <span class="SB-checkboxLabel">TZ</span>
+                                                            <span className="SB-checkboxLabel">TZ</span>
                                                         </div>
 
                                                     </div>
@@ -356,26 +357,26 @@ return (
                                             </div>
                                         </li>
                                          {/* <li>
-                                                <div class="row">
-                                                    <div class="col">Start:</div>
-                                                    <div class="col">
+                                                <div className="row">
+                                                    <div className="col">Start:</div>
+                                                    <div className="col">
                                                         20/07/2021 13:47:36
                                                     </div>
                                                 </div>
                                             </li>  */}
                                          {/* <li>
-                                                <div class="row">
-                                                    <div class="col">End:</div>
-                                                    <div class="col">
+                                                <div className="row">
+                                                    <div className="col">End:</div>
+                                                    <div className="col">
                                                         23/07/2021 13:47:36
                                                     </div>
                                                 </div>
                                             </li>  */}
                                         <li>
-                                            <div class="CMS-formGroup">
-                                                <div class="CMS-formLabel">Select Chart Type:</div>
-                                                <div class="">
-                                                    <div class="CMS-select">
+                                            <div className="CMS-formGroup">
+                                                <div className="CMS-formLabel">Select Chart Type:</div>
+                                                <div className="">
+                                                    <div className="CMS-select">
                                                         <select>
                                                             <option>Bar</option>
                                                             <option>Donut</option>
@@ -386,10 +387,10 @@ return (
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="CMS-formGroup">
-                                                <div class="CMS-formLabel">Period:</div>
-                                                <div class="">
-                                                    <div class="CMS-select">
+                                            <div className="CMS-formGroup">
+                                                <div className="CMS-formLabel">Period:</div>
+                                                <div className="">
+                                                    <div className="CMS-select">
                                                         <select>
                                                             <option>Daily</option>
                                                             <option>Weekly</option>
@@ -399,9 +400,9 @@ return (
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="CMS-formGroup">
-                                                <div class="">
-                                                    <button class="CMS-btn CMS-btnSecondary active CMS-btnMedium">Create
+                                            <div className="CMS-formGroup">
+                                                <div className="">
+                                                    <button className="CMS-btn CMS-btnSecondary active CMS-btnMedium">Create
                                                         Graph</button>
                                                 </div>
                                             </div>
@@ -409,28 +410,28 @@ return (
                                     </ul>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="CMS-box CMS-graph">
-                                        <div class="CMS-box__header">
-                                            <div class="CMS-box__header-left">
-                                                <div class="CMS-box__title CMS-yellow">Revenue by Stake Factor</div>
+                            <div className="row">
+                                <div className="col">
+                                    <div className="CMS-box CMS-graph">
+                                        <div className="CMS-box__header">
+                                            <div className="CMS-box__header-left">
+                                                <div className="CMS-box__title CMS-yellow">Revenue by Stake Factor</div>
                                             </div>
-                                            <div class="CMS-box__header-right">
-                                                <div class="CMS-box__actionIcons">
+                                            <div className="CMS-box__header-right">
+                                                <div className="CMS-box__actionIcons">
                                                     <ul>
-                                                        <li><span class="material-icons md-18"
+                                                        <li><span className="material-icons md-18"
                                                                 data-icon="back_hand"></span></li>
-                                                        <li><span class="material-icons md-24"
+                                                        <li><span className="material-icons md-24"
                                                                 data-icon="edit_note"></span></li>
-                                                        <li id="CMS-fullScreen-btn"><span class="material-icons md-18"
+                                                        <li id="CMS-fullScreen-btn"><span className="material-icons md-18"
                                                                 data-icon="aspect_ratio"></span>
                                                         </li>
-                                                        <li><span class="material-icons md-24" data-icon="close"></span>
+                                                        <li><span className="material-icons md-24" data-icon="close"></span>
                                                         </li>
                                                     </ul>
                                                 </div>
-                                                <div class="CMS-select">
+                                                <div className="CMS-select">
                                                     <select>
                                                         <option>Today</option>
                                                         <option>Yesterday</option>
@@ -440,32 +441,32 @@ return (
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="CMS-graph-content">
+                                        <div className="CMS-graph-content">
                                              {/* <img src="images/graphs/small-graph.JPG" alt="Graph">  */}
                                             <div id="revenueBy-StakeFactor"></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="CMS-box CMS-graph">
-                                        <div class="CMS-box__header">
-                                            <div class="CMS-box__header-left">
-                                                <div class="CMS-box__title CMS-red">Revenue by Brand</div>
+                                <div className="col">
+                                    <div className="CMS-box CMS-graph">
+                                        <div className="CMS-box__header">
+                                            <div className="CMS-box__header-left">
+                                                <div className="CMS-box__title CMS-red">Revenue by Brand</div>
                                             </div>
-                                            <div class="CMS-box__header-right">
-                                                <div class="CMS-box__actionIcons">
+                                            <div className="CMS-box__header-right">
+                                                <div className="CMS-box__actionIcons">
                                                     <ul>
-                                                        <li><span class="material-icons md-18"
+                                                        <li><span className="material-icons md-18"
                                                                 data-icon="back_hand"></span></li>
-                                                        <li><span class="material-icons md-24"
+                                                        <li><span className="material-icons md-24"
                                                                 data-icon="edit_note"></span></li>
-                                                        <li><span class="material-icons md-18" data-icon="aspect_ratio"></span>
+                                                        <li><span className="material-icons md-18" data-icon="aspect_ratio"></span>
                                                         </li>
-                                                        <li><span class="material-icons md-24" data-icon="close"></span>
+                                                        <li><span className="material-icons md-24" data-icon="close"></span>
                                                         </li>
                                                     </ul>
                                                 </div>
-                                                <div class="CMS-select">
+                                                <div className="CMS-select">
                                                     <select>
                                                         <option>Today</option>
                                                         <option>Yesterday</option>
@@ -475,34 +476,34 @@ return (
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="CMS-graph-content">
+                                        <div className="CMS-graph-content">
                                             {/* <img src="images/graphs/small-graph.JPG" alt="Graph"/> */}
                                             <div id="revenueBy-brand"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="CMS-box CMS-graph">
-                                        <div class="CMS-box__header">
-                                            <div class="CMS-box__header-left">
-                                                <div class="CMS-box__title CMS-green">Bet Count</div>
+                            <div className="row">
+                                <div className="col">
+                                    <div className="CMS-box CMS-graph">
+                                        <div className="CMS-box__header">
+                                            <div className="CMS-box__header-left">
+                                                <div className="CMS-box__title CMS-green">Bet Count</div>
                                             </div>
-                                            <div class="CMS-box__header-right">
-                                                <div class="CMS-box__actionIcons">
+                                            <div className="CMS-box__header-right">
+                                                <div className="CMS-box__actionIcons">
                                                     <ul>
-                                                        <li><span class="material-icons md-18"
+                                                        <li><span className="material-icons md-18"
                                                                 data-icon="back_hand"></span></li>
-                                                        <li><span class="material-icons md-24"
+                                                        <li><span className="material-icons md-24"
                                                                 data-icon="edit_note"></span></li>
-                                                        <li><span class="material-icons md-18" data-icon="aspect_ratio"></span>
+                                                        <li><span className="material-icons md-18" data-icon="aspect_ratio"></span>
                                                         </li>
-                                                        <li><span class="material-icons md-24" data-icon="close"></span>
+                                                        <li><span className="material-icons md-24" data-icon="close"></span>
                                                         </li>
                                                     </ul>
                                                 </div>
-                                                <div class="CMS-select">
+                                                <div className="CMS-select">
                                                     <select>
                                                         <option>Today</option>
                                                         <option>Yesterday</option>
@@ -512,32 +513,32 @@ return (
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="CMS-graph-content">
+                                        <div className="CMS-graph-content">
                                             <div id="bet-count"></div>
                                              {/* <img src="images/graphs/small-graph.JPG" alt="Graph/">  */}
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="CMS-box CMS-graph">
-                                        <div class="CMS-box__header">
-                                            <div class="CMS-box__header-left">
-                                                <div class="CMS-box__title">Stakes Vs Revenue</div>
+                                <div className="col">
+                                    <div className="CMS-box CMS-graph">
+                                        <div className="CMS-box__header">
+                                            <div className="CMS-box__header-left">
+                                                <div className="CMS-box__title">Stakes Vs Revenue</div>
                                             </div>
-                                            <div class="CMS-box__header-right">
-                                                <div class="CMS-box__actionIcons">
+                                            <div className="CMS-box__header-right">
+                                                <div className="CMS-box__actionIcons">
                                                     <ul>
-                                                        <li><span class="material-icons md-18"
+                                                        <li><span className="material-icons md-18"
                                                                 data-icon="back_hand"></span></li>
-                                                        <li><span class="material-icons md-24"
+                                                        <li><span className="material-icons md-24"
                                                                 data-icon="edit_note"></span></li>
-                                                        <li><span class="material-icons md-18" data-icon="aspect_ratio"></span>
+                                                        <li><span className="material-icons md-18" data-icon="aspect_ratio"></span>
                                                         </li>
-                                                        <li><span class="material-icons md-24" data-icon="close"></span>
+                                                        <li><span className="material-icons md-24" data-icon="close"></span>
                                                         </li>
                                                     </ul>
                                                 </div>
-                                                <div class="CMS-select">
+                                                <div className="CMS-select">
                                                     <select>
                                                         <option>Today</option>
                                                         <option>Yesterday</option>
@@ -547,35 +548,35 @@ return (
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="CMS-graph-content">
+                                        <div className="CMS-graph-content">
                                             <div id="cashStakes-revenue"></div>
                                              {/* <img src="images/graphs/small-graph.JPG" alt="Graph"/>  */}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="CMS-box CMS-graph">
-                                        <div class="CMS-box__header">
-                                            <div class="CMS-box__header-left">
-                                                <div class="CMS-box__title CMS-black">Cash Revenue by Sports</div>
+                            <div className="row">
+                                <div className="col">
+                                    <div className="CMS-box CMS-graph">
+                                        <div className="CMS-box__header">
+                                            <div className="CMS-box__header-left">
+                                                <div className="CMS-box__title CMS-black">Cash Revenue by Sports</div>
                                             </div>
-                                            <div class="CMS-box__header-right">
-                                                <div class="CMS-box__actionIcons">
+                                            <div className="CMS-box__header-right">
+                                                <div className="CMS-box__actionIcons">
                                                     <ul>
-                                                        <li><span class="material-icons md-18"
+                                                        <li><span className="material-icons md-18"
                                                                 data-icon="back_hand"></span></li>
-                                                        <li><span class="material-icons md-24"
+                                                        <li><span className="material-icons md-24"
                                                                 data-icon="edit_note"></span></li>
-                                                        <li id="CMS-fullScreen-btn"><span class="material-icons md-18"
+                                                        <li id="CMS-fullScreen-btn"><span className="material-icons md-18"
                                                                 data-icon="aspect_ratio"></span>
                                                         </li>
-                                                        <li><span class="material-icons md-24" data-icon="close"></span>
+                                                        <li><span className="material-icons md-24" data-icon="close"></span>
                                                         </li>
                                                     </ul>
                                                 </div>
-                                                <div class="CMS-select">
+                                                <div className="CMS-select">
                                                     <select>
                                                         <option>Today</option>
                                                         <option>Yesterday</option>
@@ -585,7 +586,7 @@ return (
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="CMS-graph-content">
+                                        <div className="CMS-graph-content">
                                             <div id="cashRevenue-sport"></div>
                                              {/* <img src="images/graphs/cash-stakes.JPG" alt="Graph" style="width: 97%;"/>  */}
                                         </div>
@@ -593,11 +594,11 @@ return (
                                 </div>
                             </div>
                         </div>
-                        <div class="CMS-page-content__right">
-                            <div class="CMS-box">
-                                <div class="CMS-box__header">
-                                    <div class="CMS-box__title">Most Profitable Sports</div>
-                                    <div class="CMS-select">
+                        <div className="CMS-page-content__right">
+                            <div className="CMS-box">
+                                <div className="CMS-box__header">
+                                    <div className="CMS-box__title">Most Profitable Sports</div>
+                                    <div className="CMS-select">
                                         <select>
                                             <option>Today</option>
                                             <option>Yesterday</option>
@@ -606,7 +607,7 @@ return (
                                         </select>
                                     </div>
                                 </div>
-                                <div class="CMS-table CMS-table-triped">
+                                <div className="CMS-table CMS-table-triped">
                                     <table>
                                         <thead>
                                             <tr>
@@ -646,10 +647,10 @@ return (
                                 </div>
                             </div>
 
-                            <div class="CMS-box">
-                                <div class="CMS-box__header">
-                                    <div class="CMS-box__title">Highest Turnover Sports</div>
-                                    <div class="CMS-select">
+                            <div className="CMS-box">
+                                <div className="CMS-box__header">
+                                    <div className="CMS-box__title">Highest Turnover Sports</div>
+                                    <div className="CMS-select">
                                         <select>
                                             <option>Today</option>
                                             <option>Yesterday</option>
@@ -658,7 +659,7 @@ return (
                                         </select>
                                     </div>
                                 </div>
-                                <div class="CMS-table CMS-table-triped">
+                                <div className="CMS-table CMS-table-triped">
                                     <table>
 
                                         <thead>
@@ -699,10 +700,10 @@ return (
                                 </div>
                             </div>
 
-                            <div class="CMS-box">
-                                <div class="CMS-box__header">
-                                    <div class="CMS-box__title">Top 10 Winners</div>
-                                    <div class="CMS-select">
+                            <div className="CMS-box">
+                                <div className="CMS-box__header">
+                                    <div className="CMS-box__title">Top 10 Winners</div>
+                                    <div className="CMS-select">
                                         <select>
                                             <option>Today</option>
                                             <option>Yesterday</option>
@@ -711,7 +712,7 @@ return (
                                         </select>
                                     </div>
                                 </div>
-                                <div class="CMS-table CMS-table-triped">
+                                <div className="CMS-table CMS-table-triped">
                                     <table>
                                         <thead>
                                             <tr>
@@ -723,52 +724,52 @@ return (
                                         <tbody>
                                             <tr>
                                                 <td>Macer123</td>
-                                                <td><span class="CMS-negative-value">-$6298.22</span></td>
+                                                <td><span className="CMS-negative-value">-$6298.22</span></td>
                                                 <td>UG</td>
                                             </tr>
                                             <tr>
                                                 <td>hipancha</td>
-                                                <td><span class="CMS-negative-value">-$3566.12</span></td>
+                                                <td><span className="CMS-negative-value">-$3566.12</span></td>
                                                 <td>KE</td>
                                             </tr>
                                             <tr>
                                                 <td>rivram</td>
-                                                <td><span class="CMS-negative-value">-$210425</span></td>
+                                                <td><span className="CMS-negative-value">-$210425</span></td>
                                                 <td>NG</td>
                                             </tr>
                                             <tr>
                                                 <td>Millie43</td>
-                                                <td><span class="CMS-negative-value">-$198599</span></td>
+                                                <td><span className="CMS-negative-value">-$198599</span></td>
                                                 <td>ZM</td>
                                             </tr>
                                             <tr>
                                                 <td>Kungfuj83</td>
-                                                <td><span class="CMS-negative-value">-$171402</span></td>
+                                                <td><span className="CMS-negative-value">-$171402</span></td>
                                                 <td>KE</td>
                                             </tr>
                                             <tr>
                                                 <td>Smissing</td>
-                                                <td><span class="CMS-negative-value">-$97411</span></td>
+                                                <td><span className="CMS-negative-value">-$97411</span></td>
                                                 <td>NG</td>
                                             </tr>
                                             <tr>
                                                 <td>Paulkeggin</td>
-                                                <td><span class="CMS-negative-value">-$85617</span></td>
+                                                <td><span className="CMS-negative-value">-$85617</span></td>
                                                 <td>NG</td>
                                             </tr>
                                             <tr>
                                                 <td>Byrnetofferings</td>
-                                                <td><span class="CMS-negative-value">-$60555</span></td>
+                                                <td><span className="CMS-negative-value">-$60555</span></td>
                                                 <td>UG</td>
                                             </tr>
                                             <tr>
                                                 <td>dobbsy44</td>
-                                                <td><span class="CMS-negative-value">-$48701</span></td>
+                                                <td><span className="CMS-negative-value">-$48701</span></td>
                                                 <td>ZM</td>
                                             </tr>
                                             <tr>
                                                 <td>Sarg999</td>
-                                                <td><span class="CMS-negative-value">-$46605</span></td>
+                                                <td><span className="CMS-negative-value">-$46605</span></td>
                                                 <td>KE</td>
                                             </tr>
                                         </tbody>
@@ -776,10 +777,10 @@ return (
                                 </div>
                             </div>
 
-                            <div class="CMS-box">
-                                <div class="CMS-box__header">
-                                    <div class="CMS-box__title">Top 10 Losers</div>
-                                    <div class="CMS-select">
+                            <div className="CMS-box">
+                                <div className="CMS-box__header">
+                                    <div className="CMS-box__title">Top 10 Losers</div>
+                                    <div className="CMS-select">
                                         <select>
                                             <option>Today</option>
                                             <option>Yesterday</option>
@@ -788,7 +789,7 @@ return (
                                         </select>
                                     </div>
                                 </div>
-                                <div class="CMS-table CMS-table-triped">
+                                <div className="CMS-table CMS-table-triped">
                                     <table>
                                         <thead>
                                             <tr>
@@ -856,7 +857,7 @@ return (
                     </div>
                 </div>
             </div>
-	</main>
+	</div>
      </>
 )
 }

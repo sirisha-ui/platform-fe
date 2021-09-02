@@ -2596,7 +2596,6 @@ i {
   min-width: calc(1280px - 290px);
   position: fixed;
   z-index: 999;
-    width: 100%;
  }
   .CMS-layout-header .CMS-header-right {
     flex: 1 1 auto; }
@@ -2608,7 +2607,9 @@ i {
       margin-right: 5px;
       font-size: 24px;
       cursor: pointer;
-      color: #2f8ff1; }
+      color: #2f8ff1; 
+      margin-left: 290px;
+    }
     .CMS-layout-header .CMS-header-left .CMS-header-logo .CMS-header-logo__brand {
       height: 34px; }
   .CMS-layout-header .CMS-header-right {
@@ -2631,7 +2632,6 @@ i {
 
 .CMS-search {
   width: 600px;
-  margin-left: 265px;
  }
  .menuOff     
 {    
