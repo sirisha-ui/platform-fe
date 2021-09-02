@@ -42,21 +42,20 @@ width: 100%;
 
 const Sidebar = () => { 
 const [sidebar, setSidebar] = useState(false); 
+const [display, setDisplay] = useState(false);
 
 const showSidebar = () => setSidebar(!sidebar); 
-
+let count =0;
 const buttonclick =() =>    
-{    
-    var menuList = document.getElementById("menu");    
-    if (menuList.className == "menuOff")    
-    {    
-    
-        menuList.className = "menuOn";    
-    } else    
-    {    
-    
-        menuList.className = "menuOff";    
-    }    
+{  if(count == 0 && display == false){
+    setDisplay(true);
+    count++
+}else if(count == 0 && display == true ){
+    setDisplay(false);
+}else{
+setDisplay(false);
+count =0;
+}
 } 
 return (
 	<> 
@@ -64,7 +63,7 @@ return (
 		<Nav> 
 		<div className="CMS-layout-header">
                 <div className="CMS-header-left">
-                    <div className="material-icons cms-icon_hamburger" data-icon="menu" id="CMS-hamburgerMenu">
+                    <div className="material-icons cms-icon_hamburger" data-icon="menu" id="CMS-hamburgerMenu" onClick={()=> buttonclick()}>
 					{/* <NavIcon to="#"> 
                     <TiThMenu className="menuicon" /> 
 		</NavIcon>  */}
@@ -88,7 +87,7 @@ return (
             </div>
 			</div>
 		</Nav> 
-        <div className="CMS-sideMenu">
+        <div className="CMS-sideMenu" id="sidebarmenuid" style={{display: display? 'none' : 'block'}}>
 		<SidebarNav sidebar={sidebar}> 
 		<SidebarWrap> 
         <div className="CMS-sideMenu-header">
@@ -97,7 +96,7 @@ return (
                     </a>     
                 </div>
 			{SidebarData.map((item, index) => { 
-			return <SubMenu className ="submenu" item={item} key={index} />; 
+			return <SubMenu item={item} key={index} />; 
 			})} 
 		</SidebarWrap> 
 		</SidebarNav> 

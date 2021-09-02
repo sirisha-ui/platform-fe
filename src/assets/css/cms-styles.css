@@ -2596,6 +2596,7 @@ i {
   min-width: calc(1280px - 290px);
   position: fixed;
   z-index: 999;
+  width: 100%;
  }
   .CMS-layout-header .CMS-header-right {
     flex: 1 1 auto; }

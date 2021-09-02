@@ -1,6 +1,6 @@
 import React from 'react';
 import "./App.css"; 
-import './assets/css/cms-styles.scss';
+import './assets/css/cms-styles.css';
 
 import Sidebar from "./components/Sidebar"; 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"; 
