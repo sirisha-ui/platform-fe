@@ -1,10 +1,9 @@
 import React,{Component} from 'react';
 // import { sidebarClick } from '../../components/Dashboard/dashboardSlice';
-import { connect } from 'react-redux';
-// import sidebar from "../sidebar";
-import { bindActionCreators } from "redux";
+// import { connect } from 'react-redux';
+// // import sidebar from "../sidebar";
+// import { bindActionCreators } from "redux";
 class Dashboard extends Component{
-
 // export const Dashboard = () => { 
      render () {
     //     console.log("side",localStorage.getItem("display"))
@@ -12,13 +11,14 @@ class Dashboard extends Component{
     //     let displayValue =localStorage.getItem("display")
     return ( 
 	<> 
-    <div className="CMS-layout-content" style ={{width: this.props.displayValue ? '100%':'80%', marginLeft: this.props.displayValue ?'0px':'290px'}}>
+    <div className="CMS-layout-content">
 			<div className="CMS-layout-innerContent">
                 <div className="CMS-page CMS-dashboard">
-                    <div className="CMS-page-header">
+                    {/* <div className="CMS-page-header">
                        <span>Dashboard</span>&nbsp;
                        <span>Reports</span>
-                    </div>
+                    </div> */}
+                    
                     <div className="CMS-page-content">
                         <div className="CMS-page-content__left">
                             <div className="CMS-page-filters mb-0">
@@ -58,8 +58,8 @@ class Dashboard extends Component{
                                 <div className="CMS-filterBtnList flex-right">
                                     <ul>
                                         <li className="active"><a href="CMS-allBets">All Bets</a></li>
-                                        <li><a href="CMS-preMatch">Pre-Match</a></li>
-                                        <li><a href="CMS-inPlay">In-Play</a></li>
+                                        <li><a href="#">Pre-Match</a></li>
+                                        <li><a href="#">In-Play</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@ class Dashboard extends Component{
                                         </div>
                                     </div>
                                 </div>
-                                <div className="CMS-tab-panel" id="CMS-preMatch">
+                                <div className="CMS-tab-panel" id="#CMS-preMatch">
                                     <div className="CMS-tabContent">
                                         <div className="CMS-box">
                                             <div className="CMS-table CMS-table-triped">
@@ -872,17 +872,17 @@ class Dashboard extends Component{
 )
 }
 }
-function mapStateToProps(state) {
-    console.log("state",state)
-    return {
-        displayValue: state.sidebar.displayValue,
-    };
-}
-function mapDispatchToProps(dispatch) {
-    return {
-        dispatch,
-        actions: bindActionCreators({
-        }, dispatch)
-    }
-}
-export default connect(mapStateToProps,mapDispatchToProps)(Dashboard);
+// function mapStateToProps(state) {
+//     console.log("state",state)
+//     return {
+//         displayValue: state.sidebar.displayValue,
+//     };
+// }
+// function mapDispatchToProps(dispatch) {
+//     return {
+//         dispatch,
+//         actions: bindActionCreators({
+//         }, dispatch)
+//     }
+// }
+export default Dashboard;

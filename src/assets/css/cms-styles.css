@@ -547,7 +547,12 @@ body.CMS-sideMenu-open {
   flex-wrap: nowrap;
   justify-content: center;
   border-bottom: solid 1px #ccc;
-  margin-left: -20px; }
+  margin-left: -20px;
+  position: relative;
+  top:100px;
+  left:2px;
+  height: 42px;
+ }
   .CMS-page-tabs.CMS-page-internalTabs {
     margin-left: 0px;
     padding: 2px 2px 0 2px; }
@@ -2778,7 +2783,7 @@ i {
 .CMS-page {
   padding: 20px; 
 position: relative;
-top:70px;}
+top:95px;}
 
 .CMS-page-content {
   display: flex; }
@@ -2850,7 +2855,6 @@ top:70px;}
   width: 100%; }
 
  .fpBbey{
-    color: #ddd !important;
     border-bottom: solid 1px #404e6e !important;
     font-weight: 400;
     font-size: 15px !important;

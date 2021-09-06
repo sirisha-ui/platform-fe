@@ -116,11 +116,11 @@ return (
             
 		<SidebarNav sidebar={this.state.sidebar}> 
 		<SidebarWrap> 
-        <div className="CMS-sideMenu-header CMS-categoryListItem CMS-accordion-header CMS-arrowAfter">
+        {/* <div className="CMS-sideMenu-header CMS-categoryListItem CMS-accordion-header CMS-arrowAfter">
         <a href="#" className="">
                         <img className="CMS-header-logo__brand" src={`${truewavelogoimage}`} alt="Logo Brand" />
                     </a>     
-                </div>
+                </div> */}
 			{SidebarData.map((item, index) => { 
 			return <SubMenu item={item} key={index} onClick={(item)=>this.displayComponent(item)} />; 
 			})} 
