@@ -14,10 +14,9 @@ class Dashboard extends Component{
     <div className="CMS-layout-content">
 			<div className="CMS-layout-innerContent">
                 <div className="CMS-page CMS-dashboard">
-                    {/* <div className="CMS-page-header">
-                       <span>Dashboard</span>&nbsp;
-                       <span>Reports</span>
-                    </div> */}
+                    <div className="CMS-page-header">
+                       <span>Dashboard</span>
+                    </div>
                     
                     <div className="CMS-page-content">
                         <div className="CMS-page-content__left">

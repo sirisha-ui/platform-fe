@@ -40,13 +40,16 @@ class MainDashbord extends React.Component{
         return (
             <>
             <div style ={{width: this.props.displayValue ? '100%':'80%', marginLeft: this.props.displayValue ?'0px':'290px'}}>
+                { this.props.dashboardStatus == false ?
             <div className="CMS-page-tabs">
-                                <ul>{this.props.dashboardNavStatus == true &&
+                                <ul>
+                                    {/* {this.props.dashboardNavStatus == true &&
                                 <li className={this.props.dashboardStatus == true ? 'active':""} onClick={()=>this.dashbordNavClick()}>
                                         <a href="#">DASHBOARD<span className="close"
                                                 ><span
                                                 className="material-icons md-18" data-icon="close" ></span></span></a>
-                                    </li>}{
+                                    </li>} */}
+                                    {
                                     this.props.reportNavStatus == true &&
                                     <li className={this.props.reportStatus == true ? 'active':""} onClick={()=>this.reportNavClick()}>
                                         <a href="#">REPORTS<span className="close"
@@ -60,7 +63,8 @@ class MainDashbord extends React.Component{
                                         <a href="CMS-betting">BETTING<span className="close"><span className="material-icons md-18" data-icon="close"></span></span></a>
                                     </li> */}
                                 </ul>
-                            </div>
+                            </div> : ""
+    }
             {this.props.dashboardStatus == true ? <Dashboard/>:
             this.props.reportStatus == true ? <Reports/> : <Dashboard/> }
             </div>

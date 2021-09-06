@@ -73,7 +73,7 @@ reportClick =()=>{
 allCollapsed =(event)=>{
     let ele = event.currentTarget.parentNode.parentNode.parentNode.parentNode;
 
-    ReactDOM.findDOMNode(ele).classList.remove('collapsed');
+    ReactDOM.findDOMNode(ele).classList.toggle('collapsed');
     //console.log("parent",ele.target)
 
 // switch (this.state.collapsed){
@@ -92,7 +92,7 @@ render(){
     let dashbordurl = window.location.href.split('/');
 
          if(dashbordurl[dashbordurl.length-1] == "dashboard" && this.state.collapsed !=""){
-    ReactDOM.findDOMNode(this.state.collapsed).classList.remove('collapsed');
+    ReactDOM.findDOMNode(this.state.collapsed).classList.toggle('collapsed');
          }
     //      else if(dashbordurl[dashbordurl.length-1] == "report"){
     //         let ele = event.currentTarget.parentNode.parentNode.parentNode;
