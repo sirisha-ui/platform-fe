@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import { Link } from "react-router-dom"; 
 import styled from "styled-components"; 
-import truewavelogoimage from "../assets/images/truewave-logos.svg";
+import truewavelogoimage from "../assets/images/truewave-logo.svg";
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { setReportNavStatus, setReportStatus,setDashboardStatus,setDashboardNavStatus } from "./sidebar/sidebarSlice";

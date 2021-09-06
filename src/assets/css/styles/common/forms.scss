@@ -1,3 +1,17 @@
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  // min-width: 160px;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
 .CMS-formGroup {
   display: flex;
   flex-direction: column;
@@ -26,9 +40,43 @@
     background-color: $CMS-formControl__bg;
     color: $CMS-formControl__txtColor;
     height: 35px;
-    border: 1px solid #ccc;
     padding: 4px 2px 4px 8px;
   }
+  select, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  // min-width: 160px;
+}
+.CMS-select {
+  background-color: $white;
+  // border-radius: 6px;
+  height: 35px;
+  color: #222;
+  font-weight: 500;
+  position: relative;
+  // border: 1px solid #d7d7d7;
+  // padding: 6px 8px;
+  font-size: 14px;
+  width: auto;
+  // min-width: 160px;
+  &::after {
+    font-family: 'Material Icons';
+    content: "expand_more";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 8px;
+    border: 0;
+    pointer-events: none;
+    color: #c6c6c6;
+    font-size: 24px;
+    color: #444;
+  }
+ 
+}
   &::placeholder {
     color: #ccc;
     font-weight: normal;
@@ -66,20 +114,7 @@
   }
 }
 
-input[type="text"],
-select,
-textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-  // min-width: 160px;
-}
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
+
 
 input[type="submit"] {
   background-color: #04aa6d;
@@ -137,6 +172,7 @@ input[type="submit"]:hover {
     display: flex;
     align-items: center;
     padding-left: 6px;
+    line-height: 24px;
     .SB-checkboxLabel {
       padding-left: 10px;
       //padding-right: 16px; // white-space: nowrap;
@@ -150,35 +186,37 @@ input[type="submit"]:hover {
       display: none;
     }
     label {
-      width: 20px;
-      height: 20px;
-      min-width: 20px;
-      margin-bottom: 0;
-      padding-left: 0;
+      width: 16px;
+      height: 16px;
+      // min-width: 20px;
+      // margin-bottom: 0;
+      // padding-left: 0;
       // padding-bottom: 0;
-      float: left;
-      position: relative;
-      top: 5px;
+      // float: left;
+      // position: relative;
+      // top: 5px;
+      padding: 0;
       &::before {
         content: "";
         display: inline-block;
-        width: 15px;
-        height: 15px;
+        width: 16px;
+        height: 16px;
         position: absolute;
-        left: 0px;
-        top: 0px;
+        // left: 0px;
+        // top: 0px;
         background-color: #fff;
         border: solid 1px #999;
         border-radius: 3px;
+        cursor: pointer;
       }
     }
     input[type="checkbox"]:checked + label:before {
       font-family: "Material Icons";
       text-align: center;
-      line-height: 15px;
+      line-height: 16px;
       color: #fff;
       content: "\e5ca";
-      font-size: 10px;
+      font-size: 12px;
       border: 0;
       background-color: #2f8ff1;
     }

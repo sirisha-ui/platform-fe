@@ -7,7 +7,6 @@ import { SidebarData } from "./SidebarData";
 import { setdisplayValue } from "../components/sidebar/sidebarSlice";
 import SubMenu from "./SubMenu"; 
 import { IconContext } from "react-icons/lib"; 
-import truewavelogoimage from "../assets/images/truewave-logos.svg";
 import profileIcon from "../assets/images/user.png";
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';

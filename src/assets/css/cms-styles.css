@@ -547,12 +547,12 @@ body.CMS-sideMenu-open {
   flex-wrap: nowrap;
   justify-content: center;
   border-bottom: solid 1px #ccc;
-  margin-left: -20px;
+  margin-left: -20px; 
   position: relative;
   top:100px;
   left:2px;
   height: 42px;
- }
+}
   .CMS-page-tabs.CMS-page-internalTabs {
     margin-left: 0px;
     padding: 2px 2px 0 2px; }
@@ -781,17 +781,25 @@ body.CMS-sideMenu-open {
   .CMS-table.CMS-betTicker td {
     border: solid 1px #eee; }
   .CMS-table.CMS-betTicker a {
-    color: #0000CD; }
+    color: #0000cd; }
   .CMS-table.CMS-betTicker .CMS-stakeFactor-more-than-1 {
-    background-color: #00B050; }
+    background-color: #29cc73;
+    color: #fff; }
+    .CMS-table.CMS-betTicker .CMS-stakeFactor-more-than-1 a {
+      color: #fff; }
   .CMS-table.CMS-betTicker .CMS-stakeFactor-less-than-1 {
-    background-color: red; }
+    background-color: #f55454;
+    color: #fff; }
+    .CMS-table.CMS-betTicker .CMS-stakeFactor-less-than-1 a {
+      color: #fff; }
   .CMS-table.CMS-betTicker .CMS-stakeFactor-1 {
     background-color: transparent; }
   .CMS-table.CMS-betTicker .CMS-declined {
-    background-color: #FFC000; }
+    background-color: #f5c01f; }
+    .CMS-table.CMS-betTicker .CMS-declined a {
+      color: #fff; }
   .CMS-table.CMS-betTicker .CMS-biggerBets {
-    background-color: #8EAADC; }
+    background-color: #88acec; }
   .CMS-table.tableHeght {
     min-height: 300px; }
   .CMS-table .textLeft {
@@ -2088,6 +2096,53 @@ body.CMS-sideMenu-open {
     display: flex;
     align-items: center;
     border-top: solid 1px #2f8ff1; }
+    #CMS-generalDetails .CMS-tabContent .general-detailsFooter .CMS-form-group .CMS-checkbox label {
+      padding: 0 20px 0 0; }
+
+#CMS-loginHistory .CMS-tabContent {
+  padding: 0; }
+  #CMS-loginHistory .CMS-tabContent .CMS-box__header {
+    padding: 10px 6px !important; }
+  #CMS-loginHistory .CMS-tabContent .CMS-box-content {
+    padding: 20px 10px 3px 10px; }
+
+.CMS-page.CMS-login {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center; }
+  .CMS-page.CMS-login .CMS-page-content {
+    margin: 0 auto;
+    justify-content: center; }
+    .CMS-page.CMS-login .CMS-page-content .CMS-box {
+      min-width: 400px; }
+      .CMS-page.CMS-login .CMS-page-content .CMS-box .CMS-forgotPin {
+        display: flex;
+        justify-content: flex-end; }
+        .CMS-page.CMS-login .CMS-page-content .CMS-box .CMS-forgotPin span {
+          float: right;
+          text-decoration: underline;
+          color: #000; }
+      .CMS-page.CMS-login .CMS-page-content .CMS-box .CMS-loginRegister {
+        display: flex;
+        justify-content: center; }
+        .CMS-page.CMS-login .CMS-page-content .CMS-box .CMS-loginRegister .CMS-txtHightlight {
+          padding-left: 5px;
+          display: inline-block;
+          text-decoration: underline;
+          color: #000; }
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; }
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block; }
 
 .CMS-formGroup {
   display: flex;
@@ -2113,8 +2168,33 @@ body.CMS-sideMenu-open {
   background-color: #FFF;
   color: #000;
   height: 35px;
-  border: 1px solid #ccc;
   padding: 4px 2px 4px 8px; }
+.CMS-formControl select, .CMS-formControl textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; }
+.CMS-formControl .CMS-select {
+  background-color: #FFF;
+  height: 35px;
+  color: #222;
+  font-weight: 500;
+  position: relative;
+  font-size: 14px;
+  width: auto; }
+  .CMS-formControl .CMS-select::after {
+    font-family: 'Material Icons';
+    content: "expand_more";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 8px;
+    border: 0;
+    pointer-events: none;
+    color: #c6c6c6;
+    font-size: 24px;
+    color: #444; }
 .CMS-formControl::placeholder {
   color: #ccc;
   font-weight: normal; }
@@ -2140,19 +2220,6 @@ body.CMS-sideMenu-open {
     bottom: 0; }
   .CMS-formControl-group .CMS-formControl {
     flex: 1 1 auto; }
-
-input[type="text"],
-select,
-textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical; }
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block; }
 
 input[type="submit"] {
   background-color: #04aa6d;
@@ -2184,7 +2251,8 @@ input[type="submit"]:hover {
   .CMS-form-group .CMS-checkbox {
     display: flex;
     align-items: center;
-    padding-left: 6px; }
+    padding-left: 6px;
+    line-height: 24px; }
     .CMS-form-group .CMS-checkbox .SB-checkboxLabel {
       padding-left: 10px;
       position: relative;
@@ -2194,32 +2262,26 @@ input[type="submit"]:hover {
     .CMS-form-group .CMS-checkbox input[type="checkbox"] {
       display: none; }
     .CMS-form-group .CMS-checkbox label {
-      width: 20px;
-      height: 20px;
-      min-width: 20px;
-      margin-bottom: 0;
-      padding-left: 0;
-      float: left;
-      position: relative;
-      top: 5px; }
+      width: 16px;
+      height: 16px;
+      padding: 0; }
       .CMS-form-group .CMS-checkbox label::before {
         content: "";
         display: inline-block;
-        width: 15px;
-        height: 15px;
+        width: 16px;
+        height: 16px;
         position: absolute;
-        left: 0px;
-        top: 0px;
         background-color: #fff;
         border: solid 1px #999;
-        border-radius: 3px; }
+        border-radius: 3px;
+        cursor: pointer; }
     .CMS-form-group .CMS-checkbox input[type="checkbox"]:checked + label:before {
       font-family: "Material Icons";
       text-align: center;
-      line-height: 15px;
+      line-height: 16px;
       color: #fff;
       content: "\e5ca";
-      font-size: 10px;
+      font-size: 12px;
       border: 0;
       background-color: #2f8ff1; }
     .CMS-form-group .CMS-checkbox a {
@@ -2321,7 +2383,8 @@ input[type="submit"]:hover {
   border-radius: 4px;
   font-size: 12px; }
   .CMS-btnStatus.CMS-statusActive {
-    background-color: #00B050; }
+    background-color: #00B050;
+    color: #fff; }
   .CMS-btnStatus.CMS-statusLapsed_14 {
     background-color: #E2EFD9; }
   .CMS-btnStatus.CMS-statusLapsed_30 {
@@ -2335,7 +2398,8 @@ input[type="submit"]:hover {
   .CMS-btnStatus.CMS-statusSuspended {
     background-color: #F8CBB2; }
   .CMS-btnStatus.CMS-statusClosed {
-    background-color: #FF0000; }
+    background-color: #FF0000;
+    color: #fff; }
 
 .CMS-statusInfo {
   display: flex;
@@ -2347,11 +2411,14 @@ input[type="submit"]:hover {
   padding: 2px 6px;
   border: none;
   white-space: nowrap;
-  border-radius: 4px; }
+  border-radius: 4px;
+  font-size: 12px; }
   .CMS-statusInfo.CMS-online {
-    background-color: #00B050; }
+    background-color: #00B050;
+    color: #fff; }
   .CMS-statusInfo.CMS-offline {
-    background-color: #FF0000; }
+    background-color: #FF0000;
+    color: #fff; }
 
 .CMS-select {
   background-color: #FFF;
@@ -2598,11 +2665,11 @@ i {
   flex-wrap: nowrap;
   align-items: center;
   box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.2);
-  min-width: calc(1280px - 290px);
+  min-width: calc(1280px - 290px); 
   position: fixed;
   z-index: 999;
   width: 100%;
- }
+}
   .CMS-layout-header .CMS-header-right {
     flex: 1 1 auto; }
   .CMS-layout-header .CMS-header-left {
@@ -2613,8 +2680,7 @@ i {
       margin-right: 5px;
       font-size: 24px;
       cursor: pointer;
-      color: #2f8ff1; 
-    }
+      color: #2f8ff1; }
     .CMS-layout-header .CMS-header-left .CMS-header-logo .CMS-header-logo__brand {
       height: 34px; }
   .CMS-layout-header .CMS-header-right {
@@ -2636,17 +2702,7 @@ i {
         color: #FFF; }
 
 .CMS-search {
-  width: 600px;
- }
- .menuOff     
-{    
-    display: none;    
-}    
-    
-.menuOn    
-{    
-    display: block;    
-}  
+  width: 600px; }
   .CMS-search.CMS-formControl-group .CMS-formAddon {
     left: 0;
     color: #8d8f91;
@@ -2780,10 +2836,10 @@ i {
   overflow: auto;
   min-width: calc(1280px - 290px); }
 
-.CMS-page {
-  padding: 20px; 
-position: relative;
-top:95px;}
+  .CMS-page {
+    padding: 20px; 
+  position: relative;
+  top:95px;}
 
 .CMS-page-content {
   display: flex; }
@@ -2853,23 +2909,5 @@ top:95px;}
 
 #cashRevenue-sport {
   width: 100%; }
-
- .fpBbey{
-    border-bottom: solid 1px #404e6e !important;
-    font-weight: 400;
-    font-size: 15px !important;
-  }
-  .oRNwG:hover {
-    background: #252831;
-    /* border-left: 4px solid green; */
-    cursor: pointer;
-    border: none !important;
-    color: #2f8ff1 !important;
-}
-.cfnroW:hover {
-  background: none !important;
-  color: #2f8ff1 !important;
-  cursor: pointer;
-}
 
 /*# sourceMappingURL=cms-styles.css.map */

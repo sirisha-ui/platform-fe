@@ -71,37 +71,37 @@
 }
 .CMS-page{
     padding: 20px;
-    .CMS-dashboard{
+    &.CMS-dashboard{
 
     }
-    .CMS-reports{
+    &.CMS-reports{
         
     }
-    .CMS-playerActivity{
+    &.CMS-playerActivity{
 
     }
-    .CMS-betHistory{
+    &.CMS-betHistory{
 
     }
-    .CMS-betTicker{
+    &.CMS-betTicker{
 
     }
-    .CMS-playerSearch{
+    &.CMS-playerSearch{
 
     }
-    .CMS-betLiability{
+    &.CMS-betLiability{
 
     }
-    .CMS-marketType{
+    &.CMS-marketType{
 
     }
-    .CMS-individualDetails{
+    &.CMS-individualDetails{
 
     }
-    .CMS-sportsOverview{
+    &.CMS-sportsOverview{
 
     }
-    .CMS-downloadReports{
+    &.CMS-downloadReports{
 
     }
     &.CMS-primaryPlayer{
@@ -110,9 +110,12 @@
         // }
         
     }
-    .CMS-newPlayer
+    &.CMS-newPlayer
     {
 
+    }
+    &.CMS-loginHistory{
+        
     }
 }
 .CMS-page-content {

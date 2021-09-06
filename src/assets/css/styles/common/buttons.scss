@@ -124,6 +124,7 @@
     
     &.CMS-statusActive{
         background-color: #00B050;
+        color: #fff;
     }
     &.CMS-statusLapsed_14{
         background-color:#E2EFD9;
@@ -145,6 +146,7 @@
     }
     &.CMS-statusClosed{
         background-color: #FF0000;
+        color: #fff;
     }
    
 }
@@ -159,10 +161,13 @@
     border: none;
     white-space: nowrap;
     border-radius: 4px;
+    font-size: 12px;
 &.CMS-online{
     background-color: #00B050;
+    color: #fff;
 }
 &.CMS-offline{
     background-color: #FF0000;
+    color: #fff;
 }
 }
