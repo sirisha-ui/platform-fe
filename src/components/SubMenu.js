@@ -5,7 +5,7 @@ import styled from "styled-components";
 import truewavelogoimage from "../assets/images/truewave-logo.svg";
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import { setReportNavStatus, setReportStatus,setDashboardStatus,setDashboardNavStatus } from "./sidebar/sidebarSlice";
+import { setReportNavStatus, setReportStatus,setDashboardStatus,setDashboardNavStatus,setPlayerSearchStatus,setPlayerSearchNavStatus } from "./sidebar/sidebarSlice";
 const SidebarLink = styled(Link)` 
 // display: flex; 
 // color: #e1e9fc; 
@@ -61,6 +61,7 @@ dashbordClick =(event)=>{
     this.props.dispatch(setDashboardStatus(true))
     this.props.dispatch(setDashboardNavStatus(true))
     this.props.dispatch(setReportStatus(false))
+    this.props.dispatch(setPlayerSearchStatus(false))
     let ele = event.currentTarget.parentNode.parentNode.parentNode;
    this.setState({collapsed:ele});
    //console.log("ele",this.state.collapsed)
@@ -69,6 +70,12 @@ reportClick =()=>{
     this.props.dispatch(setReportStatus(true))
     this.props.dispatch(setReportNavStatus(true))
     this.props.dispatch(setDashboardStatus(false)) 
+    this.props.dispatch(setPlayerSearchStatus(false))
+}
+playerNavClick =()=> {
+    this.props.dispatch(setPlayerSearchStatus(true))
+    this.props.dispatch(setPlayerSearchNavStatus(true))
+    this.props.dispatch(setDashboardStatus(false))
 }
 allCollapsed =(event)=>{
     let ele = event.currentTarget.parentNode.parentNode.parentNode.parentNode;
@@ -188,8 +195,8 @@ return (
                             </div>
                         </div>
                         <div className="CMS-accordion-content">
-                            <div className="CMS-categoryListItem"><a href="/player-search">Player Search</a></div>
-                            <div className="CMS-categoryListItem"><a href="/new-player">New Players</a></div>
+                            <div className="CMS-categoryListItem"><a onClick ={()=>this.playerNavClick()} href="/playersearch">Player Search</a></div>
+                            <div className="CMS-categoryListItem"><a href="">New Players</a></div>
                             <div className="CMS-categoryListItem"><a href="/player-activity">Player Activity</a></div>
                             <div className="CMS-categoryListItem">Player Tagging / Segmentation</div>
                         </div>

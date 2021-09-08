@@ -18,6 +18,7 @@ return (
 	<Route path="/" exact component={Home} /> 
 		<Route path="/dashboard" exact component={MainDashbord} /> 
 		<Route path="/report" exact component={MainDashbord} /> 
+		<Route path="/playersearch" exact component={MainDashbord}/>
 	</Switch> 
 	</Router> 
 ); 

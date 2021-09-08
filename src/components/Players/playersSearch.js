@@ -1,0 +1,326 @@
+
+import React from 'react';
+import PlayerSeachTable from '../playerTable/playerSearchTable';
+
+class playerSearch extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            playersearchTable : false
+        }
+    }
+playerTableDataClick=()=>{
+
+}
+ render(){
+ return (
+ <>
+<div className="CMS-layout-innerContent">
+                <div className="CMS-page CMS-playerSearch">
+                    <div className="CMS-page-content">
+                        <div className="CMS-full-page-content">
+
+                            <div className="CMS-tabs-content">
+                               
+                                <div className="CMS-tab-panel active" id="CMS-betting">
+                                    {/* <div className="CMS-box__header">
+                                        <div className="CMS-box__title">Sports Overview Report</div>
+                                       
+                                    </div>  */}
+
+                                    <div className="CMS-tabContent">
+                                        <div className="CMS-box CMS-box-content" >
+                                            <div className="row">
+                                                <div className="col-2">
+                                                    <div className="CMS-formGroup">
+                                                    <div className="CMS-formLabel">Username</div>
+                                                    <div className="CMS-formControl">
+                                                        <input type="" id="" name="" placeholder="Username"/>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                    <div className="col-2">
+                                                        <div className="CMS-formGroup">
+                                                        <div className="CMS-formLabel">First Name</div>
+                                                        <div className="CMS-formControl">
+                                                            <input type="" id="" name="" placeholder="First Name"/>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                        <div className="col-2">
+                                                            <div className="CMS-formGroup">
+                                                            <div className="CMS-formLabel">Last Name</div>
+                                                            <div className="CMS-formControl">
+                                                                <input type="" id="" name="" placeholder="Last Name"/>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="col-2">
+                                                            <div className="CMS-formGroup">
+                                                            <div className="CMS-formLabel">Country</div>
+                                                            <div className="CMS-dropdown CMS-formControl">
+                                                                <div className="CMS-select">
+                                                                    <select>
+                                                                        <option>Select</option>
+                                                                        <option>Belgium</option>
+                                                                        <option>Iceland</option>
+                                                                        <option>Panama</option>
+                                                                        <option>United Nations</option>
+                                                                        <option>Hong Kong</option>
+                                                                        <option>Germany</option>
+                                                                        <option>Poland</option>
+                                                                        <option>Australia</option>
+                                                                        <option>United Kingdom</option>
+                                                                        <option>France</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                            </div>
+                                                            <div className="col-2">
+                                                                <div className="CMS-formGroup">
+                                                                <div className="CMS-formLabel">Email</div>
+                                                                <div className="CMS-formControl">
+                                                                    <input type="" id="" name="" placeholder="email"/>
+                                                                </div>
+                                                            </div>
+                                                                </div>
+                                                                <div className="col-2">
+                                                                    <div className="CMS-formGroup">
+                                                                    <div className="CMS-formLabel">Brand</div>
+                                                                    <div className="CMS-dropdown CMS-brands-dropdown CMS-formControl">
+                                                                        <div className="CMS-dropdown-btn">Select</div>
+                                                                        <div className="CMS-dropdown-menu CMS-form-group">
+                                    
+                                                                            <div className="CMS-checkbox">
+                                                                                <input id="Kenya" type="checkbox" value="value2"/>
+                                                                                <label for="Kenya"></label>
+                                                                                <span className="SB-checkboxLabel">Ken</span>
+                                                                            </div>
+                                                                            <div className="CMS-checkbox">
+                                                                                <input id="UG" type="checkbox" value="value2"/>
+                                                                                <label for="UG"></label>
+                                                                                <span className="SB-checkboxLabel">UG</span>
+                                                                            </div>
+                                                                            <div className="CMS-checkbox">
+                                                                                <input id="NG" type="checkbox" value="value2"/>
+                                                                                <label for="NG"></label>
+                                                                                <span className="SB-checkboxLabel">NG</span>
+                                                                            </div>
+                                                                            <div className="CMS-checkbox">
+                                                                                <input id="ZM" type="checkbox" value="value2"/>
+                                                                                <label for="ZM"></label>
+                                                                                <span className="SB-checkboxLabel">ZM</span>
+                                                                            </div>
+                                                                            <div className="CMS-checkbox">
+                                                                                <input id="TZ" type="checkbox" value="value2"/>
+                                                                                <label for="TZ"></label>
+                                                                                <span className="SB-checkboxLabel">TZ</span>
+                                                                            </div>
+                                    
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                    </div>
+                                                                    <div className="col-2">
+                                                                        <div className="CMS-formGroup">
+                                                                        <div className="CMS-formLabel">Date of Birth</div>
+                                                                        <div className="CMS-formControl-group">
+                                                                            <div className="CMS-formControl">
+                                                                                <input type="text" className="CMS-datepicker" name="Dateto" placeholder="08/31/2021"/>
+                                                                            </div>
+                                                                            <div className="CMS-formAddon"><span className="material-icons md-18" data-icon="calendar_today"></span></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    </div>
+                                                                    <div className="col-2">
+                                                                        <div className="CMS-formGroup">
+                                                                            <div className="CMS-formLabel">Recent Players</div>
+                                                                            <div className="CMS-dropdown CMS-formControl">
+                                                                                <div className="CMS-select">
+                                                                                    <select>
+                                                                                        <option>Select</option>
+                                                                                        <option>Player 1</option>
+                                                                                        <option>Player 2</option>
+                                                                                        <option>Player 3 </option>
+                                                                                        <option>Player 4</option>
+                                                                                        <option>Player 5</option>
+                                                                                        <option>Player 6</option>
+                                                                                        <option>Player 7</option>
+                                                                                        <option>Player 8</option>
+                                                                                        <option>Player 9</option>
+                                                                                        <option>Player 10</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="col-2">
+                                                                        <div className="CMS-formGroup">
+                                                                        <div className="CMS-formLabel">Customer ID</div>
+                                                                        <div className="CMS-formControl">
+                                                                            <input type="" id="" name="" placeholder="Customer ID"/>
+                                                                        </div>
+                                                                    </div>
+                                                                    </div>
+                                                                    <div className="col-2">
+                                                                        <div className="CMS-formGroup">
+                                                                            <div className="CMS-formLabel">IP Address</div>
+                                                                            <div className="CMS-formControl">
+                                                                                <input type="" id="" name="" placeholder="IP Address"/>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="col-2">
+                                                                        <div className="CMS-formGroup">
+                                                                        <div className="CMS-formLabel">Referrer Code</div>
+                                                                        <div className="CMS-formControl">
+                                                                            <input type="" id="" name="" placeholder="Referrer Code"/>
+                                                                        </div>
+                                                                    </div>
+                                                                    </div>
+                                                                    <div className="col-2">
+                                                                        <div className="CMS-formGroup">
+                                                                            <div className="CMS-formLabel">Currency</div>
+                                                                            <div className="CMS-dropdown CMS-formControl">
+                                                                                <div className="CMS-select">
+                                                                                    <select id="currency" name="File">
+                                                                                        <option value="">Select</option>
+                                                                                        <option value="">EUR</option>
+                                                                                        <option value="">USD</option>
+                                                                                        <option value="">GBP</option>
+                                                                                        <option value="">KSH</option>
+                                                                                        <option value="">UGX</option>
+                                                                                        <option value="">NGN</option>
+                                                                                        <option value="">TZS</option>
+                                                                                        <option value="">XWM</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>   
+                                                                    <div className="col-2">
+                                                                        <div className="CMS-formGroup">
+                                                                        <div className="CMS-formLabel">Phone Number</div>
+                                                                        <div className="CMS-formControl">
+                                                                            <input type="" id="" name="" placeholder="Phone Number"/>
+                                                                        </div>
+                                                                    </div>
+                                                                    </div>
+                                                                    <div className="col-2">
+                                                                        <div className="CMS-formGroup">
+                                                                            <div className="CMS-formLabel">Account Status</div>
+                                                                            <div className="CMS-dropdown CMS-formControl">
+                                                                                <div className="CMS-select">
+                                                                                    <select>
+                                                                                        <option>Select</option>
+                                                                                        <option>Active</option>
+                                                                                        <option>Lapsed 14</option>
+                                                                                        <option>Lapsed 30</option>
+                                                                                        <option>Lapsed 90</option>
+                                                                                        <option>Time Out</option>
+                                                                                        <option>Self Excluded</option>
+                                                                                        <option>Suspended</option>
+                                                                                        <option>Closed</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="col-2">
+                                                                        <div className="CMS-formGroup">
+                                                                        <div className="CMS-formLabel">Registration Date</div>
+                                                                        <div className="CMS-formControl-group">
+                                                                            <div className="CMS-formControl">
+                                                                                <input type="text" className="CMS-datepicker" name="Dateto" placeholder="08/31/2021"/>
+                                                                            </div>
+                                                                            <div className="CMS-formAddon"><span className="material-icons md-18" data-icon="calendar_today"></span></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    </div>
+                                                                    
+                                                                </div>                       
+                                                 <div className="mt-20"></div>         
+                                        
+<div className="row">
+    <div className="col-12">
+        <div className="CMS-btnContainer">
+            <button onClick={()=>this.playerTableDataClick()} className="CMS-btn CMS-btnSecondary active CMS-btnMedium" type="button">Search</button>
+            <button onclick="window.location.href=''" className="CMS-btn CMS-btnQuaternary active CMS-btnMedium" type="button">Reset</button>
+                </div>                                                          
+        </div>
+    </div>
+</div>
+                                            <div className="CMS-filter-result" id="result">
+                                                <div className="CMS-pagination">
+                                                    <div className="CMS-pagination-container">
+                                                 
+                                                        <div className="CMS-pagination-list">
+                                                            <ul>
+                                                                <li><a href="#"><span className="material-icons" data-icon="first_page"></span></a></li>
+                                                                <li><a href="#"><span className="material-icons" data-icon="navigate_before"></span></a></li>
+                                                                <li><a className="active" href="#">1</a></li>
+                                                                <li><a href="#">2</a></li>
+                                                                <li><a href="#">3</a></li>
+                                                                <li><a href="#"><span className="material-icons" data-icon="navigate_next"></span></a></li>
+                                                                <li><a href="#"><span className="material-icons" data-icon="last_page"></span></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    
+                                                    <div className="CMS-page-slection">
+                                                        <div className="CMS-number-of-files CMS-select">
+                                                            <select id="country" name="File">
+                                                                <option value="PDF">25</option>
+                                                                <option value="CSV">50</option>
+                                                                <option value="XLS">100</option>
+                                                                <option value="XLS">200</option>
+                                                                <option value="XLS">500</option>
+                                                            </select>
+                                                        </div>
+                                                        <div className="CMS-file-type CMS-select">
+                                                            <select id="country" name="File">
+                                                                <option value="PDF">PDF</option>
+                                                                <option value="CSV">CSV</option>
+                                                                <option value="XLS">XLS</option>
+                                                            </select>
+                                                        </div>
+                                                        <div className="CMS-download-icon">
+                                                            <a href="#"><span className="material-icons" data-icon="file_download"></span></a>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                        
+                                                        
+                                                        <div className="CMS-page-results">
+                                                            Results 1-100 of 108
+                                                        </div>
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+        
+                                               
+                                                
+                                           
+        
+                                            </div>
+
+                                </div>
+                                   
+
+</div>
+
+
+
+
+                                </div>
+                            
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+</>
+)}
+}
+export default playerSearch;
