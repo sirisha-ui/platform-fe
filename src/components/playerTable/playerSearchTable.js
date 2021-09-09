@@ -1,8 +1,84 @@
 import React from 'react';
 
 class PlayerSeachTable extends React.Component{
+ constructor (props){
+     super(props);
+     this.state = [{
+        customerId: '125445787',
+        username: 'CraftyCockney180',
+        firstName: 'Eric',
+        lastName: 'Bristow',
+        email: 'Crafty180@bdo.com',
+        phoneNumber: '07878180180',
+        country: '',
+        brand: 'GBP',
+        playersignment: '',
+        stackFactor: '1.00',
+        deposits: '£35.12',
+        cgr: '£16.25',
+        AccountSatus: 'Active',
+        ipAddress: '',
+        referCode: '',
+    },
+    {
+        customerId: '125445788',
+        username: 'CraftyCockney180',
+        firstName: 'Eric',
+        lastName: 'Bristow',
+        email: 'Crafty180@bdo.com',
+        phoneNumber: '07878180181',
+        country: '',
+        brand: 'GBP',
+        playersignment: '',
+        stackFactor: '1.00',
+        deposits: '£35.12',
+        CGR: '£16.25',
+        AccountSatus: 'Lapsed 14',
+        ipAddress: '',
+        referCode: '',
+    },
+    {
+        customerId: '125445789',
+        username: 'CraftyCockney180',
+        firstName: 'Eric',
+        lastName: 'Bristow',
+        email: 'Crafty180@bdo.com',
+        phoneNumber: '07878180182',
+        country: '',
+        brand: 'GBP',
+        playersignment: '',
+        stackFactor: '1.00',
+        deposits: '£35.12',
+        CGR: '£16.25',
+        AccountSatus: 'Lapsed 30',
+        ipAddress: '',
+        referCode: '',
+    },
+    {
+        customerId: '125445788',
+        username: 'CraftyCockney180',
+        firstName: 'Eric',
+        lastName: 'Bristow',
+        email: 'Crafty180@bdo.com',
+        phoneNumber: '07878180180',
+        country: '',
+        brand: 'GBP',
+        playersignment: '',
+        stackFactor: '1.00',
+        deposits: '£35.12',
+        CGR: '£16.25',
+        AccountSatus: 'Lapsed 90',
+        ipAddress: '',
+        referCode: '',
+    }
+
+]
+     }
+ 
 
     render(){
+        let data = this.state;
+
         return(
             <>
             <div className="CMS-box CMS-table CMS-table-triped">
@@ -25,127 +101,26 @@ class PlayerSeachTable extends React.Component{
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            <tr>
-                                                                <td><a href="primary-player.html">125445787</a></td>
-                                                                <td>CraftyCockney180</td>
-                                                                <td>Eric</td>
-                                                                <td>Bristow</td>
-                                                                <td>Crafty180@bdo.com</td>
-                                                                <td>07878180180</td>
-                                                                <td><i className="CMS-flags CMS-262-united-kingdom"></i></td>
-                                                                <td>GBP</td>
-                                                                <td></td>
-                                                                <td>1.00</td>
-                                                                <td>£35.12</td>
-                                                                <td>£16.25</td>
-                                                                <td><div className="CMS-btnStatus CMS-statusActive">Active</div></td>
-                                                            </tr>
-                                                           <tr>
-                                                                <td><a href="">125445788</a></td>
-                                                                <td>CraftyCockney180</td>
-                                                                <td>Eric</td>
-                                                                <td>Bristow</td>
-                                                                <td>Crafty180@bdo.com</td>
-                                                                <td>07878180181</td>
-                                                                <td><i className="CMS-flags CMS-001-ethiopia"></i></td>
-                                                                <td>GBP</td>
-                                                                <td></td>
-                                                                <td>1.00</td>
-                                                                <td>£35.12</td>
-                                                                <td>£16.25</td>
-                                                                <td><div  className="CMS-btnStatus CMS-statusLapsed_14">Lapsed 14</div></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="">125445789</a></td>
-                                                                <td>CraftyCockney180</td>
-                                                                <td>Eric</td>
-                                                                <td>Bristow</td>
-                                                                <td>Crafty180@bdo.com</td>
-                                                                <td>07878180182</td>
-                                                                <td><i className="CMS-flags CMS-029-kenya"></i></td>
-                                                                <td>GBP</td>
-                                                                <td></td>
-                                                                <td>1.00</td>
-                                                                <td>£35.12</td>
-                                                                <td>£16.25</td>
-                                                                <td><div className="CMS-btnStatus CMS-statusLapsed_30">Lapsed 30</div></td>
-                                                            </tr>
-                                                             <tr>
-                                                                <td><a href="">125445788</a></td>
-                                                                <td>CraftyCockney180</td>
-                                                                <td>Eric</td>
-                                                                <td>Bristow</td>
-                                                                <td>Crafty180@bdo.com</td>
-                                                                <td>07878180180</td>
-                                                                <td><i className="CMS-flags CMS-032-latvia"></i></td>
-                                                                <td>GBP</td>
-                                                                <td></td>
-                                                                <td>1.00</td>
-                                                                <td>£35.12</td>
-                                                                <td>£16.25</td>
-                                                                <td><div className="CMS-btnStatus CMS-statusLapsed_90">Lapsed 90</div></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="">125445788</a></td>
-                                                                <td>CraftyCockney180</td>
-                                                                <td>Eric</td>
-                                                                <td>Bristow</td>
-                                                                <td>Crafty180@bdo.com</td>
-                                                                <td>07878180180</td>
-                                                                <td><i className="CMS-flags CMS-034-kazakhstan"></i></td>
-                                                                <td>GBP</td>
-                                                                <td></td>
-                                                                <td>1.00</td>
-                                                                <td>£35.12</td>
-                                                                <td>£16.25</td>
-                                                                <td><div className="CMS-btnStatus CMS-statusTime-out">Time Out</div></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="">125445788</a></td>
-                                                                <td>CraftyCockney180</td>
-                                                                <td>Eric</td>
-                                                                <td>Bristow</td>
-                                                                <td>Crafty180@bdo.com</td>
-                                                                <td>07878180180</td>
-                                                                <td><i className="CMS-flags CMS-040-guatemala"></i></td>
-                                                                <td>GBP</td>
-                                                                <td></td>
-                                                                <td>1.00</td>
-                                                                <td>£35.12</td>
-                                                                <td>£16.25</td>
-                                                                <td><div className="CMS-btnStatus CMS-statusSelf-excluded">Self Excluded</div></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="">125445788</a></td>
-                                                                <td>CraftyCockney180</td>
-                                                                <td>Eric</td>
-                                                                <td>Bristow</td>
-                                                                <td>Crafty180@bdo.com</td>
-                                                                <td>07878180180</td>
-                                                                <td><i className="CMS-flags CMS-037-north-korea"></i></td>
-                                                                <td>GBP</td>
-                                                                <td></td>
-                                                                <td>1.00</td>
-                                                                <td>£35.12</td>
-                                                                <td>£16.25</td>
-                                                                <td><div className="CMS-btnStatus CMS-statusSuspended">Suspended</div></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><a href="">125445788</a></td>
-                                                                <td>CraftyCockney180</td>
-                                                                <td>Eric</td>
-                                                                <td>Bristow</td>
-                                                                <td>Crafty180@bdo.com</td>
-                                                                <td>07878180180</td>
-                                                                <td><i className="CMS-flags CMS-035-serbia"></i></td>
-                                                                <td>GBP</td>
-                                                                <td></td>
-                                                                <td>1.00</td>
-                                                                <td>£35.12</td>
-                                                                <td>£16.25</td>
-                                                                <td><div className="CMS-btnStatus CMS-statusClosed">Closed</div></td>
-                                                            </tr>
-                                                           
+                                                            
+                                                           { data.map((item,index)=>{
+                                                                 return (<tr key={item}>
+                                                                      <td>{item.customerId}</td>
+                                                                      <td>{item.username}</td>
+                                                                      <td>{item.firstName}</td>
+                                                                      <td>{item.lastName}</td>
+                                                                      <td>{item.email}</td>
+                                                                      <td>{item.phoneNumber}</td>
+                                                                      <td>{item.country}<i class="CMS-flags CMS-262-united-kingdom"></i></td>
+                                                                      <td>{item.brand}</td>
+                                                                      <td>{item.playersignment}</td>
+                                                                      <td>{item.stackFactor}</td>
+                                                                      <td>{item.deposits}</td>
+                                                                      <td>{item.cgr}</td>
+                                                                      <td>{item.AccountSatus}<div class="CMS-btnStatus CMS-statusActive"></div></td>
+
+                                                                 </tr>)
+                                                            })
+                                                        }
                                                             
                                                             
         

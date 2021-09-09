@@ -72,12 +72,12 @@ class MainDashbord extends React.Component{
     }
     navLinksClosedFunction= (item) =>{
         console.log('click',item)
-   if(item ==="REPORTS"){
+   if(item === "REPORTS"){
       this.props.dispatch(setReportNavStatus(true))
       this.props.dispatch(setReportStatus(true))
       this.props.dispatch(setPlayerSearchNavStatus(false))
       this.props.dispatch(setPlayerSearchStatus(false))
-   }else if(item ==="PLAYERSEARCH"){
+   }else if(item === "PLAYERSEARCH"){
       this.props.dispatch(setPlayerSearchNavStatus(true))
     this.props.dispatch(setPlayerSearchStatus(true))
     this.props.dispatch(setReportNavStatus(false))
@@ -113,9 +113,10 @@ class MainDashbord extends React.Component{
                                     <>   
                                     <li key={index} className={this.props.reportStatus == true && item=="REPORTS" ||  this.props.playerSearchStatus == true && item=="PLAYERSEARCH"? 'active':""} onClick={()=>this.reportFunction(item)}>
                                        
-                                       <Link to="#">{item} <span className="close"><span className="material-icons md-18" data-icon="close" onClick={(item)=>this.navLinksClosedFunction(item)}></span> </span>
+                                       <span to="#">{item} 
+                                          </span>
+                                          <span className="close"><span className="material-icons md-18" data-icon="close" onClick={()=>this.navLinksClosedFunction(item)}></span> </span>
                                    
-                                          </Link>
                                     </li>
                                     </>
                                     )})}
