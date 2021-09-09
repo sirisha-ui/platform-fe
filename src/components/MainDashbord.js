@@ -4,11 +4,44 @@ import Reports from './Reports/Reports' ;
 import PlayerSearch  from "./Players/playersSearch";
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import {setReportStatus,setDashboardStatus,setDashboardNavStatus,setReportNavStatus,setPlayerSearchStatus,setPlayerSearchNavStatus } from "../components/sidebar/sidebarSlice";
+import { Link } from "react-router-dom"; 
+import {setReportStatus,setDashboardStatus,setDashboardNavStatus,setReportNavStatus,setPlayerSearchStatus,setPlayerSearchNavStatus,setSidebarListItems } from "../components/sidebar/sidebarSlice";
 class MainDashbord extends React.Component{
     constructor(props){
         super(props);
+      this.state={
+          listItems:[],
+          show_button: true
+      }
+    this.navFunction= this.navFunction.bind(this)
+    this.navLinksClosedFunction = this.navLinksClosedFunction.bind(this)
     }
+   
+    componentDidMount (){
+        this.navFunction();
+    }
+    
+    dashFunction(){
+      this.props.history.push("/dashboard");
+    }
+    reportFunction(item){
+        console.log("ll",item)
+        if(item ==="REPORTS"){
+        this.props.history.push("/report");
+        this.props.dispatch(setReportStatus(true))
+        this.props.dispatch(setPlayerSearchStatus(false))
+        }else if(item === "PLAYERSEARCH"){
+            this.props.history.push("/playersearch");
+            this.props.dispatch(setReportStatus(false))
+            this.props.dispatch(setPlayerSearchStatus(true))
+           
+            console.log("kjj", "hi")
+        }
+    }
+    playerFunction(){
+        this.props.history.push("/playersearch");
+    }
+    
     dashbordNavClick =()=>{
         this.props.dispatch(setDashboardStatus(true))
         this.props.dispatch(setReportStatus(false))
@@ -24,40 +57,38 @@ class MainDashbord extends React.Component{
         this.props.dispatch(setDashboardStatus(false))
         this.props.dispatch(setReportStatus(false))
     }
-    render(){
-        let dashbordurl = window.location.href.split('/');
-         if(dashbordurl[dashbordurl.length-1] == "dashboard"){
-            this.props.dispatch(setDashboardStatus(true))
-            if(this.props.reportNavStatus == true){
-                this.props.dispatch(setReportNavStatus(true))
-            }       
-            this.props.dispatch(setDashboardNavStatus(true))
-            this.props.dispatch(setReportStatus(false))
-         }else if(dashbordurl[dashbordurl.length-1] == "report"){
-            this.props.dispatch(setReportStatus(true))
-            this.props.dispatch(setDashboardNavStatus(true))
-            if(this.props.playerSearchNavStatus == false){
-                this.props.dispatch(setPlayerSearchStatus(true))
-            }
-            this.props.dispatch(setReportNavStatus(true))
-            this.props.dispatch(setDashboardStatus(false))  
-         }
-         else if(dashbordurl[dashbordurl.length-1] == "playersearch"){
-           
-             this.props.dispatch(setPlayerSearchStatus(true))
-            this.props.dispatch(setReportStatus(false))
-            this.props.dispatch(setDashboardNavStatus(true))
-            // this.props.dispatch(setReportNavStatus(true))
-            if(this.props.reportNavStatus == true){
-                this.props.dispatch(setReportNavStatus(true))
-            }   
-             this.props.dispatch(setPlayerSearchNavStatus(true))
-            this.props.dispatch(setDashboardStatus(false))  
-         }
-         else{
+    navFunction =()=>{
+        let url = this.props.match.path.split("/");
+        if(url[1]=="report"){
+            const report = ["Report"];
+            this.setState({listItems:[...report]})
 
-         }
-        console.log("dashboard", dashbordurl)
+        }
+        if(url[1] == "playersearch"){
+            const player = ["PlayerSearch"];
+            this.setState({listItems:[...player]})
+
+        }
+    }
+    navLinksClosedFunction= (item) =>{
+        console.log('click',item)
+   if(item ==="REPORTS"){
+      this.props.dispatch(setReportNavStatus(true))
+      this.props.dispatch(setReportStatus(true))
+      this.props.dispatch(setPlayerSearchNavStatus(false))
+      this.props.dispatch(setPlayerSearchStatus(false))
+   }else if(item ==="PLAYERSEARCH"){
+      this.props.dispatch(setPlayerSearchNavStatus(true))
+    this.props.dispatch(setPlayerSearchStatus(true))
+    this.props.dispatch(setReportNavStatus(false))
+    this.props.dispatch(setReportStatus(false))
+    
+   }
+    }
+    render(){
+       // console.log("path",this.props.match.path)
+         console.log("status",this.props.sidebarListItems.length)
+        //console.log("dashboard", dashbordurl)
         console.log("report", this.props.reportStatus)
         console.log("dash",this.props.dashboardNavStatus)
         console.log("navreport", this.props.reportNavStatus)
@@ -74,20 +105,27 @@ class MainDashbord extends React.Component{
                                                 ><span
                                                 className="material-icons md-18" data-icon="close" ></span></span></a>
                                     </li>} */}
+                                    
+                                    
+                                    
                                     {
-                                    this.props.reportNavStatus == true &&
-                                    <li className={this.props.reportStatus == true ? 'active':""} onClick={()=>this.reportNavClick()}>
-                                        <a href="#">REPORTS<span className="close"
-                                                ><span
-                                                className="material-icons md-18" data-icon="close"></span></span></a>
-                                    </li>}
-                                    {
+                                   this.props.sidebarListItems.length > 0 && this.props.sidebarListItems.map((item,index)=> {return (
+                                    <>   
+                                    <li key={index} className={this.props.reportStatus == true && item=="REPORTS" ||  this.props.playerSearchStatus == true && item=="PLAYERSEARCH"? 'active':""} onClick={()=>this.reportFunction(item)}>
+                                       
+                                       <Link to="#">{item} <span className="close"><span className="material-icons md-18" data-icon="close" onClick={(item)=>this.navLinksClosedFunction(item)}></span> </span>
+                                   
+                                          </Link>
+                                    </li>
+                                    </>
+                                    )})}
+                                    {/* {
                                     this.props.playerSearchNavStatus == true &&
                                     <li className={this.props.playerSearchStatus == true ? 'active':""} onClick={()=>this.playerNavClick()}>
-                                        <a href="#">PLAYER-SEARCH<span className="close"
+                                        <Link to="#" onClick={()=>this.playerFunction()}>PLAYERSEARCH<span className="close"
                                                 ><span
-                                                className="material-icons md-18" data-icon="close"></span></span></a>
-                                    </li>}
+                                                className="material-icons md-18" data-icon="close"></span></span></Link>
+                                    </li>} */}
                                     {/* <li>
                                         <a href="CMS-playerActivity">PLAYER ACTIVITY<span className="close"><span className="material-icons md-18" data-icon="close"></span></span></a>
                                     </li>
@@ -117,6 +155,7 @@ function mapStateToProps(state) {
         displayValue: state.sidebar.displayValue,
         playerSearchStatus: state.sidebar.playerSearchStatus,
         playerSearchNavStatus: state.sidebar.playerSearchNavStatus,
+        sidebarListItems: state.sidebar.sidebarListItems
     };
 }
 function mapDispatchToProps(dispatch) {

@@ -5,7 +5,9 @@ import styled from "styled-components";
 import truewavelogoimage from "../assets/images/truewave-logo.svg";
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import { setReportNavStatus, setReportStatus,setDashboardStatus,setDashboardNavStatus,setPlayerSearchStatus,setPlayerSearchNavStatus } from "./sidebar/sidebarSlice";
+import MainDashbord  from './MainDashbord';
+import { useHistory } from "react-router-dom";
+import { setReportNavStatus, setReportStatus,setDashboardStatus,setDashboardNavStatus,setPlayerSearchStatus,setPlayerSearchNavStatus,setSidebarListItems } from "./sidebar/sidebarSlice";
 const SidebarLink = styled(Link)` 
 // display: flex; 
 // color: #e1e9fc; 
@@ -52,31 +54,71 @@ class SubMenu extends React.Component{
 constructor(props){
     super(props);
     this.state ={
-        collapsed: ''
+        collapsed: '',
+        listItem: []
     }
     this.allCollapsed = this.allCollapsed.bind(this);
     this.dashbordClick = this.dashbordClick.bind(this);
 }
+//  dashFunction(){
+//         let history = useHistory();
+//        history.push("/dashboard");
+//     }
+//     reportFunction(){
+//         let history = useHistory();
+//         history.push("/report");
+//     }
+//     playerFunction(){
+//         let history = useHistory();
+//         history.push("/playersearch");
+//     }
+
 dashbordClick =(event)=>{
     this.props.dispatch(setDashboardStatus(true))
     this.props.dispatch(setDashboardNavStatus(true))
     this.props.dispatch(setReportStatus(false))
     this.props.dispatch(setPlayerSearchStatus(false))
+    this.props.dispatch(setPlayerSearchNavStatus(false))
+    this.props.dispatch(setReportNavStatus(false))
     let ele = event.currentTarget.parentNode.parentNode.parentNode;
    this.setState({collapsed:ele});
    //console.log("ele",this.state.collapsed)
+  
 }
 reportClick =()=>{
     this.props.dispatch(setReportStatus(true))
     this.props.dispatch(setReportNavStatus(true))
     this.props.dispatch(setDashboardStatus(false)) 
     this.props.dispatch(setPlayerSearchStatus(false))
+    if(this.props.playerSearchNavStatus == true){
+        const report= ["PLAYERSEARCH","REPORTS"];
+        //this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([...report]))
+    }else{
+        const report= ["REPORTS"];
+       // this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([report]))
+    }
+    
 }
-playerNavClick =()=> {
+playerClick =()=> {
     this.props.dispatch(setPlayerSearchStatus(true))
     this.props.dispatch(setPlayerSearchNavStatus(true))
     this.props.dispatch(setDashboardStatus(false))
+    this.props.dispatch(setReportStatus(false)) 
+    //const report= "Player"
+    if(this.props.reportNavStatus == true){
+        const report= ["REPORTS","PLAYERSEARCH"];
+        //this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([...report]))
+    }else{
+        const report= ["PLAYERSEARCH"];
+       // this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([report]))
+    }
+    
 }
+
 allCollapsed =(event)=>{
     let ele = event.currentTarget.parentNode.parentNode.parentNode.parentNode;
 
@@ -160,8 +202,8 @@ return (
                             </div>
                         </div>
                         <div className="CMS-accordion-content">
-                            <div className="CMS-categoryListItem active" ><a onClick ={(event)=>this.dashbordClick(event)} href="/dashboard">Dashboard</a></div>
-                            <div className="CMS-categoryListItem" ><a onClick ={()=>this.reportClick()} href="/report">Reports</a></div>
+                            <div className="CMS-categoryListItem active" ><Link onClick={(event)=>this.dashbordClick(event)} to="/dashboard">Dashboard</Link></div>
+                            <div className="CMS-categoryListItem" ><Link onClick={()=>this.reportClick()} to="/report">Report</Link></div>
                         </div>
                     </div>
                     <div className="CMS-accordion collapsed">
@@ -195,7 +237,7 @@ return (
                             </div>
                         </div>
                         <div className="CMS-accordion-content">
-                            <div className="CMS-categoryListItem"><a onClick ={()=>this.playerNavClick()} href="/playersearch">Player Search</a></div>
+                            <div className="CMS-categoryListItem"><Link onClick={()=>this.playerClick()} to="/playersearch">PlayerSearch</Link></div>
                             <div className="CMS-categoryListItem"><a href="">New Players</a></div>
                             <div className="CMS-categoryListItem"><a href="/player-activity">Player Activity</a></div>
                             <div className="CMS-categoryListItem">Player Tagging / Segmentation</div>
@@ -254,13 +296,14 @@ return (
 ); 
 }
 }
-// function mapStateToProps(state) {
-//     //console.log("state",state)
-//     return {
-//         reportStatus: state.sidebar.reportStatus,
-//         reportNavStatus: state.sidebar.reportNavStatus,
-//     };
-// }
+function mapStateToProps(state) {
+    //console.log("state",state)
+    return {
+        //reportStatus: state.sidebar.reportStatus,
+        reportNavStatus: state.sidebar.reportNavStatus,
+        playerSearchNavStatus: state.sidebar.playerSearchNavStatus
+    };
+}
 function mapDispatchToProps(dispatch) {
     return {
         dispatch,
@@ -268,4 +311,4 @@ function mapDispatchToProps(dispatch) {
         }, dispatch)
     }
 }
-export default connect(mapDispatchToProps)(SubMenu); 
+export default connect(mapStateToProps,mapDispatchToProps)(SubMenu); 

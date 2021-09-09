@@ -76,7 +76,7 @@ export const SidebarData = [
 	subNav: [ 
 		{ 
 			title: "Player Search", 
-			path: "/", 
+			path: "/playersearch", 
 			icon: <IoIcons.IoIosPaper />, 
 			cName: "sub-nav", 
 		}, 

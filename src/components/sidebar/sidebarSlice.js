@@ -10,6 +10,7 @@ export const sidebarSlice = createSlice({
     dashboardNavStatus:false,
     playerSearchStatus:false,
     playerSearchNavStatus:false,
+    sidebarListItems: [],
   },
   reducers: {
     setdisplayValue:(state,action)=>{
@@ -32,11 +33,14 @@ export const sidebarSlice = createSlice({
     },
     setPlayerSearchNavStatus:(state,action)=>{
       state.playerSearchNavStatus =action.payload;
-    }
+    },
+    setSidebarListItems:(state,action)=>{
+      state.sidebarListItems =action.payload;
+    },
   }
 });
 
-export const { setdisplayValue,setReportStatus,setReportNavStatus,setDashboardStatus,setDashboardNavStatus,setPlayerSearchStatus,setPlayerSearchNavStatus} = sidebarSlice.actions;
+export const { setdisplayValue,setReportStatus,setReportNavStatus,setDashboardStatus,setDashboardNavStatus,setPlayerSearchStatus,setPlayerSearchNavStatus,setSidebarListItems} = sidebarSlice.actions;
 
 // export const loadSidebarmenu = () =>  dispatch => {
 //     dispatch(setdisplayValue());
