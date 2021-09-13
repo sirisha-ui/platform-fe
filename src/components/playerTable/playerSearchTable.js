@@ -40,8 +40,8 @@ class PlayerSeachTable extends React.Component{
     {
         customerId: '125445789',
         username: 'CraftyCockney180',
-        firstName: 'Eric',
-        lastName: 'Bristow',
+        firstName: 'Raju',
+        lastName: 'Raghu',
         email: 'Crafty180@bdo.com',
         phoneNumber: '07878180182',
         country: '',
@@ -57,7 +57,7 @@ class PlayerSeachTable extends React.Component{
     {
         customerId: '125445788',
         username: 'CraftyCockney180',
-        firstName: 'Eric',
+        firstName: 'Ramu',
         lastName: 'Bristow',
         email: 'Crafty180@bdo.com',
         phoneNumber: '07878180180',
@@ -74,15 +74,28 @@ class PlayerSeachTable extends React.Component{
 
 ]
      }
- 
+      filterByReference = (arr1, arr2) => {
+           let res = [];
+           res = arr1.filter(el => {
+              return arr2.find(element => {
+                 return (element.firstName).toUpperCase() === (el.firstName).toUpperCase() || (element.lastName).toUpperCase() === (el.lastName).toUpperCase();
+              });
+           });
+           return res;
+        }
 
     render(){
+        console.log('data',this.props.tableData)
+        let array =[];
+        array.push(this.props.tableData)
         let data = this.state;
+       let filterData =  this.filterByReference(data, array)
+       console.log("hii",filterData)
 
         return(
             <>
             <div className="CMS-box CMS-table CMS-table-triped">
-                                                    <table>
+                                                    <table>{filterData.length > 0 &&
                                                         <thead>
                                                             <tr>
                                                                 <th>Customer Id</th>
@@ -99,10 +112,10 @@ class PlayerSeachTable extends React.Component{
                                                                 <th>GGR</th>
                                                                 <th>Account Status</th>
                                                             </tr>
-                                                        </thead>
+                                                        </thead>}
                                                         <tbody>
                                                             
-                                                           { data.map((item,index)=>{
+                                                           { filterData.length > 0 && filterData.map((item,index)=>{
                                                                  return (<tr key={item}>
                                                                       <td>{item.customerId}</td>
                                                                       <td>{item.username}</td>

@@ -111,9 +111,9 @@ class MainDashbord extends React.Component{
                                     {
                                    this.props.sidebarListItems.length > 0 && this.props.sidebarListItems.map((item,index)=> {return (
                                     <>   
-                                    <li key={index} className={this.props.reportStatus == true && item=="REPORTS" ||  this.props.playerSearchStatus == true && item=="PLAYERSEARCH"? 'active':""} onClick={()=>this.reportFunction(item)}>
+                                    <li key={index} className={this.props.reportStatus == true && item=="REPORTS" ||  this.props.playerSearchStatus == true && item=="PLAYERSEARCH"? 'active':""} >
                                        
-                                       <span to="#">{item} 
+                                       <span to="#" onClick={()=>this.reportFunction(item)}>{item} 
                                           </span>
                                           <span className="close"><span className="material-icons md-18" data-icon="close" onClick={()=>this.navLinksClosedFunction(item)}></span> </span>
                                    

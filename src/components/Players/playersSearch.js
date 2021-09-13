@@ -15,6 +15,7 @@ class playerSearch extends React.Component{
             ipAddress: '',
             phoneNumber: '',
             referCode:'',
+            country: '',
             datepicker: '',
             brand: '',
             playersignment: '',
@@ -40,6 +41,25 @@ class playerSearch extends React.Component{
         this.onSubmit = this.onSubmit.bind(this);
             
             
+        }
+        resetButton() {
+         this.setState({ username: '',firstName: '',
+         lastName: '',
+         email: '',
+         customerId: '',
+         ipAddress: '',
+         phoneNumber: '',
+         referCode:'',
+         country: '',
+         datepicker: '',
+         brand: '',
+         playersignment: '',
+         stackFactor: '',
+         deposits: '',
+         cgr: '',
+         AccountSatus: '',
+         recentPlayer: '', })
+         this.setState({data:[]})
         }
         onChangeUserName(e) {
             this.setState({ username: e.target.value })
@@ -78,26 +98,30 @@ class playerSearch extends React.Component{
 
         onSubmit(e) {
             e.preventDefault()
-       
-            this.setState({data:{ username: this.state.username,
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
-            email: this.state.email,
-            customerId: this.state.customerId,
-            ipAddress: this.state.ipAddress,
-            phoneNumber: this.state.phoneNumber,
-            country: this.state.country,
-            datepicker: this.state.datepicker,
-            referCode: this.state.referCode,
-            brand: this.state.brand,
-            playersignment: this.state.playersignment,
-            stackFactor: this.state.stackFactor,
-            deposits: this.state.deposits,
-            cgr: this.state.cgr,
-            AccountSatus: this.state.AccountSatus,
-
+            if(this.state.username != '' || this.state.firstName != '' || this.state.lastName != '' || this.state.email != '' || this.state.customerId != ''
+            || this.state.ipAddress != '' || this.state.phoneNumber != '' || this.state.country != '' ||  this.state.datepicker != '' || this.state.referCode != '' ||
+            this.state.cgr != '' || this.state.AccountSatus != ''){
+               this.setState({data:{ username: this.state.username,
+                  firstName: this.state.firstName,
+                  lastName: this.state.lastName,
+                  email: this.state.email,
+                  customerId: this.state.customerId,
+                  ipAddress: this.state.ipAddress,
+                  phoneNumber: this.state.phoneNumber,
+                  country: this.state.country,
+                  datepicker: this.state.datepicker,
+                  referCode: this.state.referCode,
+                  brand: this.state.brand,
+                  playersignment: this.state.playersignment,
+                  stackFactor: this.state.stackFactor,
+                  deposits: this.state.deposits,
+                  cgr: this.state.cgr,
+                  AccountSatus: this.state.AccountSatus,
+      
+                  }
+              })
             }
-        })
+       
     }
 
     // componentDidMount() {
@@ -377,7 +401,7 @@ class playerSearch extends React.Component{
                            <div className="col-12">
                               <div className="CMS-btnContainer">
                                  <button type="button"  onClick={(e)=> this.onSubmit(e)} className="CMS-btn CMS-btnSecondary active CMS-btnMedium" >Search</button>
-                                 <button onclick="window.location.href=''" className="CMS-btn CMS-btnQuaternary active CMS-btnMedium" type="button">Reset</button>
+                                 <button onClick={()=>this.resetButton()} className="CMS-btn CMS-btnQuaternary active CMS-btnMedium" type="button">Reset</button>
                               </div>
                            </div>
                         </div>
@@ -431,7 +455,7 @@ class playerSearch extends React.Component{
    </div>
    </form>
    </div>
-   {this.state.data.length >=0 ? "": <PlayerSeachTable/> }
+   {this.state.data.length >=0 ? "": <PlayerSeachTable tableData = {this.state.data}/> }
 </>
 )}
 }
