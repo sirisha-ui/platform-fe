@@ -551,7 +551,7 @@ body.CMS-sideMenu-open {
   position: relative;
   top:100px;
   left:2px;
-  height: 42px;
+  height: 30px;
 }
   .CMS-page-tabs.CMS-page-internalTabs {
     margin-left: 0px;
@@ -579,7 +579,7 @@ body.CMS-sideMenu-open {
       border-radius: 4px 4px 0 0;
       border-bottom: 0; }
       .CMS-page-tabs ul li:first-child {
-        margin-left: 20px; }
+        margin-left: 40px; }
       .CMS-page-tabs ul li a {
         display: flex;
         align-items: center;

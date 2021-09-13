@@ -2,10 +2,11 @@ import React from "react";
 import Dashboard from "./Dashboard/dashboard";
 import Reports from './Reports/Reports' ;
 import PlayerSearch  from "./Players/playersSearch";
+import NewPlayer from "./NewPlayer/newPlayer";
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { Link } from "react-router-dom"; 
-import {setReportStatus,setDashboardStatus,setDashboardNavStatus,setReportNavStatus,setPlayerSearchStatus,setPlayerSearchNavStatus,setSidebarListItems } from "../components/sidebar/sidebarSlice";
+import {setReportStatus,setDashboardStatus,setDashboardNavStatus,setReportNavStatus,setPlayerSearchStatus,setPlayerSearchNavStatus,setSidebarListItems,setNewplayerStatus,setNewplayerNavStatus } from "../components/sidebar/sidebarSlice";
 class MainDashbord extends React.Component{
     constructor(props){
         super(props);
@@ -30,13 +31,19 @@ class MainDashbord extends React.Component{
         this.props.history.push("/report");
         this.props.dispatch(setReportStatus(true))
         this.props.dispatch(setPlayerSearchStatus(false))
+        this.props.dispatch(setNewplayerStatus(false))
         }else if(item === "PLAYERSEARCH"){
             this.props.history.push("/playersearch");
             this.props.dispatch(setReportStatus(false))
+            this.props.dispatch(setNewplayerStatus(false))
             this.props.dispatch(setPlayerSearchStatus(true))
-           
-            console.log("kjj", "hi")
+        }else if(item === "NEWPLAYERS"){
+            this.props.history.push("/newplayer");
+            this.props.dispatch(setNewplayerStatus(true))
+            this.props.dispatch(setReportStatus(false))
+            this.props.dispatch(setPlayerSearchStatus(false))
         }
+        
     }
     playerFunction(){
         this.props.history.push("/playersearch");
@@ -46,14 +53,23 @@ class MainDashbord extends React.Component{
         this.props.dispatch(setDashboardStatus(true))
         this.props.dispatch(setReportStatus(false))
         this.props.dispatch(setPlayerSearchStatus(false))
+        this.props.dispatch(setNewplayerStatus(false))
     }
     reportNavClick =()=>{
         this.props.dispatch(setReportStatus(true))
         this.props.dispatch(setDashboardStatus(false))  
         this.props.dispatch(setPlayerSearchStatus(false))
+        this.props.dispatch(setNewplayerStatus(false))
     }
     playerNavClick =()=> {
         this.props.dispatch(setPlayerSearchStatus(true))
+        this.props.dispatch(setDashboardStatus(false))
+        this.props.dispatch(setReportStatus(false))
+        this.props.dispatch(setNewplayerStatus(false))
+    }
+    newplayerNavClick =()=> {
+        this.props.dispatch(setNewplayerStatus(true))
+        this.props.dispatch(setPlayerSearchStatus(false))
         this.props.dispatch(setDashboardStatus(false))
         this.props.dispatch(setReportStatus(false))
     }
@@ -69,6 +85,12 @@ class MainDashbord extends React.Component{
             this.setState({listItems:[...player]})
 
         }
+        if(url[1] == "newPlayer"){
+            const newplayer = ["NewPlayer"];
+            this.setState({listItems:[...newplayer]})
+
+        }
+
     }
     navLinksClosedFunction= (item) =>{
         console.log('click',item)
@@ -111,7 +133,7 @@ class MainDashbord extends React.Component{
                                     {
                                    this.props.sidebarListItems.length > 0 && this.props.sidebarListItems.map((item,index)=> {return (
                                     <>   
-                                    <li key={index} className={this.props.reportStatus == true && item=="REPORTS" ||  this.props.playerSearchStatus == true && item=="PLAYERSEARCH"? 'active':""} >
+                                    <li key={index} className={this.props.reportStatus == true && item=="REPORTS" ||  this.props.playerSearchStatus == true && item=="PLAYERSEARCH" || this.props.newplayerStatus == true && item == "NEWPLAYERS"? 'active':""} >
                                        
                                        <span to="#" onClick={()=>this.reportFunction(item)}>{item} 
                                           </span>
@@ -139,7 +161,7 @@ class MainDashbord extends React.Component{
             {this.props.dashboardStatus == true ? <Dashboard/>:
             this.props.reportStatus == true ? <Reports/> :
             this.props.playerSearchStatus == true ? <PlayerSearch/> :
-            
+            this.props.newplayerStatus == true ? <NewPlayer/> :
             <Dashboard/> }
             </div>
             </>
@@ -156,7 +178,9 @@ function mapStateToProps(state) {
         displayValue: state.sidebar.displayValue,
         playerSearchStatus: state.sidebar.playerSearchStatus,
         playerSearchNavStatus: state.sidebar.playerSearchNavStatus,
-        sidebarListItems: state.sidebar.sidebarListItems
+        sidebarListItems: state.sidebar.sidebarListItems,
+        newplayerStatus: state.sidebar.newplayerStatus,
+        newplayerNavStatus: state.sidebar.newplayerNavStatus,
     };
 }
 function mapDispatchToProps(dispatch) {

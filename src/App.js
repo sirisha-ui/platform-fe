@@ -37,6 +37,7 @@ return (
 		<Route path="/dashboard" render={props => <MainDashbord {...props} />}/> 
 		<Route path="/report" render={props => <MainDashbord {...props} />}/>
 		<Route path="/playersearch" render={props => <MainDashbord {...props} />}/>
+		<Route path="/newplayer" render={props => <MainDashbord {...props} />}/>
 	</Switch> 
 	</div>
 	</Router> 

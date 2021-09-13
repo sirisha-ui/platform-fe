@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { FaLastfmSquare } from 'react-icons/fa';
 
 export const sidebarSlice = createSlice({
   name: 'sidebar',
@@ -10,6 +11,8 @@ export const sidebarSlice = createSlice({
     dashboardNavStatus:false,
     playerSearchStatus:false,
     playerSearchNavStatus:false,
+    newplayerStatus: false,
+    newplayerNavStatus: false,
     sidebarListItems: [],
   },
   reducers: {
@@ -37,10 +40,16 @@ export const sidebarSlice = createSlice({
     setSidebarListItems:(state,action)=>{
       state.sidebarListItems =action.payload;
     },
+    setNewplayerStatus:(state,action)=>{
+      state.newplayerStatus =action.payload;
+    },
+    setNewplayerNavStatus:(state,action)=>{
+      state.newplayerNavStatus =action.payload;
+    }
   }
 });
 
-export const { setdisplayValue,setReportStatus,setReportNavStatus,setDashboardStatus,setDashboardNavStatus,setPlayerSearchStatus,setPlayerSearchNavStatus,setSidebarListItems} = sidebarSlice.actions;
+export const { setdisplayValue,setReportStatus,setReportNavStatus,setDashboardStatus,setDashboardNavStatus,setPlayerSearchStatus,setPlayerSearchNavStatus,setSidebarListItems,setNewplayerStatus,setNewplayerNavStatus} = sidebarSlice.actions;
 
 // export const loadSidebarmenu = () =>  dispatch => {
 //     dispatch(setdisplayValue());

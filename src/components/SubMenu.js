@@ -7,7 +7,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import MainDashbord  from './MainDashbord';
 import { useHistory } from "react-router-dom";
-import { setReportNavStatus, setReportStatus,setDashboardStatus,setDashboardNavStatus,setPlayerSearchStatus,setPlayerSearchNavStatus,setSidebarListItems } from "./sidebar/sidebarSlice";
+import { setReportNavStatus, setReportStatus,setDashboardStatus,setDashboardNavStatus,setPlayerSearchStatus,setPlayerSearchNavStatus,setSidebarListItems, setNewplayerStatus, setNewplayerNavStatus } from "./sidebar/sidebarSlice";
+import { FaDiceFive } from "react-icons/fa";
 const SidebarLink = styled(Link)` 
 // display: flex; 
 // color: #e1e9fc; 
@@ -80,6 +81,8 @@ dashbordClick =(event)=>{
     this.props.dispatch(setPlayerSearchStatus(false))
     this.props.dispatch(setPlayerSearchNavStatus(false))
     this.props.dispatch(setReportNavStatus(false))
+    this.props.dispatch(setNewplayerStatus(false))
+    this.props.dispatch(setNewplayerNavStatus(false))
     let ele = event.currentTarget.parentNode.parentNode.parentNode;
    this.setState({collapsed:ele});
    //console.log("ele",this.state.collapsed)
@@ -90,11 +93,24 @@ reportClick =()=>{
     this.props.dispatch(setReportNavStatus(true))
     this.props.dispatch(setDashboardStatus(false)) 
     this.props.dispatch(setPlayerSearchStatus(false))
+    this.props.dispatch(setNewplayerStatus(false))
     if(this.props.playerSearchNavStatus == true){
         const report= ["PLAYERSEARCH","REPORTS"];
         //this.setState({listItem: [...report]})
        this.props.dispatch(setSidebarListItems([...report]))
-    }else{
+    }else if(this.props.newplayerNavStatus == true){
+        const report= ["NEWPLAYERS","REPORTS"];
+        this.props.dispatch(setSidebarListItems([...report]))
+    }
+    else if(this.props.playerSearchNavStatus && this.props.newplayerNavStatus){
+        const report= ["PLAYERSEARCH","NEWPLAYERS","REPORTS"];
+        this.props.dispatch(setSidebarListItems([...report]))
+    }
+    else if(this.props.newplayerNavStatus && this.props.playerSearchNavStatus){
+        const report= ["NEWPLAYERS","PLAYERSEARCH","REPORTS"];
+        this.props.dispatch(setSidebarListItems([...report]))
+    }
+    else{
         const report= ["REPORTS"];
        // this.setState({listItem: [...report]})
        this.props.dispatch(setSidebarListItems([report]))
@@ -106,12 +122,25 @@ playerClick =()=> {
     this.props.dispatch(setPlayerSearchNavStatus(true))
     this.props.dispatch(setDashboardStatus(false))
     this.props.dispatch(setReportStatus(false)) 
+    this.props.dispatch(setNewplayerStatus(false))
     //const report= "Player"
     if(this.props.reportNavStatus == true){
         const report= ["REPORTS","PLAYERSEARCH"];
         //this.setState({listItem: [...report]})
        this.props.dispatch(setSidebarListItems([...report]))
-    }else{
+    }else if(this.props.newplayerNavStatus == true){
+        const report= ["NEWPLAYERS","PLAYERSEARCH"];
+        this.props.dispatch(setSidebarListItems([...report]))
+    }
+    else if(this.props.reportNavStatus && this.props.newplayerNavStatus){
+        const report= ["REPORTS","NEWPLAYERS","PLAYERSEARCH"];
+        this.props.dispatch(setSidebarListItems([...report]))
+    }
+    else if(this.props.newplayerNavStatus && this.props.reportNavStatus){
+        const report= ["NEWPLAYERS","REPORTS","PLAYERSEARCH"];
+        this.props.dispatch(setSidebarListItems([...report]))
+    }
+    else{
         const report= ["PLAYERSEARCH"];
        // this.setState({listItem: [...report]})
        this.props.dispatch(setSidebarListItems([report]))
@@ -119,6 +148,52 @@ playerClick =()=> {
     
 }
 
+newPlayerClick =()=> {
+    
+    this.props.dispatch(setNewplayerStatus(true))
+    this.props.dispatch(setNewplayerNavStatus(true))
+    this.props.dispatch(setPlayerSearchStatus(false))
+    this.props.dispatch(setDashboardStatus(false))
+    this.props.dispatch(setReportStatus(false)) 
+    //const report= "Player"
+    if(this.props.reportNavStatus == true){
+        const report= ["REPORTS","NEWPLAYERS"];
+        //this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([...report]))
+       if(this.props.playerSearchNavStatus == true){
+        const report= ["REPORTS","PLAYERSEARCH","NEWPLAYERS"];
+        //this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([...report]))
+
+       }
+    }
+      else if (this.props.playerSearchNavStatus == true){
+        const report= ["PLAYERSEARCH","NEWPLAYERS"];
+        //this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([...report]))
+       if(this.props.reportNavStatus == true){
+        const report= ["PLAYERSEARCH","REPORTS","NEWPLAYERS"];
+        //this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([...report]))
+       }
+     }
+    //  else if(this.props.reportNavStatus && this.props.playerSearchNavStatus){
+    //     const report= ["REPORTS","PLAYERSEARCH","NEWPLAYERS"];
+    //     //this.setState({listItem: [...report]})
+    //    this.props.dispatch(setSidebarListItems([...report]))
+    //  }
+    //  else if(this.props.playerSearchNavStatus && this.props.reportNavStatus){
+    //     const report= ["PLAYERSEARCH","REPORTS","NEWPLAYERS"];
+    //     //this.setState({listItem: [...report]})
+    //    this.props.dispatch(setSidebarListItems([...report]))
+    //  }
+    else{
+        const report= ["NEWPLAYERS"];
+       // this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([report]))
+    }
+    
+}
 allCollapsed =(event)=>{
     let ele = event.currentTarget.parentNode.parentNode.parentNode.parentNode;
 
@@ -137,6 +212,16 @@ allCollapsed =(event)=>{
 
 }
 render(){
+    console.log("re reportNavStatus",this.props.reportNavStatus)
+    console.log("re playerSearchNavStatus",this.props.playerSearchNavStatus)
+    console.log("re newplayerNavStatus",this.props.newplayerNavStatus)
+    // console.log("re playerSearchNavStatus & newplayerNavStatus",this.props.playerSearchNavStatus && this.props.newplayerNavStatus)
+    // console.log("re",this.props.newplayerNavStatus && this.props.playerSearchNavStatus)
+    // console.log("playerClick rep,newplay",this.props.reportNavStatus && this.props.newplayerNavStatus)
+    
+    // console.log("pla newplay,repornav",this.props.newplayerNavStatus && this.props.reportNavStatus)
+    // console.log("newplayer repnav,playersearchnav", this.props.reportNavStatus && this.props.playerSearchNavStatus)
+    
     console.log("ele",this.state.collapsed)
     let dashbordurl = window.location.href.split('/');
 
@@ -238,7 +323,7 @@ return (
                         </div>
                         <div className="CMS-accordion-content">
                             <div className="CMS-categoryListItem"><Link onClick={()=>this.playerClick()} to="/playersearch">PlayerSearch</Link></div>
-                            <div className="CMS-categoryListItem"><a href="">New Players</a></div>
+                            <div className="CMS-categoryListItem"><Link onClick={()=>this.newPlayerClick()} to="/newplayer">New Players</Link></div>
                             <div className="CMS-categoryListItem"><a href="/player-activity">Player Activity</a></div>
                             <div className="CMS-categoryListItem">Player Tagging / Segmentation</div>
                         </div>
@@ -301,7 +386,8 @@ function mapStateToProps(state) {
     return {
         //reportStatus: state.sidebar.reportStatus,
         reportNavStatus: state.sidebar.reportNavStatus,
-        playerSearchNavStatus: state.sidebar.playerSearchNavStatus
+        playerSearchNavStatus: state.sidebar.playerSearchNavStatus,
+        newplayerNavStatus: state.sidebar.newplayerNavStatus
     };
 }
 function mapDispatchToProps(dispatch) {

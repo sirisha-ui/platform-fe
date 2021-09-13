@@ -124,38 +124,6 @@ class playerSearch extends React.Component{
        
     }
 
-    // componentDidMount() {
-    //     this.userData = JSON.parse(localStorage.getItem('user'));
-
-    //     if (localStorage.getItem('user')) {
-    //         this.setState({
-    //             username: this.userData.username,
-    //             firstName: this.userData.firstName,
-    //             lastName: this.userData.lastName,
-    //             email: this.userData.email,
-    //             phoneNumber: this.userData.phoneNumber,
-    //             customerId: this.userData.customerId,
-    //             ipAddress: this.userData.ipAddress,
-    //             referCode: this.userData.referCode,
-    //         })
-    //     } else {
-    //         this.setState({
-    //             username: '',
-    //             firstName: '',
-    //             lastName: '',
-    //             email: '',
-    //             phoneNumber: '',
-    //             customerId: '',
-    //             ipAddress: '',
-    //             referCode: '',
-    //         })
-    //     }
-    // }
-
-    // componentWillUpdate(nextProps, nextState) {
-    //     localStorage.setItem('user', JSON.stringify(nextState));
-    // }
-
  render(){
     
 
