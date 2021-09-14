@@ -1,6 +1,6 @@
 import React from "react";
 import NewPlayerSeachTable from "./newPlayerTable";
-
+import { connect } from 'react-redux';
 class newPlayer extends React.Component {
     constructor(props){
         
@@ -114,7 +114,7 @@ class newPlayer extends React.Component {
   render (){
 
     return (<>
-    <div class="CMS-layout-innerContent">
+    <div class="CMS-layout-innerContent" style ={{width: this.props.displayValue ? '100%':'80%', marginLeft: this.props.displayValue ?'0px':'290px'}}>
                 <div class="CMS-page CMS-newPlayer">
                     <div class="CMS-page-content">
                         <div class="CMS-full-page-content">
@@ -374,4 +374,9 @@ class newPlayer extends React.Component {
   }
 
 }
-export default newPlayer;
+function mapStateToProps(state) {
+    return {
+        displayValue: state.sidebar.displayValue,
+    };
+ }
+export default connect(mapStateToProps)(newPlayer);

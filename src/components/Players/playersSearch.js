@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { connect } from 'react-redux';
 import PlayerSeachTable from '../playerTable/playerSearchTable';
 
 class playerSearch extends React.Component{
@@ -161,7 +162,7 @@ class playerSearch extends React.Component{
 
  return (
  <>
-<div className="CMS-layout-innerContent">
+<div className="CMS-layout-innerContent" style ={{width: this.props.displayValue ? '100%':'80%', marginLeft: this.props.displayValue ?'0px':'290px'}}>
 <form>
    <div className="CMS-page CMS-playerSearch">
       <div className="CMS-page-content">
@@ -459,4 +460,9 @@ class playerSearch extends React.Component{
 </>
 )}
 }
-export default playerSearch;
+function mapStateToProps(state) {
+   return {
+       displayValue: state.sidebar.displayValue,
+   };
+}
+export default connect(mapStateToProps)(playerSearch);

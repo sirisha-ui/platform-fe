@@ -8,7 +8,7 @@ class Reports extends Component{
   render(){
   return (
     <>
-    <div>
+    <div style ={{width: this.props.displayValue ? '100%':'79%', marginLeft: this.props.displayValue ?'0px':'295px'}}>
       <div className="CMS-layout-innerContent">
                 <div className="CMS-page CMS-reports">
                     <div className="CMS-page-content">
@@ -156,6 +156,12 @@ class Reports extends Component{
   );
   }
 }
+function mapStateToProps(state) {
+    console.log("state",state)
+    return {
+        displayValue: state.sidebar.displayValue,
+    };
+}
 function mapDispatchToProps(dispatch) {
   return {
       dispatch,
@@ -163,4 +169,4 @@ function mapDispatchToProps(dispatch) {
       }, dispatch)
   }
 }
-export default connect(mapDispatchToProps)(Reports);
+export default connect(mapStateToProps,mapDispatchToProps)(Reports);

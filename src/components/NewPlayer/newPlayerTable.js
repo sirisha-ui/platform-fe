@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class NewPlayerSeachTable extends React.Component{
  constructor (props){
@@ -86,7 +87,7 @@ class NewPlayerSeachTable extends React.Component{
 
         return(
             <>
-            <div className="CMS-box CMS-table CMS-table-triped">
+            <div className="CMS-box CMS-table CMS-table-triped" style ={{width: this.props.displayValue ? '100%':'80%', marginLeft: this.props.displayValue ?'0px':'290px'}}>
                                                     <table>{filterData.length > 0 &&
                                                         <thead>
                                                             <tr>
@@ -138,4 +139,10 @@ class NewPlayerSeachTable extends React.Component{
     }
 }
 
-export default NewPlayerSeachTable;
+function mapStateToProps(state) {
+    return {
+        displayValue: state.sidebar.displayValue,
+    };
+ }
+ 
+export default connect(mapStateToProps)(NewPlayerSeachTable);

@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 // import { sidebarClick } from '../../components/Dashboard/dashboardSlice';
-// import { connect } from 'react-redux';
+ import { connect } from 'react-redux';
+ import { setSidebarTabs,setdisplayValue } from "../sidebar/sidebarSlice";
 // // import sidebar from "../sidebar";
 // import { bindActionCreators } from "redux";
 class Dashboard extends Component{
@@ -11,7 +12,9 @@ class Dashboard extends Component{
     //     let displayValue =localStorage.getItem("display")
     return ( 
 	<> 
-    <div className="CMS-layout-content">
+    
+    <div className="CMS-layout-content"  style ={{width: this.props.displayValue ? '100%':'80%', marginLeft: this.props.displayValue ?'0px':'290px'}}>
+    
 			<div className="CMS-layout-innerContent">
                 <div className="CMS-page CMS-dashboard">
                     <div className="CMS-page-header">
@@ -866,17 +869,18 @@ class Dashboard extends Component{
                     </div>
                 </div>
             </div>
-	</div>
+	
+    
+    </div>
      </>
 )
 }
 }
-// function mapStateToProps(state) {
-//     console.log("state",state)
-//     return {
-//         displayValue: state.sidebar.displayValue,
-//     };
-// }
+function mapStateToProps(state) {
+    return {
+        displayValue: state.sidebar.displayValue,
+    };
+}
 // function mapDispatchToProps(dispatch) {
 //     return {
 //         dispatch,
@@ -884,4 +888,4 @@ class Dashboard extends Component{
 //         }, dispatch)
 //     }
 // }
-export default Dashboard;
+export default connect(mapStateToProps)(Dashboard);

@@ -8,140 +8,117 @@ export const SidebarData = [
 { 
 	title: "MANAGEMENT REPORTING", 
 	path: "/", 
-	icon: <AiIcons.AiFillHome />, 
+	icon: "person", 
 	iconClosed: <RiIcons.RiArrowDownSFill />, 
 	iconOpened: <RiIcons.RiArrowUpSFill />, 
 
 	subNav: [ 
 	{ 
-		title: "DASHBOARD", 
+		subtitle: "DASHBOARD", 
 		path: "/dashboard", 
-		icon: <IoIcons.IoIosPaper />, 
 	}, 
 	{ 
-		title: "REPORTS", 
+		subtitle: "REPORTS", 
 		path: "/report", 
-		icon: <IoIcons.IoIosPaper />, 
 	}, 
 	], 
 }, 
 { 
 	title: "CUSTOMER ANALYTICS", 
 	path: "/", 
-	icon: <IoIcons.IoIosPaper />, 
+	icon: "equalizer", 
 	iconClosed: <RiIcons.RiArrowDownSFill />, 
 	iconOpened: <RiIcons.RiArrowUpSFill />, 
 
 	subNav: [ 
 	{ 
-		title: "SPORTS", 
-		path: "/", 
-		icon: <IoIcons.IoIosPaper />, 
-		cName: "sub-nav", 
+		subtitle: "SPORTS", 
+		path: "/",  
 	}, 
 	{ 
-		title: "CUSTOMERS", 
+		subtitle: "CUSTOMERS", 
 		path: "/", 
-		icon: <IoIcons.IoIosPaper />, 
-		cName: "sub-nav", 
 	}, 
 	{ 
-		title: "SEARCH", 
+		subtitle: "SEARCH", 
 		path: "/", 
-		icon: <IoIcons.IoIosPaper />, 
 	}, 
 	{ 
-		title: "INSIGHTS", 
+		subtitle: "INSIGHTS", 
 		path: "/", 
-		icon: <IoIcons.IoIosPaper />, 
 	}, 
 	{ 
-		title: "MVPs", 
+		subtitle: "MVPs", 
 		path: "/", 
-		icon: <IoIcons.IoIosPaper />, 
 	}, 
 	{ 
-		title: "SETTINGS", 
+		subtitle: "SETTINGS", 
 		path: "/", 
-		icon: <IoIcons.IoIosPaper />, 
 	}
 	], 
 }, 
 { 
 	title: "PLAYERS", 
 	path: "/", 
-	icon: <FaIcons.FaPhone />, 
+	icon: "people_outline", 
 	iconClosed: <RiIcons.RiArrowDownSFill />, 
 	iconOpened: <RiIcons.RiArrowUpSFill />, 
 	subNav: [ 
 		{ 
-			title: "Player Search", 
+			subtitle: "Player Search", 
 			path: "/playersearch", 
-			icon: <IoIcons.IoIosPaper />, 
-			cName: "sub-nav", 
 		}, 
 		{ 
-			title: "New Players", 
-			path: "/", 
-			icon: <IoIcons.IoIosPaper />, 
-			cName: "sub-nav", 
+			subtitle: "New Players", 
+			path: "/newplayer", 
 		}, 
 		{ 
-			title: "Player Activity", 
+			subtitle: "Player Activity", 
 			path: "/", 
-			icon: <IoIcons.IoIosPaper />, 
-			cName: "sub-nav", 
 		}, 
 		{ 
-			title: "Player Tagging / Segmentation", 
+			subtitle: "Player Tagging / Segmentation", 
 			path: "/", 
-			icon: <IoIcons.IoIosPaper />, 
-			cName: "sub-nav", 
 		}, 
 	]
 }, 
 { 
 	title: "BONUSING", 
 	path: "/", 
-	icon: <FaIcons.FaEnvelopeOpenText />, 
+	icon: "card_giftcard", 
 
 	iconClosed: <RiIcons.RiArrowDownSFill />, 
 	iconOpened: <RiIcons.RiArrowUpSFill />, 
 
 	subNav: [ 
 	{ 
-		title: "Create Bonus", 
+		subtitle: "Create Bonus", 
 		path: "/events/events1", 
-		icon: <IoIcons.IoIosPaper />, 
 	}, 
 	{ 
-		title: "Bonus Plan Summary", 
+		subtitle: "Bonus Plan Summary", 
 		path: "/events/events2", 
-		icon: <IoIcons.IoIosPaper />, 
 	}, 
 	], 
 }, 
 { 
 	title: "BETTING", 
 	path: "/", 
-	icon: <IoIcons.IoMdHelpCircle />, 
+	icon: "attach_money", 
 	iconClosed: <RiIcons.RiArrowDownSFill />, 
 	iconOpened: <RiIcons.RiArrowUpSFill />, 
 	subNav: [ 
 		{ 
-			title: "Betting History", 
+			subtitle: "Betting History", 
 			path: "/", 
-			icon: <IoIcons.IoIosPaper />, 
 		}, 
 		{ 
-			title: "Betting Ticker", 
+			subtitle: "Betting Ticker", 
 			path: "/", 
-			icon: <IoIcons.IoIosPaper />, 
 		}, 
 		{ 
-			title: "Liability", 
+			subtitle: "Liability", 
 			path: "/", 
-			icon: <IoIcons.IoIosPaper />, 
 			
 		}, 
 		], 
@@ -149,21 +126,19 @@ export const SidebarData = [
 { 
 	title: "ADMIN", 
 	path: "/", 
-	icon: <FaIcons.FaEnvelopeOpenText />, 
+	icon: "manage_accounts", 
 
 	iconClosed: <RiIcons.RiArrowDownSFill />, 
 	iconOpened: <RiIcons.RiArrowUpSFill />, 
 
 	subNav: [ 
 	{ 
-		title: "User Permissions", 
+		subtitle: "User Permissions", 
 		path: "/", 
-		icon: <IoIcons.IoIosPaper />, 
 	}, 
 	{ 
-		title: "Auditing", 
+		subtitle: "Auditing", 
 		path: "/", 
-		icon: <IoIcons.IoIosPaper />, 
 	}, 
 	], 
 }, 
