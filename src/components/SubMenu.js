@@ -104,7 +104,16 @@ reportClick =()=>{
        this.props.dispatch(setSidebarListItems([...report]))
        }
     }
-
+    else if (this.props.newplayerNavStatus == true){
+        const report= ["NEWPLAYERS","REPORTS"];
+        //this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([...report]))
+       if(this.props.playerSearchNavStatus == true){
+        const report= ["PLAYERSEARCH","NEWPLAYERS","REPORTS"];
+        //this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([...report]))
+       }
+     }
     // else if(this.props.newplayerNavStatus == true){
     //     const report= ["NEWPLAYERS","REPORTS"];
     //     this.props.dispatch(setSidebarListItems([...report]))
@@ -141,6 +150,16 @@ playerClick =()=> {
        this.props.dispatch(setSidebarListItems([...report]))
        }
     }
+    else if (this.props.newplayerNavStatus == true){
+        const report= ["NEWPLAYERS","PLAYERSEARCH"];
+        //this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([...report]))
+       if(this.props.reportNavStatus == true){
+        const report= ["NEWPLAYERS","REPORTS","PLAYERSEARCH"];
+        //this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([...report]))
+       }
+     }
     
     // else if(this.props.newplayerNavStatus == true){
     //     const report= ["NEWPLAYERS","PLAYERSEARCH"];
@@ -181,16 +200,16 @@ newPlayerClick =()=> {
        
        }
     }
-    //   else if (this.props.playerSearchNavStatus == true){
-    //     const report= ["PLAYERSEARCH","NEWPLAYERS"];
-    //     //this.setState({listItem: [...report]})
-    //    this.props.dispatch(setSidebarListItems([...report]))
-    //    if(this.props.reportNavStatus == true){
-    //     const report= ["PLAYERSEARCH","REPORTS","NEWPLAYERS"];
-    //     //this.setState({listItem: [...report]})
-    //    this.props.dispatch(setSidebarListItems([...report]))
-    //    }
-    //  }
+      else if (this.props.playerSearchNavStatus == true){
+        const report= ["PLAYERSEARCH","NEWPLAYERS"];
+        //this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([...report]))
+       if(this.props.reportNavStatus == true){
+        const report= ["PLAYERSEARCH","REPORTS","NEWPLAYERS"];
+        //this.setState({listItem: [...report]})
+       this.props.dispatch(setSidebarListItems([...report]))
+       }
+     }
     //  else if(this.props.reportNavStatus && this.props.playerSearchNavStatus){
     //     const report= ["REPORTS","PLAYERSEARCH","NEWPLAYERS"];
     //     //this.setState({listItem: [...report]})
