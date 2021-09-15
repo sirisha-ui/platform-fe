@@ -65,16 +65,16 @@ export const SidebarData = [
 	iconOpened: <RiIcons.RiArrowUpSFill />, 
 	subNav: [ 
 		{ 
-			subtitle: "Player Search", 
+			subtitle: "PLAYERSEARCH", 
 			path: "/playersearch", 
 		}, 
 		{ 
-			subtitle: "New Players", 
+			subtitle: "NEWPLAYERS", 
 			path: "/newplayer", 
 		}, 
 		{ 
 			subtitle: "Player Activity", 
-			path: "/", 
+			path: "/playerActivity", 
 		}, 
 		{ 
 			subtitle: "Player Tagging / Segmentation", 

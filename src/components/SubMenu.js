@@ -60,32 +60,42 @@ constructor(props){
         listItem: []
     }
     this.allCollapsed = this.allCollapsed.bind(this);
-    this.dashboardClick = this.dashboardClick.bind(this);
-    this.reportClick = this.reportClick.bind(this);
-    this.playerSearchClick = this.playerSearchClick.bind(this);
-    this.newPlayerClick = this.newPlayerClick.bind(this);
+    this.subTabsClick = this.subTabsClick.bind(this);
 }
 
-dashboardClick() {
-    //console.log("value",this.props.sidebarTabs)
-    this.props.dispatch(setSidebarTabs({tabName: "DASHBOARD",path: "/dashboard"}))
-}
-reportClick() {
-    this.props.dispatch(setSidebarTabs({tabName: "REPORTS",path: "/report"}))
-}
-playerSearchClick() {
-    this.props.dispatch(setSidebarTabs({tabName: "PLAYERSEARCH",path: "/playersearch"}))
-}
-newPlayerClick(){
-    this.props.dispatch(setSidebarTabs({tabName: "NEWPLAYERS",path: "/newplayer"}))
+// dashboardClick() {
+//     //console.log("value",this.props.sidebarTabs)
+//     this.props.dispatch(setSidebarTabs({tabName: "DASHBOARD",path: "/dashboard"}))
+// }
+subTabsClick(SidebarData,sidebarTabs) {
+    let tabs=[]
+    tabs.push(SidebarData)
+    switch (SidebarData.path) {
+        case '/report' :
+           this.props.dispatch(setSidebarTabs(tabs));
+        //    SidebarData.push(sidebarTabs)
+           break;   
+        case '/playersearch' :
+            this.props.dispatch(setSidebarTabs(tabs));
+            // SidebarData.push(sidebarTabs)
+            break;  
+            case '/newplayer' :
+            this.props.dispatch(setSidebarTabs(tabs));
+            // SidebarData.push(sidebarTabs)
+            break;  
+            case '/playerActivity' :
+            this.props.dispatch(setSidebarTabs(tabs));
+            // SidebarData.push(sidebarTabs)
+            break;   
+    }
+    console.log(sidebarTabs,'data')
+
 }
 
 allCollapsed =(event)=>{
     let ele = event.currentTarget.parentNode.parentNode.parentNode.parentNode;
 
     ReactDOM.findDOMNode(ele).classList.toggle('collapsed');
-    //console.log("parent",ele.target)
-
 // switch (this.state.collapsed){
 //     case true:
 //     this.setState({collapsed:false})
@@ -98,7 +108,8 @@ allCollapsed =(event)=>{
 
 }
 render(){
-   console.log("sidebar",SidebarData)
+   //console.log("sidebar",SidebarData)
+  // console.log(this.state.listItem,'Statedata')
     let dashbordurl = window.location.href.split('/');
 
          if(dashbordurl[dashbordurl.length-1] == "dashboard" && this.state.collapsed !=""){
@@ -154,7 +165,7 @@ return (
                         {item.subNav.map((item,index)=>{
                             return(
                             <div className="CMS-accordion-content">
-                            <div className="CMS-categoryListItem active" ><Link onClick ={()=>this.dashboardClick()} to={item.path}>{item.subtitle}</Link></div>
+                            <div className="CMS-categoryListItem active" ><Link onClick={()=>this.subTabsClick(item,this.props.sidebarTabs)} to={item.path}>{item.subtitle}</Link></div>
                         </div>)
                         })}
                         
@@ -172,12 +183,9 @@ return (
 }
 }
 function mapStateToProps(state) {
-    console.log("tabs",state.sidebar.sidebarTabs)
+    // console.log("tabs",state.sidebar.sidebarTabs)
     return {
         sidebarTabs: state.sidebar.sidebarTabs,
-        // reportNavStatus: state.sidebar.reportNavStatus,
-        // playerSearchNavStatus: state.sidebar.playerSearchNavStatus,
-        // newplayerNavStatus: state.sidebar.newplayerNavStatus
     };
 }
 function mapDispatchToProps(dispatch) {

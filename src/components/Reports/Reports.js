@@ -6,9 +6,32 @@ import { setdisplayValue } from '../Reports/reportSlice';
 class Reports extends Component{
 // function Reports() {
   render(){
+      console.log("llink",this.props.sidebarTabs)
   return (
     <>
+
     <div style ={{width: this.props.displayValue ? '100%':'79%', marginLeft: this.props.displayValue ?'0px':'295px'}}>
+      
+            <div className="CMS-page-tabs">
+                                <ul>
+                                  
+                                    
+                                    {
+                                   this.props.sidebarTabs.length > 0 && this.props.sidebarTabs.map((item,index)=> {return (
+                                    <>   
+                                    <li key={index} >
+                                       
+                                       <span to="#">{item.subtitle} 
+                                          </span>
+                                          <span className="close"><span className="material-icons md-18" data-icon="close" onClick={()=>this.navLinksClosedFunction(item)}></span> </span>
+                                   
+                                    </li>
+                                    </>
+                                    )})}
+                                  
+                                </ul>
+                            </div> 
+
       <div className="CMS-layout-innerContent">
                 <div className="CMS-page CMS-reports">
                     <div className="CMS-page-content">
@@ -160,6 +183,7 @@ function mapStateToProps(state) {
     console.log("state",state)
     return {
         displayValue: state.sidebar.displayValue,
+        sidebarTabs: state.sidebar.sidebarTabs
     };
 }
 function mapDispatchToProps(dispatch) {

@@ -10,9 +10,11 @@ import Dashboard from "./components/Dashboard/dashboard";
  import Reports from './components/Reports/Reports';
  import Home from "./components/Home/Home";
  import PlayerSearch from './components/Players/playersSearch';
+ import PlayerActivity from './components/PlayerActivity/playerActivity';
  import NewPlayer from './components/NewPlayer/newPlayer';
 import MainDashbord  from './components/MainDashbord';
 import { getEvenId} from '../src/components/AppSlice';
+
 class App extends React.Component {
 	constructor(props) {
 		super(props)
@@ -40,6 +42,7 @@ return (
 		<Route path="/report" render={props => <Reports {...props} />}/>
 		<Route path="/playersearch" render={props => <PlayerSearch {...props} />}/>
 		<Route path="/newplayer" render={props => <NewPlayer {...props} />}/>
+		<Route path="/playerActivity" render={props => <PlayerActivity {...props} />}/>
 	</Switch> 
 	</div>
 	</Router> 

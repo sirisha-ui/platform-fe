@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { TiThMenu } from 'react-icons/ti';
 import * as AiIcons from "react-icons/ai"; 
 import { SidebarData } from "./SidebarData"; 
-import { setdisplayValue } from "../components/sidebar/sidebarSlice";
+import { setSidebarTabs,setdisplayValue } from "../components/sidebar/sidebarSlice";
 import SubMenu from "./SubMenu"; 
 import { IconContext } from "react-icons/lib"; 
 import profileIcon from "../assets/images/user.png";
@@ -51,15 +51,35 @@ class Sidebar extends React.Component  {
           sidebar: false,
           display: false
         }
-        this.displayComponent = this.displayComponent.bind(this);
+       // this.displayComponent = this.displayComponent.bind(this);
       }
 // const [sidebar, setSidebar] = useState(false); 
 // const [display, setDisplay] = useState(false);
 
  showSidebar = () => this.setState({sidebar: !this.state.sidebar}); 
- displayComponent =(item) => {
-     console.log("item",item)
- }
+//  displayComponent =(item) => {
+//      console.log("item",item)
+//  }
+ 
+//  displayComponent(SidebarData,sidebarTabs) {
+//     //console.log(sidebarData,'data')
+//     switch (SidebarData.path) {
+//         case '/report' :
+//            this.props.dispatch(setSidebarTabs(sidebarTabs));
+//            //sidebarTabs.push(sidebarData)
+//            this.setState({listItem:[SidebarData]})
+//         case '/playersearch' :
+//             this.props.dispatch(setSidebarTabs(sidebarTabs));
+//            // sidebarTabs.push(sidebarData)
+//            this.setState({listItem:[SidebarData]})
+//             break;   
+          
+
+//     }
+//     console.log(SidebarData.path,'data')
+//     //this.props.dispatch(setSidebarTabs({tabName: "REPORTS",path: "/report"}))
+
+// }
  buttonclick =() => {  
 let count =0; { 
      if(count == 0 && this.state.display == false){
@@ -131,11 +151,11 @@ return (
 ); 
 }
 }
-// function mapStateToProps(state) {
-//     return {
-//         loader: state.sidebar.loader,
-//     };
-// }
+function mapStateToProps(state) {
+    return {
+       sidebarTabs: state.sidebar.sidebarTabs,
+    };
+}
 function mapDispatchToProps(dispatch) {
     return {
         dispatch,

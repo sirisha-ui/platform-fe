@@ -125,44 +125,30 @@ class playerSearch extends React.Component{
        
     }
 
-    // componentDidMount() {
-    //     this.userData = JSON.parse(localStorage.getItem('user'));
-
-    //     if (localStorage.getItem('user')) {
-    //         this.setState({
-    //             username: this.userData.username,
-    //             firstName: this.userData.firstName,
-    //             lastName: this.userData.lastName,
-    //             email: this.userData.email,
-    //             phoneNumber: this.userData.phoneNumber,
-    //             customerId: this.userData.customerId,
-    //             ipAddress: this.userData.ipAddress,
-    //             referCode: this.userData.referCode,
-    //         })
-    //     } else {
-    //         this.setState({
-    //             username: '',
-    //             firstName: '',
-    //             lastName: '',
-    //             email: '',
-    //             phoneNumber: '',
-    //             customerId: '',
-    //             ipAddress: '',
-    //             referCode: '',
-    //         })
-    //     }
-    // }
-
-    // componentWillUpdate(nextProps, nextState) {
-    //     localStorage.setItem('user', JSON.stringify(nextState));
-    // }
-
  render(){
     
 
  return (
  <>
 <div className="CMS-layout-innerContent" style ={{width: this.props.displayValue ? '100%':'80%', marginLeft: this.props.displayValue ?'0px':'290px'}}>
+<div className="CMS-page-tabs">
+                                <ul>
+
+                                    {
+                                   this.props.sidebarTabs.length > 0 && this.props.sidebarTabs.map((item,index)=> {return (
+                                    <>   
+                                    <li key={index} >
+                                       
+                                       <span to="#">{item.subtitle} 
+                                          </span>
+                                          <span className="close"><span className="material-icons md-18" data-icon="close" onClick={()=>this.navLinksClosedFunction(item)}></span> </span>
+                                   
+                                    </li>
+                                    </>
+                                    )})}
+                                  
+                                </ul>
+                            </div> 
 <form>
    <div className="CMS-page CMS-playerSearch">
       <div className="CMS-page-content">
@@ -460,9 +446,11 @@ class playerSearch extends React.Component{
 </>
 )}
 }
+
 function mapStateToProps(state) {
    return {
        displayValue: state.sidebar.displayValue,
+       sidebarTabs: state.sidebar.sidebarTabs
    };
 }
 export default connect(mapStateToProps)(playerSearch);
