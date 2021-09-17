@@ -270,28 +270,7 @@ class playerSearch extends React.Component{
                                  </div>
                               </div>
                            </div>
-                           <div className="col-2">
-                              <div className="CMS-formGroup">
-                                 <div className="CMS-formLabel">Recent Players</div>
-                                 <div className="CMS-dropdown CMS-formControl">
-                                    <div className="CMS-select">
-                                       <select value={this.state.recentPlayer} onChange={this.onChangeRecentPlayer}>
-                                          <option>Select</option>
-                                          <option>Player 1</option>
-                                          <option>Player 2</option>
-                                          <option>Player 3 </option>
-                                          <option>Player 4</option>
-                                          <option>Player 5</option>
-                                          <option>Player 6</option>
-                                          <option>Player 7</option>
-                                          <option>Player 8</option>
-                                          <option>Player 9</option>
-                                          <option>Player 10</option>
-                                       </select>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
+                           
                            <div className="col-2">
                               <div className="CMS-formGroup">
                                  <div className="CMS-formLabel">Customer ID</div>

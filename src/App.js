@@ -12,6 +12,8 @@ import Dashboard from "./components/Dashboard/dashboard";
  import PlayerSearch from './components/Players/playersSearch';
  import PlayerActivity from './components/PlayerActivity/playerActivity';
  import NewPlayer from './components/NewPlayer/newPlayer';
+ import Prematch from './components/Dashboard/prematch';
+ import Inplay from './components/Dashboard/inplay';
 import MainDashbord  from './components/MainDashbord';
 import { getEvenId} from '../src/components/AppSlice';
 
@@ -37,12 +39,15 @@ return (
 	<Sidebar /> 
 	<div>
 	<Switch> 
-	<Route path="/" exact component={Home} /> 
+	<Route path="/" exact component={Dashboard} /> 
 		<Route path="/dashboard" render={props => <Dashboard {...props} />}/> 
 		<Route path="/report" render={props => <Reports {...props} />}/>
 		<Route path="/playersearch" render={props => <PlayerSearch {...props} />}/>
 		<Route path="/newplayer" render={props => <NewPlayer {...props} />}/>
 		<Route path="/playerActivity" render={props => <PlayerActivity {...props} />}/>
+		<Route path="/prematch" render={props => <Prematch {...props} />}/>
+		<Route path="/inplay" render={props => <Inplay {...props} />}/>
+		prematch
 	</Switch> 
 	</div>
 	</Router> 

@@ -9,8 +9,32 @@ import React,{Component} from 'react';
 // // import sidebar from "../sidebar";
 // import { bindActionCreators } from "redux";
 
-
-class Dashboard extends Component{
+const Option = (props) => {
+    return (
+      <div>
+        <components.Option {...props}>
+          <input
+            type="checkbox"
+            checked={props.isSelected}
+            onChange={() => null}
+          />{" "}
+          <label >{props.label}</label>
+        </components.Option>
+      </div>
+    );
+  };
+class Inplay extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+          optionSelected: null
+        };
+      }
+      handleChange = (selected) => {
+        this.setState({
+          optionSelected: selected
+        });
+      };
 // export const Dashboard = () => { 
      render () {
     //     console.log("side",localStorage.getItem("display"))
@@ -32,6 +56,24 @@ class Dashboard extends Component{
                             <div className="CMS-page-filters mb-0">
                                 <div className="CMS-dropdown CMS-brands-dropdown">
                                     <div className="CMS-dropdown-btn">Brand</div>
+
+                                    
+                                    {/* <div className="CMS-checkbox">
+                                    <ReactSelect
+          options={brandOptions}
+          isMulti
+          closeMenuOnSelect={false}
+          hideSelectedOptions={false}
+          components={{
+            Option
+          }}
+          onChange={this.handleChange}
+          allowSelectAll={true}
+          value={this.state.optionSelected}
+        />
+                                        </div> */}
+
+
                                     <div className="CMS-dropdown-menu CMS-form-group">
 
                                         <div className="CMS-checkbox">
@@ -67,13 +109,13 @@ class Dashboard extends Component{
                                     <ul>
                                         <li className="active"><Link to ="/dashboard">All Bets</Link></li>
                                         <li><Link to ="/prematch">Pre-Match</Link></li>
-                                        <li><Link to ="/inplay">In-Play</Link></li>
+                                        <li><a href="/inplay">In-Play</a></li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div className="CMS-tabs-content">
-                                <div className="CMS-tab-panel active" >
+                                <div className="CMS-tab-panel active" id="CMS-allBets">
                                     <div className="CMS-tabContent">
                                         <div className="CMS-box">
                                             <div className="CMS-table CMS-table-triped">
@@ -894,4 +936,4 @@ function mapStateToProps(state) {
 //         }, dispatch)
 //     }
 // }
-export default connect(mapStateToProps)(Dashboard);
+export default connect(mapStateToProps)(Inplay);
