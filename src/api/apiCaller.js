@@ -5,7 +5,8 @@ export function apiCaller(url, method, params) {
     options.method = method;
     var headers= {
          'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'X-TenantID': 'tenant1',
     }
     var query = '';
     if (params && Object.keys(params).length > 0) {
@@ -24,12 +25,17 @@ export function apiCaller(url, method, params) {
                 .join('&');
         }
     }
+
     return new Promise((resolve, reject) => {
         if (method === 'POST') {
+            options.headers = headers;
+            console.log('headers', options.headers)
             fetch(url, options)
                 .then(response => {
+                    console.log('url')
                     if (response.status === 200) {
                         response.json().then(json => {
+                           
                             resolve(json);
                         })
                     }
@@ -45,11 +51,16 @@ export function apiCaller(url, method, params) {
                 .catch(handleError)
         }
         else {
-            fetch(url + query)
+            console.log('url,query', url,query)
+            options.headers = headers;
+            console.log('urlssd',options.headers)
+            fetch(url + query,options)
                 .then(response => {
+                    console.log('url')
                     if (response.status === 200) {
                         response.json().then(json => {
-                            resolve(json);
+                            console.log("hh",json)
+                             return resolve(json);
                         })
                     }
                     // if (response.status === 500) {

@@ -2452,10 +2452,10 @@ input[type="submit"]:hover {
 .CMS-dropdown {
   position: relative; }
 
-.CMS-dropdown > .CMS-dropdown-menu {
+/* .CMS-dropdown > .CMS-dropdown-menu {
   display: none;
   position: absolute;
-  z-index: 999; }
+  z-index: 999; } */
 
 .CMS-dropdown.active > .CMS-dropdown-menu {
   display: block; }

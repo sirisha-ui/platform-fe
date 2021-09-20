@@ -6,6 +6,9 @@ import React,{Component} from 'react';
  import { setSidebarTabs,setdisplayValue } from "../sidebar/sidebarSlice";
  import { brandOptions } from './data';
  import { Link } from "react-router-dom"; 
+ import HiLoGraph from './piechart';
+ import AccessibilityLineChart from './accessibilityLineChart';
+ import BasicLineChart from './basiclinechart';
 // // import sidebar from "../sidebar";
 // import { bindActionCreators } from "redux";
 
@@ -13,6 +16,7 @@ import React,{Component} from 'react';
 class Dashboard extends Component{
 // export const Dashboard = () => { 
      render () {
+         console.log("name",brandOptions)
     //     console.log("side",localStorage.getItem("display"))
         
     //     let displayValue =localStorage.getItem("display")
@@ -30,37 +34,19 @@ class Dashboard extends Component{
                     <div className="CMS-page-content">
                         <div className="CMS-page-content__left">
                             <div className="CMS-page-filters mb-0">
-                                <div className="CMS-dropdown CMS-brands-dropdown">
-                                    <div className="CMS-dropdown-btn">Brand</div>
-                                    <div className="CMS-dropdown-menu CMS-form-group">
-
-                                        <div className="CMS-checkbox">
-                                            <input id="Kenya" type="checkbox" value="value2"/>
-                                            <label for="Kenya"></label>
-                                            <span className="SB-checkboxLabel">Ken</span>
-                                        </div>
-                                        <div className="CMS-checkbox">
-                                            <input id="UG" type="checkbox" value="value2"/>
-                                            <label for="UG"></label>
-                                            <span className="SB-checkboxLabel">UG</span>
-                                        </div>
-                                        <div className="CMS-checkbox">
-                                            <input id="NG" type="checkbox" value="value2"/>
-                                            <label for="NG"></label>
-                                            <span className="SB-checkboxLabel">NG</span>
-                                        </div>
-                                        <div className="CMS-checkbox">
-                                            <input id="ZM" type="checkbox" value="value2"/>
-                                            <label for="ZM"></label>
-                                            <span className="SB-checkboxLabel">ZM</span>
-                                        </div>
-                                        <div className="CMS-checkbox">
-                                            <input id="TZ" type="checkbox" value="value2"/>
-                                            <label for="TZ"></label>
-                                            <span className="SB-checkboxLabel">TZ</span>
-                                        </div>
-
-                                    </div>
+                                    <div className="CMS-select ">
+                                    
+                                    <select>
+                                       {brandOptions.map((item,index)=>{
+                                           return(
+                                          
+                                           <option>{item.name}
+                                           </option>
+                                       
+                                           )
+                                        })}
+                                        </select>
+                                    
                                 </div>
 
                                 <div className="CMS-filterBtnList flex-right">
@@ -429,7 +415,8 @@ class Dashboard extends Component{
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col">
+                                <div className="col"> <BasicLineChart /></div>
+                                {/* <div className="col">
                                     <div className="CMS-box CMS-graph">
                                         <div className="CMS-box__header">
                                             <div className="CMS-box__header-left">
@@ -460,12 +447,12 @@ class Dashboard extends Component{
                                             </div>
                                         </div>
                                         <div className="CMS-graph-content">
-                                             {/* <img src="images/graphs/small-graph.JPG" alt="Graph">  */}
+                                              <img src="images/graphs/small-graph.JPG" alt="Graph"> 
                                             <div id="revenueBy-StakeFactor"></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="col">
+                                </div> */}
+                                {/* <div className="col">
                                     <div className="CMS-box CMS-graph">
                                         <div className="CMS-box__header">
                                             <div className="CMS-box__header-left">
@@ -495,12 +482,14 @@ class Dashboard extends Component{
                                             </div>
                                         </div>
                                         <div className="CMS-graph-content">
-                                            {/* <img src="images/graphs/small-graph.JPG" alt="Graph"/> */}
+                                             <img src="images/graphs/small-graph.JPG" alt="Graph"/>
                                             <div id="revenueBy-brand"></div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                </div> */}
+                                 <div className="col"> <HiLoGraph /></div>
+                               
+                                  </div>
                             <div className="row">
                                 <div className="col">
                                     <div className="CMS-box CMS-graph">
@@ -573,7 +562,8 @@ class Dashboard extends Component{
                                     </div>
                                 </div>
                             </div>
-                            <div className="row">
+                           
+                            {/* <div className="row">
                                 <div className="col">
                                     <div className="CMS-box CMS-graph">
                                         <div className="CMS-box__header">
@@ -606,11 +596,12 @@ class Dashboard extends Component{
                                         </div>
                                         <div className="CMS-graph-content">
                                             <div id="cashRevenue-sport"></div>
-                                             {/* <img src="images/graphs/cash-stakes.JPG" alt="Graph" style="width: 97%;"/>  */}
+                                              <img src="images/graphs/cash-stakes.JPG" alt="Graph" style="width: 97%;"/>  
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
+                             <AccessibilityLineChart />
                         </div>
                         <div className="CMS-page-content__right">
                             <div className="CMS-box">
@@ -876,6 +867,9 @@ class Dashboard extends Component{
                 </div>
             </div>
 	
+    
+
+
     
     </div>
      </>

@@ -1,13 +1,15 @@
+import React from "react"; 
+
 export const brandOptions = [
-    { value: "ocean1", label: "Ocean" },
-    { value: "blue", label: "Blue" },
-    { value: "purple", label: "Purple" },
-    { value: "red", label: "Red" },
-    { value: "orange", label: "Orange" },
-    { value: "yellow", label: "Yellow" },
-    { value: "green", label: "Green" },
-    { value: "forest", label: "Forest" },
-    { value: "slate", label: "Slate" },
-    { value: "silver", label: "Silver" }
+    { name: "Brand"},
+    { name: "blue" },
+    { name: "purple" },
+    { name: "red" },
+    { name: "orange"},
+    { name: "yellow" },
+    { name: "green"},
+    { name: "forest" },
+    { name: "slate"},
+    { name: "silver"}
   ];
   

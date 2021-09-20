@@ -2,12 +2,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PlayerSeachTable from '../playerTable/playerSearchTable';
-
+import { playerapi } from '../../sharedfiles/EndpointConfig'
+import { getplayerList,getPlayerSearchList } from '../playerTable/playerSearchTableSlice';
 class playerSearch extends React.Component{
     constructor(props){
         
         super(props);
-        this.state ={
+        this.state = {
             username: '',
             firstName: '',
             lastName: '',
@@ -98,7 +99,11 @@ class playerSearch extends React.Component{
         }
 
         onSubmit(e) {
+
             e.preventDefault()
+           // this.props.dispatch(getplayerList(this.props.playerData))
+            //this.props.dispatch(getPlayerSearchList)(this.props)
+            console.log('searchdata',this.props)
             if(this.state.username != '' || this.state.firstName != '' || this.state.lastName != '' || this.state.email != '' || this.state.customerId != ''
             || this.state.ipAddress != '' || this.state.phoneNumber != '' || this.state.country != '' ||  this.state.datepicker != '' || this.state.referCode != '' ||
             this.state.cgr != '' || this.state.AccountSatus != ''){
@@ -120,10 +125,10 @@ class playerSearch extends React.Component{
                   AccountSatus: this.state.AccountSatus,
       
                   }
-              })
+             })
             }
-       
-    }
+         }
+    
 
  render(){
     
