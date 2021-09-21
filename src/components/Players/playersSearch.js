@@ -182,7 +182,7 @@ class playerSearch extends React.Component{
                         <div className="row">
                            <div className="col-2">
                               <div className="CMS-formGroup">
-                                 <div className="CMS-formLabel">Username</div>
+                                 <div className="CMS-formLabel">Username *</div>
                                  <div className="CMS-formControl">
                                     {/* <input type="" id="" name="" placeholder="Username"/> */}
                                     <input type="text" placeholder="Username" value={this.state.username} onChange={this.onChangeUserName} />
@@ -191,7 +191,7 @@ class playerSearch extends React.Component{
                            </div>
                            <div className="col-2">
                               <div className="CMS-formGroup">
-                                 <div className="CMS-formLabel">First Name</div>
+                                 <div className="CMS-formLabel">First Name *</div>
                                  <div className="CMS-formControl">
                                     {/* <input type="" id="" name="" placeholder="First Name"/> */}
                                     <input type="text" placeholder="First Name" value={this.state.firstName} onChange={this.onChangeFirstName} />
@@ -201,7 +201,7 @@ class playerSearch extends React.Component{
                            </div>
                            <div className="col-2">
                               <div className="CMS-formGroup">
-                                 <div className="CMS-formLabel">Last Name</div>
+                                 <div className="CMS-formLabel">Last Name *</div>
                                  <div className="CMS-formControl">
                                     {/* <input type="" id="" name="" placeholder="Last Name"/> */}
                                     <input type="text" placeholder="Last Name" value={this.state.lastName} onChange={this.onChangeLastName} />
@@ -233,7 +233,7 @@ class playerSearch extends React.Component{
                            </div>
                            <div className="col-2">
                               <div className="CMS-formGroup">
-                                 <div className="CMS-formLabel">Email</div>
+                                 <div className="CMS-formLabel">Email *</div>
                                  <div className="CMS-formControl">
                                     {/* <input type="" id="" name="" placeholder="email"/> */}
                                     <input type="text" placeholder="email" value={this.state.email} onChange={this.onChangeEmail} />
@@ -244,12 +244,10 @@ class playerSearch extends React.Component{
                            <div className="col-2">
                               <div className="CMS-formGroup">
                                  <div className="CMS-formLabel">Brand</div>
-                                 <div className="CMS-dropdown CMS-brands-dropdown CMS-formControl">
-                                    <div className="CMS-dropdown-btn">Select</div>
-                                    <div className="CMS-dropdown-menu CMS-form-group">
+                                 <div className="CMS-dropdown CMS-formControl">
                                     <div className="CMS-select">
-                                    <select id="currency" name="File" value={this.state.brand} onChange={this.onChangeBrand}>
-                                          <option value="">Select</option>
+                                       <select value={this.state.brand} onChange={this.onChangeBrand}>
+                                       <option value="">Select</option>
                                           <option value="">Ken</option>
                                           <option value="">UG</option>
                                           <option value="">NG</option>
@@ -258,36 +256,12 @@ class playerSearch extends React.Component{
                                           <option value="">NGN</option>
                                           <option value="">TZ</option>
                                        </select>
-                                        </div>
-                                       {/* <div className="CMS-checkbox">
-                                          <input id="Kenya" type="checkbox" value="value2"/>
-                                          <label for="Kenya"></label>
-                                          <span className="SB-checkboxLabel">Ken</span>
-                                       </div>
-                                       <div className="CMS-checkbox">
-                                          <input id="UG" type="checkbox" value="value2"/>
-                                          <label for="UG"></label>
-                                          <span className="SB-checkboxLabel">UG</span>
-                                       </div>
-                                       <div className="CMS-checkbox">
-                                          <input id="NG" type="checkbox" value="value2"/>
-                                          <label for="NG"></label>
-                                          <span className="SB-checkboxLabel">NG</span>
-                                       </div>
-                                       <div className="CMS-checkbox">
-                                          <input id="ZM" type="checkbox" value="value2"/>
-                                          <label for="ZM"></label>
-                                          <span className="SB-checkboxLabel">ZM</span>
-                                       </div>
-                                       <div className="CMS-checkbox">
-                                          <input id="TZ" type="checkbox" value="value2"/>
-                                          <label for="TZ"></label>
-                                          <span className="SB-checkboxLabel">TZ</span>
-                                       </div> */}
                                     </div>
                                  </div>
                               </div>
                            </div>
+                           
+                           
                            <div className="col-2">
                               <div className="CMS-formGroup">
                                  <div className="CMS-formLabel">Date of Birth</div>
@@ -302,7 +276,7 @@ class playerSearch extends React.Component{
                            
                            <div className="col-2">
                               <div className="CMS-formGroup">
-                                 <div className="CMS-formLabel">Customer ID</div>
+                                 <div className="CMS-formLabel">Customer ID *</div>
                                  <div className="CMS-formControl">
                                     {/* <input type="" id="" name="" placeholder="Customer ID"/> */}
                                     <input type="number" placeholder="Customer ID" value={this.state.customerId} onChange={this.onChangeCustomerId} />
@@ -312,7 +286,7 @@ class playerSearch extends React.Component{
                            </div>
                            <div className="col-2">
                               <div className="CMS-formGroup">
-                                 <div className="CMS-formLabel">IP Address</div>
+                                 <div className="CMS-formLabel">IP Address *</div>
                                  <div className="CMS-formControl">
                                     {/* <input type="" id="" name="" placeholder="IP Address"/> */}
                                     <input type="text" placeholder="IP Address" value={this.state.ipAddress} onChange={this.onChangeIpAddress} />
@@ -351,7 +325,7 @@ class playerSearch extends React.Component{
                            </div>
                            <div className="col-2">
                               <div className="CMS-formGroup">
-                                 <div className="CMS-formLabel">Phone Number</div>
+                                 <div className="CMS-formLabel">Phone Number *</div>
                                  <div className="CMS-formControl">
                                     {/* <input type="" id="" name="" placeholder="Phone Number"/> */}
                                     <input type="text" placeholder="Phone Number" value={this.state.phoneNumber} onChange={this.onChangePhoneNumber} />
