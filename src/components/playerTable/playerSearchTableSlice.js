@@ -34,8 +34,12 @@ export const getplayerList = (props) => dispatch => {
     //  dispatch(setEventList([]))
      // dispatch(setCompetitionsList([]))
      console.log("params",params)
-      //var url = playerapi.getPlayerSearch;
-      var url = `${playerapi.getPlayerSearch}param=%7B%22user_name%22%3A%20%22palyer1%22%7D`;
+      // //var url = playerapi.getPlayerSearch;
+       var url = `${playerapi.getPlayerSearch}param=%7B%22userName%22%3A%20%22edellabbate6%22%7D`;
+      //var data ={"user_name": params.username}
+      //var param;
+      //var url = `${playerapi.getPlayerSearch}`'
+     // https://dev.platform-ups.sportsit-tech.net/player/search?param="user_name":"palyer1"
       apiCaller(url,'GET',{})
       .then((response)=>{
         console.log("dffsfd",response)
