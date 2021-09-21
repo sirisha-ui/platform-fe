@@ -415,7 +415,8 @@ class Dashboard extends Component{
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col"> <BasicLineChart /></div>
+                                <div className="col"> <BasicLineChart /><br/></div>
+                                
                                 {/* <div className="col">
                                     <div className="CMS-box CMS-graph">
                                         <div className="CMS-box__header">
@@ -486,11 +487,12 @@ class Dashboard extends Component{
                                             <div id="revenueBy-brand"></div>
                                         </div>
                                     </div>
-                                </div> */}
-                                 <div className="col"> <HiLoGraph /></div>
+                                </div> */}<br/>
+                                 <div className="col">
+                                 <div className="col"> <HiLoGraph /></div></div>
                                
                                   </div>
-                            <div className="row">
+                            {/* <div className="row">
                                 <div className="col">
                                     <div className="CMS-box CMS-graph">
                                         <div className="CMS-box__header">
@@ -523,7 +525,7 @@ class Dashboard extends Component{
                                         <div className="CMS-graph-content">
                                             <div id="bet-count"></div>
                                              {/* <img src="images/graphs/small-graph.JPG" alt="Graph/">  */}
-                                        </div>
+                                        {/* </div>
                                     </div>
                                 </div>
                                 <div className="col">
@@ -557,12 +559,12 @@ class Dashboard extends Component{
                                         </div>
                                         <div className="CMS-graph-content">
                                             <div id="cashStakes-revenue"></div>
-                                             {/* <img src="images/graphs/small-graph.JPG" alt="Graph"/>  */}
+                                              <img src="images/graphs/small-graph.JPG" alt="Graph"/> 
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                           
+                            </div> */}
+                            
                             {/* <div className="row">
                                 <div className="col">
                                     <div className="CMS-box CMS-graph">
@@ -601,6 +603,7 @@ class Dashboard extends Component{
                                     </div>
                                 </div>
                             </div> */}
+                            <br/>
                              <AccessibilityLineChart />
                         </div>
                         <div className="CMS-page-content__right">
