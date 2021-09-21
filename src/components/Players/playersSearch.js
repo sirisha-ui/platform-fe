@@ -37,9 +37,11 @@ class playerSearch extends React.Component{
         this.onChangeCountry = this.onChangeCountry.bind(this);
         this.onChangeIpAddress = this.onChangeIpAddress.bind(this);
         this.onChangeReferCode = this.onChangeReferCode.bind(this);
-        this.onChangeRecentPlayer = this.onChangeRecentPlayer.bind(this);
-        this.onChangeDatepicker = this.onChangeDatepicker.bind(this);
-        
+        //this.onChangeRecentPlayer = this.onChangeRecentPlayer.bind(this);
+        this.onChangeDateOfBirth = this.onChangeDateOfBirth.bind(this);
+        this.onChangeCurrency = this.onChangeCurrency.bind(this);
+        this.onChangeBrand = this.onChangeBrand.bind(this);
+        this.onChangeAccountStatus = this.onChangeAccountStatus.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
             
             
@@ -60,7 +62,9 @@ class playerSearch extends React.Component{
          deposits: '',
          cgr: '',
          AccountSatus: '',
-         recentPlayer: '', })
+         recentPlayer: '',
+         dateOfbirth: '',
+         currency: ''})
          this.setState({data:[]})
         }
         onChangeUserName(e) {
@@ -85,7 +89,7 @@ class playerSearch extends React.Component{
         onChangeCountry(e){
             this.setState({country: e.target.value })
         }
-        onChangeDatepicker(e){
+        onChangeDateOfBirth(e){
             this.setState({datepicker: e.target.value})
         }
         onChangeIpAddress(e){
@@ -94,10 +98,18 @@ class playerSearch extends React.Component{
         onChangeReferCode(e){
             this.setState({ referCode: e.target.value })
         }
-        onChangeRecentPlayer(e){
-            this.setState({recentPlayer: e.target.value})
-        }
-
+      //   onChangeRecentPlayer(e){
+      //       this.setState({recentPlayer: e.target.value})
+      //   }
+      onChangeCurrency(e) {
+         this.setState({ currency: e.target.value })
+      }
+      onChangeBrand(e){
+         this.setState({brand: e.target.value})
+      }
+      onChangeAccountStatus(e){
+         this.setState({accountSatus: e.target.value})
+      }
         onSubmit(e) {
 
             e.preventDefault()
@@ -131,7 +143,7 @@ class playerSearch extends React.Component{
     
 
  render(){
-    
+    console.log("phone",this.state.phoneNumber)
 
  return (
  <>
@@ -235,7 +247,19 @@ class playerSearch extends React.Component{
                                  <div className="CMS-dropdown CMS-brands-dropdown CMS-formControl">
                                     <div className="CMS-dropdown-btn">Select</div>
                                     <div className="CMS-dropdown-menu CMS-form-group">
-                                       <div className="CMS-checkbox">
+                                    <div className="CMS-select">
+                                    <select id="currency" name="File" value={this.state.brand} onChange={this.onChangeBrand}>
+                                          <option value="">Select</option>
+                                          <option value="">Ken</option>
+                                          <option value="">UG</option>
+                                          <option value="">NG</option>
+                                          <option value="">ZM</option>
+                                          <option value="">UGX</option>
+                                          <option value="">NGN</option>
+                                          <option value="">TZ</option>
+                                       </select>
+                                        </div>
+                                       {/* <div className="CMS-checkbox">
                                           <input id="Kenya" type="checkbox" value="value2"/>
                                           <label for="Kenya"></label>
                                           <span className="SB-checkboxLabel">Ken</span>
@@ -259,7 +283,7 @@ class playerSearch extends React.Component{
                                           <input id="TZ" type="checkbox" value="value2"/>
                                           <label for="TZ"></label>
                                           <span className="SB-checkboxLabel">TZ</span>
-                                       </div>
+                                       </div> */}
                                     </div>
                                  </div>
                               </div>
@@ -269,7 +293,7 @@ class playerSearch extends React.Component{
                                  <div className="CMS-formLabel">Date of Birth</div>
                                  <div className="CMS-formControl-group">
                                     <div className="CMS-formControl">
-                                       <input type="number" className="CMS-datepicker" value={this.state.datepicker} onChange={this.onChangeDatepicker} name="Dateto" placeholder="08/31/2021"/>
+                                       <input type="number" className="CMS-datepicker" value={this.state.datepicker} onChange={this.onChangeDateOfBirth} name="Dateto" placeholder="08/31/2021"/>
                                     </div>
                                     <div className="CMS-formAddon"><span className="material-icons md-18" data-icon="calendar_today"></span></div>
                                  </div>
@@ -310,7 +334,7 @@ class playerSearch extends React.Component{
                                  <div className="CMS-formLabel">Currency</div>
                                  <div className="CMS-dropdown CMS-formControl">
                                     <div className="CMS-select">
-                                       <select id="currency" name="File">
+                                       <select id="currency" name="File" value={this.state.currency} onChange={this.onChangeCurrency}>
                                           <option value="">Select</option>
                                           <option value="">EUR</option>
                                           <option value="">USD</option>
@@ -330,7 +354,7 @@ class playerSearch extends React.Component{
                                  <div className="CMS-formLabel">Phone Number</div>
                                  <div className="CMS-formControl">
                                     {/* <input type="" id="" name="" placeholder="Phone Number"/> */}
-                                    <input type="number" placeholder="Phone Number" value={this.state.phoneNumber} onChange={this.onChangePhoneNumber} />
+                                    <input type="text" placeholder="Phone Number" value={this.state.phoneNumber} onChange={this.onChangePhoneNumber} />
                                 
                                  </div>
                               </div>
@@ -340,7 +364,7 @@ class playerSearch extends React.Component{
                                  <div className="CMS-formLabel">Account Status</div>
                                  <div className="CMS-dropdown CMS-formControl">
                                     <div className="CMS-select">
-                                       <select>
+                                       <select value={this.state.accountSatus} onChange={this.onChangeAccountStatus}>
                                           <option>Select</option>
                                           <option>Active</option>
                                           <option>Lapsed 14</option>
@@ -360,7 +384,7 @@ class playerSearch extends React.Component{
                                  <div className="CMS-formLabel">Registration Date</div>
                                  <div className="CMS-formControl-group">
                                     <div className="CMS-formControl">
-                                       <input type="text" className="CMS-datepicker" name="Dateto" placeholder="08/31/2021"/>
+                                       <input type="text" className="CMS-datepicker" name="Dateto" placeholder="08/31/2021" />
                                     </div>
                                     <div className="CMS-formAddon"><span className="material-icons md-18" data-icon="calendar_today"></span></div>
                                  </div>

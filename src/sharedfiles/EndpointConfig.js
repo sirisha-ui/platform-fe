@@ -49,7 +49,7 @@ else if(window.location.hostname.includes('uat')){
 
 export const playerapi={
 	"getPlayer":endPoint+"player",
-     "getPlayerSearch": endPoint+"player/search?",
+     "getPlayerSearch": endPoint+"player/search",
 
 	
 }

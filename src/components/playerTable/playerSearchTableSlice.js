@@ -35,12 +35,31 @@ export const getplayerList = (props) => dispatch => {
      // dispatch(setCompetitionsList([]))
      console.log("params",params)
       // //var url = playerapi.getPlayerSearch;
-       var url = `${playerapi.getPlayerSearch}param=%7B%22userName%22%3A%20%22edellabbate6%22%7D`;
+      //  var url = `${playerapi.getPlayerSearch}param=%7B%22userName%22%3A%20%22edellabbate6%22%7D`;
+       //var url = `${playerapi.getPlayerSearch}search=%7B%22userName%22%3A%22edellabbate6%22%7D`;
+       var obj={
+        // "accountStatus": params.accountStatus,
+        // "brand": params.brand,
+        // "country": params.country,
+        // "currency": params.currency,
+        // "dob": params.datepicker,
+        // "referralCode": params.referCode,
+        // "registrationDate": params.datepicker,
+        // 
+        "userName": params.username,
+        "firstName": params.firstName,
+         "lastName": params.lastName,
+         "email": params.email,
+         "userId": params.customerId,
+         "ipaddress": params.ipAddress,
+         "phone": params.phoneNumber,
+      }
+       var url = `${playerapi.getPlayerSearch}`;
       //var data ={"user_name": params.username}
       //var param;
       //var url = `${playerapi.getPlayerSearch}`'
      // https://dev.platform-ups.sportsit-tech.net/player/search?param="user_name":"palyer1"
-      apiCaller(url,'GET',{})
+      apiCaller(url,'POST',obj)
       .then((response)=>{
         console.log("dffsfd",response)
         if(response !==null && response){
