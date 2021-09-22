@@ -6,7 +6,7 @@ var updateOddsEndpoint="";
 var devEndPoint = "https://dev.platform-ups.sportsit-tech.net:443/";//"http://localhost:50002/";
 
 
-var qaEndPoint = "https://qa.hkjcstatsapi.bettorlogic.com/";
+var qaEndPoint = "https://qa.hkjcstatsapi.bettorlogic.com";
 
 
 var uatEndPoint = "https://uat-hkjc.beapi.footylogic.com/"
@@ -19,7 +19,7 @@ var testingv2="https://testingv2-beapi.footylogic.com/"
 
 //var testEndPoint = "https://test.hkjcstatsapi.bettorlogic.com/"
 if(window.location.hostname.includes('qa')){
-	endPoint = qaEndPoint;
+	endPoint = devEndPoint;
 } 
 // else if(window.location.hostname.includes('testing.footylogic.com')){
 // 	endPoint = testEndPoint;
