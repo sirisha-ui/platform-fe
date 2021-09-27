@@ -15,7 +15,7 @@
         .cms-icon_hamburger{
             padding: 20px;
             margin-right: 5px;
-            font-size: 24px;
+            font-size: 30px;
             cursor: pointer;
             color: $brand-primaryColor;
         }
@@ -68,10 +68,15 @@
                 content: "search";
             }
         }
+        
         .CMS-formControl{
             padding: 0 8px 0 50px;
             min-height: 44px;
             max-height: 44px;
         }
     } 
+}
+.CMS-greyOut{
+    color: #ccc !important;
+
 }

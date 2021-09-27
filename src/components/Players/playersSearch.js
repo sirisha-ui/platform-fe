@@ -3,12 +3,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PlayerSeachTable from '../playerTable/playerSearchTable';
 import { playerapi } from '../../sharedfiles/EndpointConfig'
-import { getplayerList,getPlayerSearchList } from '../playerTable/playerSearchTableSlice';
+import { getplayerList,getPlayerSearchList,setPaginationSecondValue } from '../playerTable/playerSearchTableSlice';
 class playerSearch extends React.Component{
     constructor(props){
         
         super(props);
         this.state = {
+         pageNumber:[],
+         itemsperpage: '',
             username: '',
             firstName: '',
             lastName: '',
@@ -42,6 +44,7 @@ class playerSearch extends React.Component{
         this.onChangeCurrency = this.onChangeCurrency.bind(this);
         this.onChangeBrand = this.onChangeBrand.bind(this);
         this.onChangeAccountStatus = this.onChangeAccountStatus.bind(this);
+        this.onChangeItemperpage = this.onChangeItemperpage.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
             
             
@@ -110,15 +113,20 @@ class playerSearch extends React.Component{
       onChangeAccountStatus(e){
          this.setState({accountSatus: e.target.value})
       }
+      onChangeItemperpage(e){
+         this.setState({itemsperpage: e.target.value})
+         this.props.dispatch(setPaginationSecondValue(e.target.value))
+         this.props.dispatch(getPlayerSearchList(this.props.paginationFirstValue,e.target.value,this.state.data))
+          
+      }
         onSubmit(e) {
-
             e.preventDefault()
-           // this.props.dispatch(getplayerList(this.props.playerData))
+            // e.target.resetButton();
             //this.props.dispatch(getPlayerSearchList)(this.props)
-            console.log('searchdata',this.props)
-            if(this.state.username != '' || this.state.firstName != '' || this.state.lastName != '' || this.state.email != '' || this.state.customerId != ''
-            || this.state.ipAddress != '' || this.state.phoneNumber != '' || this.state.country != '' ||  this.state.datepicker != '' || this.state.referCode != '' ||
-            this.state.cgr != '' || this.state.AccountSatus != ''){
+            debugger
+            // if(this.state.username != '' || this.state.firstName != '' || this.state.lastName != '' || this.state.email != '' || this.state.customerId != ''
+            // || this.state.ipAddress != '' || this.state.phoneNumber != '' || this.state.country != '' ||  this.state.datepicker != '' || this.state.referCode != '' ||
+            // this.state.cgr != '' || this.state.AccountSatus != ''){
                this.setState({data:{ username: this.state.username,
                   firstName: this.state.firstName,
                   lastName: this.state.lastName,
@@ -134,17 +142,35 @@ class playerSearch extends React.Component{
                   stackFactor: this.state.stackFactor,
                   deposits: this.state.deposits,
                   cgr: this.state.cgr,
-                  AccountSatus: this.state.AccountSatus,
-      
+                  AccountSatus: this.state.AccountSatus
                   }
              })
+    //var  playerserachdata =[];
+   var playerserachdata=  { username: this.state.username,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            customerId: this.state.customerId,
+            ipAddress: this.state.ipAddress,
+            phoneNumber: this.state.phoneNumber,
+            country: this.state.country,
+            datepicker: this.state.datepicker,
+            referCode: this.state.referCode,
+            brand: this.state.brand,
+            playersignment: this.state.playersignment,
+            stackFactor: this.state.stackFactor,
+            deposits: this.state.deposits,
+            cgr: this.state.cgr,
+            AccountSatus: this.state.AccountSatus,
+
             }
+            this.props.dispatch(getPlayerSearchList(this.props.paginationFirstValue,this.props.paginationSecondValue,playerserachdata))
+            
+            //}
          }
     
 
  render(){
-    console.log("phone",this.state.phoneNumber)
-
  return (
  <>
 <div className="CMS-layout-innerContent" style ={{width: this.props.displayValue ? '100%':'80%', marginLeft: this.props.displayValue ?'0px':'290px'}}>
@@ -171,6 +197,13 @@ class playerSearch extends React.Component{
       <div className="CMS-page-content">
          <div className="CMS-full-page-content">
             <div className="CMS-tabs-content">
+               
+            <div class="CMS-tabs-content">
+            <div class="CMS-msgBox CMS-noRecords">
+                                    <div class="CMS-msgBox-container">
+                                        {this.props.errorMessage}
+                                    </div>
+                                </div>
                <div className="CMS-tab-panel active" id="CMS-betting">
                   {/* 
                   <div className="CMS-box__header">
@@ -179,11 +212,16 @@ class playerSearch extends React.Component{
                   */}
                   <div className="CMS-tabContent">
                      <div className="CMS-box CMS-box-content" >
+                     <div class="CMS-msgBox CMS-error">
+                                                <div class="CMS-msgBox-container">
+                                                    Atleast one field required for your search
+                                                </div>
+                                            </div>
                         <div className="row">
                            <div className="col-2">
                               <div className="CMS-formGroup">
                                  <div className="CMS-formLabel">Username *</div>
-                                 <div className="CMS-formControl">
+                                 <div class="CMS-formControl CMS-errorField">
                                     {/* <input type="" id="" name="" placeholder="Username"/> */}
                                     <input type="text" placeholder="Username" value={this.state.username} onChange={this.onChangeUserName} />
                                  </div>
@@ -241,26 +279,26 @@ class playerSearch extends React.Component{
                                  </div>
                               </div>
                            </div>
+                           
                            <div className="col-2">
                               <div className="CMS-formGroup">
                                  <div className="CMS-formLabel">Brand</div>
                                  <div className="CMS-dropdown CMS-formControl">
                                     <div className="CMS-select">
                                        <select value={this.state.brand} onChange={this.onChangeBrand}>
-                                       <option value="">Select</option>
-                                          <option value="">Ken</option>
-                                          <option value="">UG</option>
-                                          <option value="">NG</option>
-                                          <option value="">ZM</option>
-                                          <option value="">UGX</option>
-                                          <option value="">NGN</option>
-                                          <option value="">TZ</option>
+                                       <option>Select</option>
+                                          <option>Ken</option>
+                                          <option>UG</option>
+                                          <option>NG</option>
+                                          <option>ZM</option>
+                                          <option>UGX</option>
+                                          <option>NGN</option>
+                                          <option>TZ</option>
                                        </select>
                                     </div>
                                  </div>
                               </div>
                            </div>
-                           
                            
                            <div className="col-2">
                               <div className="CMS-formGroup">
@@ -309,15 +347,15 @@ class playerSearch extends React.Component{
                                  <div className="CMS-dropdown CMS-formControl">
                                     <div className="CMS-select">
                                        <select id="currency" name="File" value={this.state.currency} onChange={this.onChangeCurrency}>
-                                          <option value="">Select</option>
-                                          <option value="">EUR</option>
-                                          <option value="">USD</option>
-                                          <option value="">GBP</option>
-                                          <option value="">KSH</option>
-                                          <option value="">UGX</option>
-                                          <option value="">NGN</option>
-                                          <option value="">TZS</option>
-                                          <option value="">XWM</option>
+                                          <option>Select</option>
+                                          <option>EUR</option>
+                                          <option>USD</option>
+                                          <option>GBP</option>
+                                          <option>KSH</option>
+                                          <option>UGX</option>
+                                          <option>NGN</option>
+                                          <option>TZS</option>
+                                          <option>XWM</option>
                                        </select>
                                     </div>
                                  </div>
@@ -381,22 +419,29 @@ class playerSearch extends React.Component{
                               <div className="CMS-pagination-list">
                                  <ul>
                                     <li><a href="#"><span className="material-icons" data-icon="first_page"></span></a></li>
-                                    <li><a href="#"><span className="material-icons" data-icon="navigate_before"></span></a></li>
+                                    <li><a href="#"><span className="material-icons" data-icon="navigate_before"></span></a></li></ul>
+                                    <ul>
+                                       {/* {
+                                       pageNumber.map((item, index)=>{
+
+                                       })
+                                       } */}
                                     <li><a className="active" href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
+                                    {/* <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li> */}</ul>
+                                    <ul>
                                     <li><a href="#"><span className="material-icons" data-icon="navigate_next"></span></a></li>
                                     <li><a href="#"><span className="material-icons" data-icon="last_page"></span></a></li>
                                  </ul>
                               </div>
                               <div className="CMS-page-slection">
                                  <div className="CMS-number-of-files CMS-select">
-                                    <select id="country" name="File">
-                                       <option value="PDF">25</option>
-                                       <option value="CSV">50</option>
-                                       <option value="XLS">100</option>
-                                       <option value="XLS">200</option>
-                                       <option value="XLS">500</option>
+                                    <select id="country" name="File" value={this.state.itemsperpage} onChange={this.onChangeItemperpage}>
+                                       <option value="25">25</option>
+                                       <option value="50">50</option>
+                                       <option value="100">100</option>
+                                       <option value="200">200</option>
+                                       <option value="500">500</option>
                                     </select>
                                  </div>
                                  <div className="CMS-file-type CMS-select">
@@ -411,7 +456,7 @@ class playerSearch extends React.Component{
                                  </div>
                               </div>
                               <div className="CMS-page-results">
-                                 Results 1-100 of 108
+                                 Results {this.props.paginationFirstValue}-{this.props.paginationSecondValue} of {this.props.paginationSecondValue} 
                               </div>
                            </div>
                         </div>
@@ -419,12 +464,14 @@ class playerSearch extends React.Component{
                   </div>
                </div>
             </div>
+            </div>
          </div>
       </div>
    </div>
    </form>
    </div>
-   {this.state.data.length >=0 ? "": <PlayerSeachTable tableData = {this.state.data}/> }
+  {/* {this.state.data.length >=0 ? "": <PlayerSeachTable tableData = {this.state.data}/> } */}
+  <PlayerSeachTable tableData = {this.state.data}/> 
 </>
 )}
 }
@@ -432,7 +479,10 @@ class playerSearch extends React.Component{
 function mapStateToProps(state) {
    return {
        displayValue: state.sidebar.displayValue,
-       sidebarTabs: state.sidebar.sidebarTabs
+       sidebarTabs: state.sidebar.sidebarTabs,
+       paginationFirstValue: state.playersearch.paginationFirstValue,
+       paginationSecondValue: state.playersearch.paginationSecondValue,
+       errorMessage: state.playersearch.errorMessage
    };
 }
 export default connect(mapStateToProps)(playerSearch);

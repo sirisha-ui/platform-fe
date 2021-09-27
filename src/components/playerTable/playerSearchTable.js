@@ -80,8 +80,7 @@ class PlayerSeachTable extends React.Component{
 
      componentDidMount(){
          //this.props.dispatch(getplayerList(this.props))
-         this.props.dispatch(getPlayerSearchList(this.props.tableData))
-         console.log("dsd",this.props.tableData)
+        // this.props.dispatch(getPlayerSearchList(this.props.paginationFirstValue,this.props.paginationSecondValue,this.props.tableData))
      }
     //   filterByReference = (arr1, arr2) => {
     //        let res = [];
@@ -94,18 +93,18 @@ class PlayerSeachTable extends React.Component{
     //     }
 
     render(){
-        console.log('data',this.props.playerData)
         let array =[];
         array.push(this.props.playerData)
         let data = this.state;
+        var responseData = this.props.playerData.data
        //let filterData =  this.filterByReference(data, array)
-       console.log("hii",this.props.playerData)
+       console.log("hii",responseData)
 
         return(
             <>
             <div className="CMS-box CMS-table CMS-table-triped" style ={{width: this.props.displayValue ? '100%':'80%', marginLeft: this.props.displayValue ?'0px':'290px'}}>
                                                     <table>
-                                                        {this.props.playerData.length > 0 &&
+                                                        {responseData != undefined && responseData.length> 0 &&
                                                         <thead>
                                                             <tr>
                                                                 <th>Customer Id</th>
@@ -125,7 +124,7 @@ class PlayerSeachTable extends React.Component{
                                                         </thead>}
                                                         <tbody>
                                                             
-                                                           { this.props.playerData.length > 0 && this.props.playerData.map((item,index)=>{
+                                                           { responseData != undefined  && responseData.map((item,index)=>{
                                                                  return (<tr key={item}>
                                                                       <td>{item.userId}</td>
                                                                       <td>{item.userName}</td>
@@ -160,7 +159,9 @@ class PlayerSeachTable extends React.Component{
 function mapStateToProps(state) {
     return {
         displayValue: state.sidebar.displayValue,
-        playerData: state.playersearch.playerData
+        playerData: state.playersearch.playerData,
+        paginationFirstValue: state.playersearch.paginationFirstValue,
+        paginationSecondValue: state.playersearch.paginationSecondValue
     };
  }
 export default connect(mapStateToProps)(PlayerSeachTable);

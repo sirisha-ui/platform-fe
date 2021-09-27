@@ -43,9 +43,7 @@
         margin-right: 5px;
         font-size: 22px;
     }
-    span{
-        margin-right: 5px;
-    }
+    
     &.active{
         color: #2f8ff1 !important;
     }
@@ -57,6 +55,14 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
+            align-items: center;
+            .CMS-categoryListItem-title{
+                margin-left: 5px;
+
+            }
+            // span{
+            //     margin-right: 5px;
+            // }
         }
     }
 }

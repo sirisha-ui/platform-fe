@@ -19,7 +19,12 @@ label {
   &.formGroup-inline {
     flex-direction: row;
     align-items: center;
+    line-height: 25px;
   }
+}
+.CMS-form-errorMsg{
+  color: #d92100;
+  min-height: 20px;
 }
 .CMS-formLabel {
   margin: 0 10px 2px 0;
@@ -31,6 +36,14 @@ label {
   align-items: center;
 }
 .CMS-formControl {
+  &.CMS-errorField{       
+    border: soid 1px #d92100;
+    border-radius: 4px;
+    input, select {
+      border: solid 1px #d92100;
+    }
+    
+}
   input {
     border: 1px solid $CMS-formControl__border;
     border-radius: 4px;
@@ -68,7 +81,7 @@ label {
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
-    right: 8px;
+    right: 2px;
     border: 0;
     pointer-events: none;
     color: #c6c6c6;
@@ -98,13 +111,13 @@ label {
   position: relative;
 
   .CMS-formAddon {
-    min-width: 30px;
-    max-width: 30px;
+    min-width: 28px;
+    max-width: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    right: 5px;
+    right: 0px;
     top: 0;
     bottom: 0;
   }
@@ -193,7 +206,7 @@ input[type="submit"]:hover {
       // padding-left: 0;
       // padding-bottom: 0;
       // float: left;
-      // position: relative;
+      position: relative;
       // top: 5px;
       padding: 0;
       &::before {

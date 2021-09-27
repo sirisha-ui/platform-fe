@@ -16,7 +16,7 @@
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
-    right: 8px;
+    right: 2px;
     border: 0;
     pointer-events: none;
     color: #c6c6c6;
@@ -104,7 +104,7 @@
     width: 100%;
     cursor: pointer;
     display: inline-block;
-    padding: 6px 50px 6px 10px;
+    padding: 6px 25px 6px 10px;
     border: 1px solid #d7d7d7;
     border-radius: 4px;
     background-color: #fff;
@@ -115,7 +115,7 @@
       position: absolute;
       top: 50%;
       transform: translate(0, -50%);
-      right: 8px;
+      right: 2px;
       border: 0;
       pointer-events: none;
       color: #444;

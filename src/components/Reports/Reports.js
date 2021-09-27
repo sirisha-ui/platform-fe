@@ -23,7 +23,7 @@ class Reports extends Component{
                                        
                                        <span to="#">{item.subtitle} 
                                           </span>
-                                          <span className="close"><span className="material-icons md-18" data-icon="close" onClick={()=>this.navLinksClosedFunction(item)}></span> </span>
+                                          <span className="close"><span className="material-icons md-18" data-icon="close"></span> </span>
                                    
                                     </li>
                                     </>

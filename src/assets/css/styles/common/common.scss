@@ -33,7 +33,7 @@
     margin-left: -20px;
     &.CMS-page-internalTabs {
         margin-left: 0px;
-        padding: 2px 2px 0 2px;
+        padding: 10px 8px 0 8px;
         // overflow-x: scroll;
         // overflow-y: hidden;
 
@@ -111,6 +111,102 @@
     }
 }
 
+
+//page internal tabs
+
+
+.CMS-page-subTabs {
+    // height: $CMS-tabs__height;
+    // background-color: $CMS-tabs__bgColor;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    // overflow-x: auto;
+    border-bottom: solid 1px #ccc;
+    // overflow: hidden;
+    // position: relative;
+    // left: -20px;
+    // margin-left: -20px;
+    ul {
+        display: flex;
+        align-items: stretch;
+        width: 100%;
+        height: 100%;
+
+        li {
+            // flex: 1 1 auto;
+            // min-width: 120px;
+            white-space: nowrap;
+            // margin-right: 10px;
+            vertical-align: middle;
+            border: solid 1px #ccc;
+            // border-radius: 4px 4px 0 0;
+            border-bottom: 0;
+            margin: 15px 5px 0 5px;
+            &:first-child {
+                margin-left: 15px;
+            }
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 4px 10px;
+                // height: $CMS-tabs__height;
+                // font-size: $CMS-tabs__fontSize;
+                color: $CMS-tabs-a__txtColor;
+                // background-color: #ddd;
+                // border-radius: 4px 4px 0 0;
+                height: 35px;
+            }
+            &.active {
+                border: 1px solid #2f8ff1;
+                border-bottom: 0;
+                // border-radius: 4px 4px 0 0;
+                background-color: #2f8ff1;
+                // position: relative;
+                // top: 1px;
+
+                a {
+                    color: #fff;
+                    font-weight: 600;
+                    // background-color: $CMS-tabs__bgColor;
+                    // border: solid 1px #ddd;
+                    // border-bottom: none;
+
+                    // :after {
+                    //     font-family: "sb-cms" !important;
+                    //     content: "\2716";
+                    // }
+                }
+            }
+        }
+    }
+}
+
+.CMS-tabContent{
+    .CMS-box-content{
+        padding: 0 15px;
+    }
+    .CMS-userDetails{
+        display: flex;
+        align-items: center;
+        line-height: 35px;
+    .userLabel{
+        font-weight: 400;
+    }
+    .userData{
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        justify-content: space-between;
+        .CMS-formControl{
+            width: 100%;
+        }
+    }
+}
+}
 /* Tabs ----- */
 .CMS-tabs-data {
     // position: relative;
@@ -277,15 +373,19 @@
                 justify-content: center;
                 height: $CMS-box-tabs-item__height;
                 padding: 4px 10px;
-                background-color: $CMS-box-tabs-item__bg;
+                // background-color: $CMS-box-tabs-item__bg;
             }
             i.CMS-icon-ticket {
                 font-size: 16px;
             }
-            &.active a {
-                background-color: $white;
-                font-weight: 500;
-            }
+            &.active{
+                border: solid 1px #2f8ff1;
+                a {
+                    background-color: #2f8ff1;
+                    font-weight: 500;
+                    color: #fff;
+                }
+            } 
             &:not(.active) {
                 border-bottom: 1px solid $CMS-box-tabs-item__border;
             }
@@ -396,7 +496,23 @@
         min-width: 100px;
         // background-color: #f0f8ff;
     }
+    .CMS-tablePlain {
+        tbody {
+            th {
+                &:first-child {
+                    text-align: left;
+                }
+            }
+            td:first-child {
+                text-align: left;
+            }
+            tr:nth-child(even) {
+                background-color: #fff;
+            }
+        }
+        }
 }
+
 .CMS-hr {
     margin: 20px 0;
     height: 1px;
@@ -472,9 +588,9 @@
             margin-bottom: 10px;
         }
     }
-    .CMS-box__tableHeader {
+    .CMS-box__Header {
         background-color: #192239;
-        color: $CMS-table-caption__color;
+        color: #fff;
         height: $CMS-table-caption__height;
         font-size: 18px;
         font-weight: 600;
@@ -486,7 +602,7 @@
     }
 }
 .CMS-box-content {
-    padding: 20px 10px;
+    padding: 20px 15px;
 }
 .CMS-page-header {
     font-size: 24px;
@@ -598,7 +714,6 @@
                 }
             }
         }
-
         .CMS-page-slection {
             display: flex;
             align-items: center;
@@ -759,1606 +874,1348 @@
 
 /* Sprite image flags */
 .CMS-flags {
-    background-image: url(../../../images/country_flags/spritesheet.png);
+    background-image: url(/images/country_flags/spritesheet.png);
     background-repeat: no-repeat;
     display: inline-block;
-    &.CMS-001-ethiopia {
-        width: 30px;
-        height: 20px;
+    border-radius: 4px;
+    width: 30px;
+    height: 20px;
+    &.et {
+        
         background-position: -5px -5px;
     }
 
-    &.CMS-002-oman {
-        width: 30px;
-        height: 20px;
+    &.om {
+        
         background-position: -5px -35px;
     }
 
-    &.CMS-003-tanzania {
-        width: 30px;
-        height: 20px;
+    &.tz {
+        
         background-position: -5px -65px;
     }
 
-    &.CMS-004-slovenia {
-        width: 30px;
-        height: 20px;
+    &.sl {
+        
         background-position: -5px -95px;
     }
 
-    &.CMS-005-puerto-rico {
-        width: 30px;
-        height: 20px;
+    &.pr {
+        
         background-position: -5px -125px;
     }
 
-    &.CMS-006-mozambique {
-        width: 30px;
-        height: 20px;
+    &.mz {
+        
         background-position: -5px -155px;
     }
 
-    &.CMS-007-iraq {
-        width: 30px;
-        height: 20px;
+    &.iq {
+        
         background-position: -5px -185px;
     }
 
-    &.CMS-008-lebanon {
-        width: 30px;
-        height: 20px;
+    &.lb {
+        
         background-position: -5px -215px;
     }
 
-    &.CMS-009-uganda {
-        width: 30px;
-        height: 20px;
+    &.ug {
+        
         background-position: -5px -245px;
     }
 
-    &.CMS-010-nigeria {
-        width: 30px;
-        height: 20px;
+    &.ng {
+        
         background-position: -5px -275px;
     }
 
-    &.CMS-011-italy {
-        width: 30px;
-        height: 20px;
+    &.it {
+        
         background-position: -5px -305px;
     }
 
-    &.CMS-012-malta {
-        width: 30px;
-        height: 20px;
+    &.mt {
+        
         background-position: -5px -335px;
     }
 
-    &.CMS-013-tunisia {
-        width: 30px;
-        height: 20px;
+    &.tn {
+        
         background-position: -5px -365px;
     }
 
-    &.CMS-014-nicaragua {
-        width: 30px;
-        height: 20px;
+    &.ni {
+        
         background-position: -5px -395px;
     }
 
-    &.CMS-015-el-salvador {
-        width: 30px;
-        height: 20px;
+    &.sv {
+        
         background-position: -5px -425px;
     }
 
-    &.CMS-016-zambia {
-        width: 30px;
-        height: 20px;
+    &.zm {
+        
         background-position: -5px -455px;
     }
 
-    &.CMS-017-wales {
-        width: 30px;
-        height: 20px;
+    &.wales {
+        
         background-position: -5px -485px;
     }
 
-    &.CMS-018-dominican-republic {
-        width: 30px;
-        height: 20px;
+    &.do {
+        
         background-position: -5px -515px;
     }
 
-    &.CMS-019-qatar {
-        width: 30px;
-        height: 20px;
+    &.qa {
+        
         background-position: -5px -545px;
     }
 
-    &.CMS-020-namibia {
-        width: 30px;
-        height: 20px;
+    &.na {
+        
         background-position: -5px -575px;
     }
 
-    &.CMS-021-mauritius {
-        width: 30px;
-        height: 20px;
+    &.mu {
+        
         background-position: -5px -605px;
     }
 
-    &.CMS-022-european-union {
-        width: 30px;
-        height: 20px;
+    &.european-union {
+        
         background-position: -5px -635px;
     }
 
-    &.CMS-023-luxembourg {
-        width: 30px;
-        height: 20px;
+    &.lu {
+        
         background-position: -5px -665px;
     }
 
-    &.CMS-024-hawaii {
-        width: 30px;
-        height: 20px;
+    &.hawaii {
+        
         background-position: -5px -695px;
     }
 
-    &.CMS-025-lithuania {
-        width: 30px;
-        height: 20px;
+    &.lt {
+        
         background-position: -5px -725px;
     }
 
-    &.CMS-026-jamaica {
-        width: 30px;
-        height: 20px;
+    &.jm {
+        
         background-position: -5px -755px;
     }
 
-    &.CMS-027-honduras {
-        width: 30px;
-        height: 20px;
+    &.hn {
+        
         background-position: -5px -785px;
     }
 
-    &.CMS-028-myanmar {
-        width: 30px;
-        height: 20px;
+    &.mm {
+        
         background-position: -5px -815px;
     }
 
-    &.CMS-029-kenya {
-        width: 30px;
-        height: 20px;
+    &.ke {
+        
         background-position: -5px -845px;
     }
 
-    &.CMS-030-cyprus {
-        width: 30px;
-        height: 20px;
+    &.cy {
+        
         background-position: -5px -875px;
     }
 
-    &.CMS-031-pakistan {
-        width: 30px;
-        height: 20px;
+    &.pk {
+        
         background-position: -5px -905px;
     }
 
-    &.CMS-032-latvia {
-        width: 30px;
-        height: 20px;
+    &.lv {
+        
         background-position: -5px -935px;
     }
 
-    &.CMS-033-japan {
-        width: 30px;
-        height: 20px;
+    &.jp {
+        
         background-position: -5px -965px;
     }
 
-    &.CMS-034-kazakhstan {
-        width: 30px;
-        height: 20px;
+    &.kz {
+        
         background-position: -5px -995px;
     }
 
-    &.CMS-035-serbia {
-        width: 30px;
-        height: 20px;
+    &.rs {
+        
         background-position: -5px -1025px;
     }
 
-    &.CMS-036-scotland {
-        width: 30px;
-        height: 20px;
+    &.scotland {
+        
         background-position: -5px -1055px;
     }
 
-    &.CMS-037-north-korea {
-        width: 30px;
-        height: 20px;
+    &.kp {
+        
         background-position: -5px -1085px;
     }
 
-    &.CMS-038-uruguay {
-        width: 30px;
-        height: 20px;
+    &.uy {
+        
         background-position: -5px -1115px;
     }
 
-    &.CMS-039-syria {
-        width: 30px;
-        height: 20px;
+    &.sy {
+        
         background-position: -5px -1145px;
     }
 
-    &.CMS-040-guatemala {
-        width: 30px;
-        height: 20px;
+    &.gt {
+        
         background-position: -5px -1175px;
     }
 
-    &.CMS-041-iceland {
-        width: 30px;
-        height: 20px;
+    &.is {
+        
         background-position: -5px -1205px;
     }
 
-    &.CMS-042-jordan {
-        width: 30px;
-        height: 20px;
+    &.jo {
+        
         background-position: -5px -1235px;
     }
 
-    &.CMS-043-monaco {
-        width: 30px;
-        height: 20px;
+    &.mc {
+        
         background-position: -5px -1265px;
     }
 
-    &.CMS-044-spain {
-        width: 30px;
-        height: 20px;
+    &.es {
+        
         background-position: -5px -1295px;
     }
 
-    &.CMS-045-slovakia {
-        width: 30px;
-        height: 20px;
+    &.sk {
+        
         background-position: -5px -1325px;
     }
 
-    &.CMS-046-united-nations {
-        width: 30px;
-        height: 20px;
+    &.united-nations {
+        
         background-position: -5px -1355px;
     }
 
-    &.CMS-047-panama {
-        width: 30px;
-        height: 20px;
+    &.pa {
+        
         background-position: -5px -1385px;
     }
 
-    &.CMS-048-new-zealand {
-        width: 30px;
-        height: 20px;
+    &.nz {
+        
         background-position: -5px -1415px;
     }
 
-    &.CMS-049-ecuador {
-        width: 30px;
-        height: 20px;
+    &.ec {
+        
         background-position: -5px -1445px;
     }
 
-    &.CMS-050-romania {
-        width: 30px;
-        height: 20px;
+    &.ro {
+        
         background-position: -5px -1475px;
     }
 
-    &.CMS-051-chile {
-        width: 30px;
-        height: 20px;
+    &.cl {
+        
         background-position: -5px -1505px;
     }
 
-    &.CMS-052-finland {
-        width: 30px;
-        height: 20px;
+    &.fl {
+        
         background-position: -5px -1535px;
     }
 
-    &.CMS-053-hungary {
-        width: 30px;
-        height: 20px;
+    &.hu {
+        
         background-position: -5px -1565px;
     }
 
-    &.CMS-054-belgium {
-        width: 30px;
-        height: 20px;
+    &.be {
+        
         background-position: -5px -1595px;
     }
 
-    &.CMS-055-south-korea {
-        width: 30px;
-        height: 20px;
+    &.kr {
+        
         background-position: -5px -1625px;
     }
 
-    &.CMS-056-malaysia {
-        width: 30px;
-        height: 20px;
+    &.my {
+        
         background-position: -5px -1655px;
     }
 
-    &.CMS-057-venezuela {
-        width: 30px;
-        height: 20px;
+    &.ve {
+        
         background-position: -5px -1685px;
     }
 
-    &.CMS-058-norway {
-        width: 30px;
-        height: 20px;
+    &.no {
+        
         background-position: -5px -1715px;
     }
 
-    &.CMS-059-saudi-arabia {
-        width: 30px;
-        height: 20px;
+    &.sa {
+        
         background-position: -5px -1745px;
     }
 
-    &.CMS-060-israel {
-        width: 30px;
-        height: 20px;
+    &.il {
+        
         background-position: -5px -1775px;
     }
 
-    &.CMS-061-czech-republic {
-        width: 30px;
-        height: 20px;
+    &.cz {
+        
         background-position: -5px -1805px;
     }
 
-    &.CMS-062-colombia {
-        width: 30px;
-        height: 20px;
+    &.co {
+        
         background-position: -5px -1835px;
     }
 
-    &.CMS-063-iran {
-        width: 30px;
-        height: 20px;
+    &.ir {
+        
         background-position: -5px -1865px;
     }
 
-    &.CMS-064-argentina {
-        width: 30px;
-        height: 20px;
+    &.ar {
+        
         background-position: -5px -1895px;
     }
 
-    &.CMS-065-ukraine {
-        width: 30px;
-        height: 20px;
+    &.ua {
+        
         background-position: -5px -1925px;
     }
 
-    &.CMS-066-germany {
-        width: 30px;
-        height: 20px;
+    &.de {
+        
         background-position: -5px -1955px;
     }
 
-    &.CMS-067-hong-kong {
-        width: 30px;
-        height: 20px;
+    &.hk {
+        
         background-position: -5px -1985px;
     }
 
-    &.CMS-068-united-arab-emirates {
-        width: 30px;
-        height: 20px;
+    &.ae {
+        
         background-position: -5px -2015px;
     }
 
-    &.CMS-069-laos {
-        width: 30px;
-        height: 20px;
+    &.la {
+        
         background-position: -5px -2045px;
     }
 
-    &.CMS-070-ireland {
-        width: 30px;
-        height: 20px;
+    &.ie {
+        
         background-position: -5px -2075px;
     }
 
-    &.CMS-071-greece {
-        width: 30px;
-        height: 20px;
+    &.gr {
+        
         background-position: -5px -2105px;
     }
 
-    &.CMS-072-denmark {
-        width: 30px;
-        height: 20px;
+    &.dk {
+        
         background-position: -5px -2135px;
     }
 
-    &.CMS-073-sweden {
-        width: 30px;
-        height: 20px;
+    &.se {
+        
         background-position: -5px -2165px;
     }
 
-    &.CMS-074-peru {
-        width: 30px;
-        height: 20px;
+    &.pe {
+        
         background-position: -5px -2195px;
     }
 
-    &.CMS-075-south-africa {
-        width: 30px;
-        height: 20px;
+    &.za {
+        
         background-position: -5px -2225px;
     }
 
-    &.CMS-076-philippines {
-        width: 30px;
-        height: 20px;
+    &.ph {
+        
         background-position: -5px -2255px;
     }
 
-    &.CMS-077-france {
-        width: 30px;
-        height: 20px;
+    &.fr {
+        
         background-position: -5px -2285px;
     }
 
-    &.CMS-078-indonesia {
-        width: 30px;
-        height: 20px;
+    &.id {
+        
         background-position: -5px -2315px;
     }
 
-    &.CMS-079-egypt {
-        width: 30px;
-        height: 20px;
+    &.eg {
+        
         background-position: -5px -2345px;
     }
 
-    &.CMS-080-taiwan {
-        width: 30px;
-        height: 20px;
+    &.tw {
+        
         background-position: -5px -2375px;
     }
 
-    &.CMS-081-cook-islands {
-        width: 30px;
-        height: 20px;
+    &.ck {
+        
         background-position: -5px -2405px;
     }
 
-    &.CMS-082-cocos-island {
-        width: 30px;
-        height: 20px;
+    &.cc {
+        
         background-position: -5px -2435px;
     }
 
-    &.CMS-083-christmas-island {
-        width: 30px;
-        height: 20px;
+    &.cx {
+        
         background-position: -5px -2465px;
     }
 
-    &.CMS-084-ceuta {
-        width: 30px;
-        height: 20px;
+    &.ceuta {
+        
         background-position: -5px -2495px;
     }
 
-    &.CMS-085-american-samoa {
-        width: 29px;
-        height: 20px;
+    &.as {
         background-position: -5px -2525px;
     }
 
-    &.CMS-086-morocco {
-        width: 30px;
-        height: 20px;
+    &.ma {
+        
         background-position: -5px -2555px;
     }
 
-    &.CMS-087-anguilla {
-        width: 30px;
-        height: 20px;
+    &.al {
+        
         background-position: -5px -2585px;
     }
 
-    &.CMS-088-corsica {
-        width: 30px;
-        height: 20px;
+    &.corsica {
+        
         background-position: -5px -2615px;
     }
 
-    &.CMS-089-canary-islands {
-        width: 30px;
-        height: 20px;
+    &.canary-islands {
+        
         background-position: -5px -2645px;
     }
 
-    &.CMS-090-comoros {
-        width: 30px;
-        height: 20px;
+    &.km {
+        
         background-position: -5px -2675px;
     }
 
-    &.CMS-091-central-african-republic {
-        width: 30px;
-        height: 20px;
+    &.cf {
+        
         background-position: -5px -2705px;
     }
 
-    &.CMS-092-cayman-islands {
-        width: 30px;
-        height: 20px;
+    &.ky {
+        
         background-position: -5px -2735px;
     }
 
-    &.CMS-093-british-indian-ocean-territory {
-        width: 30px;
-        height: 20px;
+    &.io {
+        
         background-position: -5px -2765px;
     }
 
-    &.CMS-094-bhutan {
-        width: 30px;
-        height: 20px;
+    &.bt {
+        
         background-position: -5px -2795px;
     }
 
-    &.CMS-095-chad {
-        width: 30px;
-        height: 20px;
+    &.td {
+        
         background-position: -5px -2825px;
     }
 
-    &.CMS-096-cape-verde {
-        width: 30px;
-        height: 20px;
+    &.cv {
+        
         background-position: -5px -2855px;
     }
 
-    &.CMS-097-switzerland {
-        width: 30px;
-        height: 20px;
+    &.ch {
+        
         background-position: -5px -2885px;
     }
 
-    &.CMS-098-benin {
-        width: 30px;
-        height: 20px;
+    &.benin {
+        
         background-position: -5px -2915px;
     }
 
-    &.CMS-099-aruba {
-        width: 30px;
-        height: 20px;
+    &.aruba {
+        
         background-position: -5px -2945px;
     }
 
-    &.CMS-101-balearic-islands {
-        width: 30px;
-        height: 20px;
+    &.balearic-islands {
+        
         background-position: -5px -2975px;
     }
 
-    &.CMS-102-andorra {
-        width: 30px;
-        height: 20px;
+    &.ad {
+        
         background-position: -5px -3005px;
     }
 
-    &.CMS-103-burundi {
-        width: 30px;
-        height: 20px;
+    &.burundi {
+        
         background-position: -5px -3035px;
     }
 
-    &.CMS-104-antigua-and-barbuda {
-        width: 30px;
-        height: 20px;
+    &.antigua-and-barbuda {
+        
         background-position: -5px -3065px;
     }
 
-    &.CMS-105-aland-islands {
-        width: 30px;
-        height: 20px;
+    &.ax {
+        
         background-position: -5px -3095px;
     }
 
-    &.CMS-106-cameroon {
-        width: 30px;
-        height: 20px;
+    &.cameroon {
+        
         background-position: -5px -3125px;
     }
 
-    &.CMS-107-brunei {
-        width: 30px;
-        height: 20px;
+    &.brunei {
+        
         background-position: -5px -3155px;
     }
 
-    &.CMS-108-poland {
-        width: 30px;
-        height: 20px;
+    &.poland {
+        
         background-position: -5px -3185px;
     }
 
-    &.CMS-109-bonaire {
-        width: 30px;
-        height: 20px;
+    &.bonaire {
+        
         background-position: -5px -3215px;
     }
 
-    &.CMS-110-belarus {
-        width: 30px;
-        height: 20px;
+    &.belarus {
+        
         background-position: -5px -3245px;
     }
 
-    &.CMS-111-barbados {
-        width: 30px;
-        height: 20px;
+    &.barbados {
+        
         background-position: -5px -3275px;
     }
 
-    &.CMS-112-british-virgin-islands {
-        width: 30px;
-        height: 20px;
+    &.british-virgin-islands {
+        
         background-position: -5px -3305px;
     }
 
-    &.CMS-113-bosnia-and-herzegovina {
-        width: 30px;
-        height: 20px;
+    &.bosnia-and-herzegovina {
+        
         background-position: -5px -3335px;
     }
 
-    &.CMS-114-bermuda {
-        width: 30px;
-        height: 20px;
+    &.bermuda {
+        
         background-position: -5px -3365px;
     }
 
-    &.CMS-115-belize {
-        width: 30px;
-        height: 20px;
+    &.belize {
+        
         background-position: -5px -3395px;
     }
 
-    &.CMS-116-bahrain {
-        width: 30px;
-        height: 20px;
+    &.bahrain {
+        
         background-position: -5px -3425px;
     }
 
-    &.CMS-117-albania {
-        width: 30px;
-        height: 20px;
+    &.al {
+        
         background-position: -5px -3455px;
     }
 
-    &.CMS-118-burkina-faso {
-        width: 30px;
-        height: 20px;
+    &.burkina-faso {
+        
         background-position: -5px -3485px;
     }
 
-    &.CMS-119-turkey {
-        width: 30px;
-        height: 20px;
+    &.turkey {
+        
         background-position: -5px -3515px;
     }
 
-    &.CMS-120-basque-country {
-        width: 30px;
-        height: 20px;
+    &.basque-country {
+        
         background-position: -5px -3545px;
     }
 
-    &.CMS-121-armenia {
-        width: 30px;
-        height: 20px;
+    &.armenia {
+        
         background-position: -5px -3575px;
     }
 
-    &.CMS-122-afghanistan {
-        width: 30px;
-        height: 20px;
+    &.afghanistan {
+        
         background-position: -5px -3605px;
     }
 
-    &.CMS-123-british-columbia {
-        width: 30px;
-        height: 20px;
+    &.british-columbia {
+        
         background-position: -5px -3635px;
     }
 
-    &.CMS-124-angola {
-        width: 30px;
-        height: 20px;
+    &.ao {
+        
         background-position: -5px -3665px;
     }
 
-    &.CMS-125-azerbaijan {
-        width: 30px;
-        height: 20px;
+    &.azerbaijan {
+        
         background-position: -5px -3695px;
     }
 
-    &.CMS-126-algeria {
-        width: 30px;
-        height: 20px;
+    &.dz {
+        
         background-position: -5px -3725px;
     }
 
-    &.CMS-127-botswana {
-        width: 30px;
-        height: 20px;
+    &.botswana {
+        
         background-position: -5px -3755px;
     }
 
-    &.CMS-128-bangladesh {
-        width: 30px;
-        height: 20px;
+    &.bangladesh {
+        
         background-position: -5px -3785px;
     }
 
-    &.CMS-129-cuba {
-        width: 30px;
-        height: 20px;
+    &.cuba {
+        
         background-position: -5px -3815px;
     }
 
-    &.CMS-130-australia {
-        width: 30px;
-        height: 20px;
+    &.australia {
+        
         background-position: -5px -3845px;
     }
 
-    &.CMS-131-costa-rica {
-        width: 30px;
-        height: 20px;
+    &.costa-rica {
+        
         background-position: -5px -3875px;
     }
 
-    &.CMS-132-cambodia {
-        width: 30px;
-        height: 20px;
+    &.cambodia {
+        
         background-position: -5px -3905px;
     }
 
-    &.CMS-133-bolivia {
-        width: 30px;
-        height: 20px;
+    &.bolivia {
+        
         background-position: -5px -3935px;
     }
 
-    &.CMS-134-croatia {
-        width: 30px;
-        height: 20px;
+    &.croatia {
+        
         background-position: -5px -3965px;
     }
 
-    &.CMS-135-bulgaria {
-        width: 30px;
-        height: 20px;
+    &.bulgaria {
+        
         background-position: -5px -3995px;
     }
 
-    &.CMS-136-galapagos-islands {
-        width: 30px;
-        height: 20px;
+    &.galapagos-islands {
+        
         background-position: -5px -4025px;
     }
 
-    &.CMS-137-martinique {
-        width: 30px;
-        height: 20px;
+    &.martinique {
+        
         background-position: -5px -4055px;
     }
 
-    &.CMS-138-tonga {
-        width: 30px;
-        height: 20px;
+    &.tonga {
+        
         background-position: -5px -4085px;
     }
 
-    &.CMS-139-st-lucia {
-        width: 30px;
-        height: 20px;
+    &.st-lucia {
+        
         background-position: -5px -4115px;
     }
 
-    &.CMS-140-rapa-nui {
-        width: 30px;
-        height: 20px;
+    &.rapa-nui {
+        
         background-position: -5px -4145px;
     }
 
-    &.CMS-141-singapore {
-        width: 30px;
-        height: 20px;
+    &.singapore {
+        
         background-position: -5px -4175px;
     }
 
-    &.CMS-142-palau {
-        width: 30px;
-        height: 20px;
+    &.palau {
+        
         background-position: -5px -4205px;
     }
 
-    &.CMS-143-niue {
-        width: 30px;
-        height: 20px;
+    &.niue {
+        
         background-position: -5px -4235px;
     }
 
-    &.CMS-144-macao {
-        width: 30px;
-        height: 20px;
+    &.macao {
+        
         background-position: -5px -4265px;
     }
 
-    &.CMS-145-fiji {
-        width: 30px;
-        height: 20px;
+    &.fiji {
+        
         background-position: -5px -4295px;
     }
 
-    &.CMS-146-faroe-islands {
-        width: 30px;
-        height: 20px;
+    &.faroe-islands {
+        
         background-position: -5px -4325px;
     }
 
-    &.CMS-147-dominica {
-        width: 30px;
-        height: 20px;
+    &.dominica {
+        
         background-position: -5px -4355px;
     }
 
-    &.CMS-148-vanuatu {
-        width: 30px;
-        height: 20px;
+    &.vanuatu {
+        
         background-position: -5px -4385px;
     }
 
-    &.CMS-149-sierra-leone {
-        width: 30px;
-        height: 20px;
+    &.sierra-leone {
+        
         background-position: -5px -4415px;
     }
 
-    &.CMS-150-seychelles {
-        width: 30px;
-        height: 20px;
+    &.seychelles {
+        
         background-position: -5px -4445px;
     }
 
-    &.CMS-151-kosovo {
-        width: 30px;
-        height: 20px;
+    &.kosovo {
+        
         background-position: -5px -4475px;
     }
 
-    &.CMS-152-england {
-        width: 30px;
-        height: 20px;
+    &.england {
+        
         background-position: -5px -4505px;
     }
 
-    &.CMS-153-united-states-of-america {
-        width: 30px;
-        height: 20px;
+    &.united-states-of-america {
+        
         background-position: -5px -4535px;
     }
 
-    &.CMS-154-guinea {
-        width: 30px;
-        height: 20px;
+    &.guinea {
+        
         background-position: -5px -4565px;
     }
 
-    &.CMS-155-orkney-islands {
-        width: 30px;
-        height: 20px;
+    &.orkney-islands {
+        
         background-position: -5px -4595px;
     }
 
-    &.CMS-156-turks-and-caicos {
-        width: 30px;
-        height: 20px;
+    &.turks-and-caicos {
+        
         background-position: -5px -4625px;
     }
 
-    &.CMS-157-transnistria {
-        width: 30px;
-        height: 20px;
+    &.transnistria {
+        
         background-position: -5px -4655px;
     }
 
-    &.CMS-158-tokelau {
-        width: 30px;
-        height: 20px;
+    &.tokelau {
+        
         background-position: -5px -4685px;
     }
 
-    &.CMS-159-gambia {
-        width: 30px;
-        height: 20px;
+    &.gambia {
+        
         background-position: -5px -4715px;
     }
 
-    &.CMS-160-st-vincent-and-the-grenadines {
-        width: 30px;
-        height: 20px;
+    &.st-vincent-and-the-grenadines {
+        
         background-position: -5px -4745px;
     }
 
-    &.CMS-161-south-sudan {
-        width: 30px;
-        height: 20px;
+    &.south-sudan {
+        
         background-position: -5px -4775px;
     }
 
-    &.CMS-162-somaliland {
-        width: 30px;
-        height: 20px;
+    &.somaliland {
+        
         background-position: -5px -4805px;
     }
 
-    &.CMS-163-solomon-islands {
-        width: 30px;
-        height: 20px;
+    &.solomon-islands {
+        
         background-position: -5px -4835px;
     }
 
-    &.CMS-164-vietnam {
-        width: 30px;
-        height: 20px;
+    &.vietnam {
+        
         background-position: -5px -4865px;
     }
 
-    &.CMS-165-sint-maarten {
-        width: 30px;
-        height: 20px;
+    &.sint-maarten {
+        
         background-position: -5px -4895px;
     }
 
-    &.CMS-166-sint-eustatius {
-        width: 30px;
-        height: 20px;
+    &.sint-eustatius {
+        
         background-position: -5px -4925px;
     }
 
-    &.CMS-167-saint-kitts-and-nevis {
-        width: 30px;
-        height: 20px;
+    &.saint-kitts-and-nevis {
+        
         background-position: -5px -4955px;
     }
 
-    &.CMS-168-saba-island {
-        width: 30px;
-        height: 20px;
+    &.saba-island {
+        
         background-position: -5px -4985px;
     }
 
-    &.CMS-169-pitcairn-islands {
-        width: 30px;
-        height: 20px;
+    &.pitcairn-islands {
+        
         background-position: -5px -5015px;
     }
 
-    &.CMS-170-palestine {
-        width: 30px;
-        height: 20px;
+    &.palestine {
+        
         background-position: -5px -5045px;
     }
 
-    &.CMS-171-ossetia {
-        width: 30px;
-        height: 20px;
+    &.ossetia {
+        
         background-position: -5px -5075px;
     }
 
-    &.CMS-172-northern-marianas-islands {
-        width: 30px;
-        height: 20px;
+    &.northern-marianas-islands {
+        
         background-position: -5px -5105px;
     }
 
-    &.CMS-173-nauru {
-        width: 30px;
-        height: 20px;
+    &.nauru {
+        
         background-position: -5px -5135px;
     }
 
-    &.CMS-174-portugal {
-        width: 30px;
-        height: 20px;
+    &.portugal {
+        
         background-position: -5px -5165px;
     }
 
-    &.CMS-175-montserrat {
-        width: 30px;
-        height: 20px;
+    &.montserrat {
+        
         background-position: -5px -5195px;
     }
 
-    &.CMS-176-melilla {
-        width: 30px;
-        height: 20px;
+    &.melilla {
+        
         background-position: -5px -5225px;
     }
 
-    &.CMS-177-mauritania {
-        width: 30px;
-        height: 20px;
+    &.mauritania {
+        
         background-position: -5px -5255px;
     }
 
-    &.CMS-178-kuwait {
-        width: 30px;
-        height: 20px;
+    &.kuwait {
+        
         background-position: -5px -5285px;
     }
 
-    &.CMS-179-kiribati {
-        width: 30px;
-        height: 20px;
+    &.kiribati {
+        
         background-position: -5px -5315px;
     }
 
-    &.CMS-180-guernsey {
-        width: 30px;
-        height: 20px;
+    &.guernsey {
+        
         background-position: -5px -5345px;
     }
 
-    &.CMS-181-guam {
-        width: 30px;
-        height: 20px;
+    &.guam {
+        
         background-position: -5px -5375px;
     }
 
-    &.CMS-182-grenada {
-        width: 30px;
-        height: 20px;
+    &.grenada {
+        
         background-position: -5px -5405px;
     }
 
-    &.CMS-183-greenland {
-        width: 30px;
-        height: 20px;
+    &.greenland {
+        
         background-position: -5px -5435px;
     }
 
-    &.CMS-184-thailand {
-        width: 30px;
-        height: 20px;
+    &.thailand {
+        
         background-position: -5px -5465px;
     }
 
-    &.CMS-185-gibraltar {
-        width: 30px;
-        height: 20px;
+    &.gibraltar {
+        
         background-position: -5px -5495px;
     }
 
-    &.CMS-186-gabon {
-        width: 30px;
-        height: 20px;
+    &.gabon {
+        
         background-position: -5px -5525px;
     }
 
-    &.CMS-187-falkland-islands {
-        width: 30px;
-        height: 20px;
+    &.falkland-islands {
+        
         background-position: -5px -5555px;
     }
 
-    &.CMS-188-virgin-islands {
-        width: 30px;
-        height: 20px;
+    &.virgin-islands {
+        
         background-position: -5px -5585px;
     }
 
-    &.CMS-189-austria {
-        width: 30px;
-        height: 20px;
+    &.austria {
+        
         background-position: -5px -5615px;
     }
 
-    &.CMS-190-vatican-city {
-        width: 30px;
-        height: 20px;
+    &.vatican-city {
+        
         background-position: -5px -5645px;
     }
 
-    &.CMS-191-tubalu {
-        width: 30px;
-        height: 20px;
+    &.tubalu {
+        
         background-position: -5px -5675px;
     }
 
-    &.CMS-192-turkmenistan {
-        width: 30px;
-        height: 20px;
+    &.turkmenistan {
+        
         background-position: -5px -5705px;
     }
 
-    &.CMS-193-togo {
-        width: 30px;
-        height: 20px;
+    &.togo {
+        
         background-position: -5px -5735px;
     }
 
-    &.CMS-194-bahamas {
-        width: 30px;
-        height: 20px;
+    &.bahamas {
+        
         background-position: -5px -5765px;
     }
 
-    &.CMS-195-netherlands {
-        width: 30px;
-        height: 20px;
+    &.netherlands {
+        
         background-position: -5px -5795px;
     }
 
-    &.CMS-196-azores-islands {
-        width: 30px;
-        height: 20px;
+    &.azores-islands {
+        
         background-position: -5px -5825px;
     }
 
-    &.CMS-197-suriname {
-        width: 30px;
-        height: 20px;
+    &.suriname {
+        
         background-position: -5px -5855px;
     }
 
-    &.CMS-198-somalia {
-        width: 30px;
-        height: 20px;
+    &.somalia {
+        
         background-position: -5px -5885px;
     }
 
-    &.CMS-199-sicily {
-        width: 30px;
-        height: 20px;
+    &.sicily {
+        
         background-position: -5px -5915px;
     }
 
-    &.CMS-200-sardinia {
-        width: 30px;
-        height: 20px;
+    &.sardinia {
+        
         background-position: -5px -5945px;
     }
 
-    &.CMS-201-sao-tome-and-principe {
-        width: 30px;
-        height: 20px;
+    &.sao-tome-and-principe {
+        
         background-position: -5px -5975px;
     }
 
-    &.CMS-202-norfolk-island {
-        width: 30px;
-        height: 20px;
+    &.norfolk-island {
+        
         background-position: -5px -6005px;
     }
 
-    &.CMS-203-niger {
-        width: 30px;
-        height: 20px;
+    &.niger {
+        
         background-position: -5px -6035px;
     }
 
-    &.CMS-204-micronesia {
-        width: 30px;
-        height: 20px;
+    &.micronesia {
+        
         background-position: -5px -6065px;
     }
 
-    &.CMS-205-marshall-island {
-        width: 30px;
-        height: 20px;
+    &.marshall-island {
+        
         background-position: -5px -6095px;
     }
 
-    &.CMS-206-canada {
-        width: 30px;
-        height: 20px;
+    &.canada {
+        
         background-position: -5px -6125px;
     }
 
-    &.CMS-207-mali {
-        width: 30px;
-        height: 20px;
+    &.mali {
+        
         background-position: -5px -6155px;
     }
 
-    &.CMS-208-kyrgyzstan {
-        width: 30px;
-        height: 20px;
+    &.kyrgyzstan {
+        
         background-position: -5px -6185px;
     }
 
-    &.CMS-209-guinea-bissau {
-        width: 30px;
-        height: 20px;
+    &.guinea-bissau {
+        
         background-position: -5px -6215px;
     }
 
-    &.CMS-210-eritrea {
-        width: 30px;
-        height: 20px;
+    &.eritrea {
+        
         background-position: -5px -6245px;
     }
 
-    &.CMS-211-djibouti {
-        width: 30px;
-        height: 20px;
+    &.djibouti {
+        
         background-position: -5px -6275px;
     }
 
-    &.CMS-212-curacao {
-        width: 30px;
-        height: 20px;
+    &.curacao {
+        
         background-position: -5px -6305px;
     }
 
-    &.CMS-213-st-barts {
-        width: 30px;
-        height: 20px;
+    &.st-barts {
+        
         background-position: -5px -6335px;
     }
 
-    &.CMS-214-san-marino {
-        width: 30px;
-        height: 20px;
+    &.san-marino {
+        
         background-position: -5px -6365px;
     }
 
-    &.CMS-215-northen-cyprus {
-        width: 30px;
-        height: 20px;
+    &.northen-cyprus {
+        
         background-position: -5px -6395px;
     }
 
-    &.CMS-216-liechtenstein {
-        width: 30px;
-        height: 20px;
+    &.liechtenstein {
+        
         background-position: -5px -6425px;
     }
 
-    &.CMS-217-india {
-        width: 30px;
-        height: 20px;
+    &.india {
+        
         background-position: -5px -6455px;
     }
 
-    &.CMS-218-liberia {
+    &.liberia {
         width: 29px;
         height: 20px;
         background-position: -5px -6485px;
     }
 
-    &.CMS-219-yemen {
-        width: 30px;
-        height: 20px;
+    &.yemen {
+        
         background-position: -5px -6515px;
     }
 
-    &.CMS-220-uzbekistn {
-        width: 30px;
-        height: 20px;
+    &.uzbekistn {
+        
         background-position: -5px -6545px;
     }
 
-    &.CMS-221-sudan {
-        width: 30px;
-        height: 20px;
+    &.sudan {
+        
         background-position: -5px -6575px;
     }
 
-    &.CMS-222-sahrawi-arab-democratic-republic {
-        width: 30px;
-        height: 20px;
+    &.sahrawi-arab-democratic-republic {
+        
         background-position: -5px -6605px;
     }
 
-    &.CMS-223-republic-of-macedonia {
-        width: 30px;
-        height: 20px;
+    &.republic-of-macedonia {
+        
         background-position: -5px -6635px;
     }
 
-    &.CMS-224-otan {
-        width: 30px;
-        height: 20px;
+    &.otan {
+        
         background-position: -5px -6665px;
     }
 
-    &.CMS-225-libya {
-        width: 30px;
-        height: 20px;
+    &.libya {
+        
         background-position: -5px -6695px;
     }
 
-    &.CMS-226-east-timor {
-        width: 30px;
-        height: 20px;
+    &.east-timor {
+        
         background-position: -5px -6725px;
     }
 
-    &.CMS-227-tibet {
-        width: 30px;
-        height: 20px;
+    &.tibet {
+        
         background-position: -5px -6755px;
     }
 
-    &.CMS-228-russia {
-        width: 30px;
-        height: 20px;
+    &.russia {
+        
         background-position: -5px -6785px;
     }
 
-    &.CMS-229-papua-new-guinea {
-        width: 30px;
-        height: 20px;
+    &.papua-new-guinea {
+        
         background-position: -5px -6815px;
     }
 
-    &.CMS-230-montenegro {
-        width: 30px;
-        height: 20px;
+    &.montenegro {
+        
         background-position: -5px -6845px;
     }
 
-    &.CMS-231-moldova {
-        width: 30px;
-        height: 20px;
+    &.moldova {
+        
         background-position: -5px -6875px;
     }
 
-    &.CMS-232-maldives {
-        width: 30px;
-        height: 20px;
+    &.maldives {
+        
         background-position: -5px -6905px;
     }
 
-    &.CMS-233-madeira {
-        width: 30px;
-        height: 20px;
+    &.madeira {
+        
         background-position: -5px -6935px;
     }
 
-    &.CMS-234-french-polynesia {
-        width: 30px;
-        height: 20px;
+    &.french-polynesia {
+        
         background-position: -5px -6965px;
     }
 
-    &.CMS-235-trinidad-and-tobago {
-        width: 30px;
-        height: 20px;
+    &.trinidad-and-tobago {
+        
         background-position: -5px -6995px;
     }
 
-    &.CMS-236-tajikistan {
-        width: 30px;
-        height: 20px;
+    &.tajikistan {
+        
         background-position: -5px -7025px;
     }
 
-    &.CMS-237-swaziland {
-        width: 30px;
-        height: 20px;
+    &.swaziland {
+        
         background-position: -5px -7055px;
     }
 
-    &.CMS-238-sri-lanka {
-        width: 30px;
-        height: 20px;
+    &.sri-lanka {
+        
         background-position: -5px -7085px;
     }
 
-    &.CMS-239-mexico {
-        width: 30px;
-        height: 20px;
+    &.mexico {
+        
         background-position: -5px -7115px;
     }
 
-    &.CMS-240-republic-of-the-congo {
-        width: 30px;
-        height: 20px;
+    &.republic-of-the-congo {
+        
         background-position: -5px -7145px;
     }
 
-    &.CMS-241-equatorial-guinea {
-        width: 30px;
-        height: 20px;
+    &.equatorial-guinea {
+        
         background-position: -5px -7175px;
     }
 
-    &.CMS-242-zimbabwe {
-        width: 30px;
-        height: 20px;
+    &.zimbabwe {
+        
         background-position: -5px -7205px;
     }
 
-    &.CMS-243-rwanda {
-        width: 30px;
-        height: 20px;
+    &.rwanda {
+        
         background-position: -5px -7235px;
     }
 
-    &.CMS-244-lesotho {
-        width: 30px;
-        height: 20px;
+    &.lesotho {
+        
         background-position: -5px -7265px;
     }
 
-    &.CMS-245-ivory-coast {
-        width: 30px;
-        height: 20px;
+    &.ivory-coast {
+        
         background-position: -5px -7295px;
     }
 
-    &.CMS-246-isle-of-man {
-        width: 30px;
-        height: 20px;
+    &.isle-of-man {
+        
         background-position: -5px -7325px;
     }
 
-    &.CMS-247-haiti {
-        width: 30px;
-        height: 20px;
+    &.haiti {
+        
         background-position: -5px -7355px;
     }
 
-    &.CMS-248-samoa {
-        width: 30px;
-        height: 20px;
+    &.samoa {
+        
         background-position: -5px -7385px;
     }
 
-    &.CMS-249-nepal {
-        width: 30px;
-        height: 20px;
+    &.nepal {
+        
         background-position: -5px -7415px;
     }
 
-    &.CMS-250-brazil {
-        width: 30px;
-        height: 20px;
+    &.brazil {
+        
         background-position: -5px -7445px;
     }
 
-    &.CMS-251-mongolia {
-        width: 30px;
-        height: 20px;
+    &.mongolia {
+        
         background-position: -5px -7475px;
     }
 
-    &.CMS-252-malawi {
-        width: 30px;
-        height: 20px;
+    &.malawi {
+        
         background-position: -5px -7505px;
     }
 
-    &.CMS-253-madagascar {
-        width: 30px;
-        height: 20px;
+    &.madagascar {
+        
         background-position: -5px -7535px;
     }
 
-    &.CMS-254-jersey {
-        width: 30px;
-        height: 20px;
+    &.jersey {
+        
         background-position: -5px -7565px;
     }
 
-    &.CMS-255-ghana {
-        width: 30px;
-        height: 20px;
+    &.ghana {
+        
         background-position: -5px -7595px;
     }
 
-    &.CMS-256-georgia {
-        width: 30px;
-        height: 20px;
+    &.georgia {
+        
         background-position: -5px -7625px;
     }
 
-    &.CMS-257-estonia {
-        width: 30px;
-        height: 20px;
+    &.estonia {
+        
         background-position: -5px -7655px;
     }
 
-    &.CMS-258-democratic-republic-of-congo {
-        width: 30px;
-        height: 20px;
+    &.democratic-republic-of-congo {
+        
         background-position: -5px -7685px;
     }
 
-    &.CMS-259-senegal {
-        width: 30px;
-        height: 20px;
+    &.senegal {
+        
         background-position: -5px -7715px;
     }
 
-    &.CMS-261-china {
-        width: 30px;
-        height: 20px;
+    &.china {
+        
         background-position: -5px -7745px;
     }
 
-    &.CMS-262-united-kingdom {
-        width: 30px;
-        height: 20px;
+    &.gb {
+        
         background-position: -5px -7775px;
     }
 
-    &.CMS-Chinese--Taipei {
-        width: 30px;
-        height: 20px;
+    &.Chinese--Taipei {
+        
         background-position: -5px -7805px;
     }
 
-    &.CMS-github {
+    &.github {
         width: 30px;
         height: 30px;
         background-position: -5px -7835px;
     }
 
-    &.CMS-gmail {
+    &.gmail {
         width: 30px;
         height: 30px;
         background-position: -5px -7875px;
     }
 
-    &.CMS-linkedin {
+    &.linkedin {
         width: 30px;
         height: 30px;
         background-position: -5px -7915px;
     }
 
-    &.CMS-stackoverflow {
+    &.stackoverflow {
         width: 30px;
         height: 30px;
         background-position: -5px -7955px;
     }
 
-    &.CMS-tumblr {
+    &.tumblr {
         width: 30px;
         height: 30px;
         background-position: -5px -7995px;
     }
 
-    &.CMS-twitter {
+    &.twitter {
         width: 30px;
         height: 30px;
         background-position: -5px -8035px;
@@ -2366,6 +2223,9 @@
 }
 
 #CMS-generalDetails {
+    .CMS-checkbox {
+        padding-left: 0;
+    }
     .CMS-tabContent {
         padding: 0;
         .CMS-box-content {
@@ -2376,7 +2236,8 @@
             border-radius: 0 0 4px 4px;
             display: flex;
             align-items: center;
-            border-top: solid 1px #2f8ff1;
+            border-top: solid 3px #2f8ff1;
+            min-height: 50px;
             .CMS-form-group {
                 .CMS-checkbox {
                     label {
@@ -2387,17 +2248,20 @@
         }
     }
 }
-#CMS-loginHistory {
-    .CMS-tabContent {
-        padding: 0;
-        .CMS-box__header {
-            padding: 10px 6px !important;
-        }
-        .CMS-box-content {
-            padding: 20px 10px 3px 10px;
-        }
+#CMS-bettingHistory{
+    .CMS-checkbox {
+        padding-left: 0;
     }
+    .CMS-userDetails{
+        padding: 0 3px;
+    }
+    // .CMS-box-content {
+    //     padding: 0px 15px 0px 15px;
+    // }
 }
+// #CMS-loginHistory {
+    
+// }
 
 // Login
 .CMS-page {
@@ -2431,6 +2295,98 @@
                     }
                 }
             }
+        }
+    }
+}
+// popup //
+.ui-widget-header{
+    background-color: #192239 !important;
+    color: #fff !important;
+}
+.ui-dialog .ui-dialog-content{
+    padding: 0 !important;
+}
+
+// filter
+// .CMS-filterDropdownbtn {
+//     border-radius: 4px;
+//     border: solid 1px #192239;
+//     padding: 4px 8px;
+//     background-color: #192239;
+//     color: #fff;
+// }
+
+// .CMS-filterDropdown {
+//   display: flex;
+//   justify-content: flex-end;
+// }
+
+// .CMS-dropdownContent {
+//   display: none;
+//   position: absolute;
+//   background-color: #f1f1f1;
+//   min-width: 160px;
+//   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+//   z-index: 9999;
+// }
+
+// .CMS-dropdownContent a {
+//   color: black;
+//   padding: 12px 16px;
+//   text-decoration: none;
+//   display: block;
+// }
+
+// .CMS-dropdownContent a:hover {background-color: #ddd;}
+
+// .CMS-filterDropdown:hover .CMS-dropdownContent {display: block;}
+
+// .CMS-filterDropdown:hover .CMS-filterDropdownbtn {background-color: #192239;}
+
+.CMS-calenderGroup{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .CMS-calender{
+        width: auto;
+    }
+    .CMS-calenderCheckbox{
+        width: auto;
+
+    }
+}
+
+.CMS-msgBox {
+    padding: 10px 0;
+    font-weight: 600;
+    .CMS-msgBox-container{
+        min-height: 20px;  
+    }
+    &.CMS-success {
+        .CMS-msgBox-container{
+            background-color: #FFF;
+            border: 1px solid #33c45a;
+            color: #33c45a;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    }
+    &.CMS-error {
+        .CMS-msgBox-container{
+            background-color: #FFF;
+            // border: solid 1px #d92100;
+            color: #d92100;
+            padding: 0px 7px;
+            border-radius: 4px;
+        }
+    }
+    &.CMS-noRecords {
+        .CMS-msgBox-container{
+            background-color: #FFF;
+            border: solid 1px #FF8300;
+            color: #FF8300;
+            padding: 10px;
+            border-radius: 4px;
         }
     }
 }

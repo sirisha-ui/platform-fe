@@ -547,15 +547,10 @@ body.CMS-sideMenu-open {
   flex-wrap: nowrap;
   justify-content: center;
   border-bottom: solid 1px #ccc;
-  margin-left: -20px; 
-  position: relative;
-  top:100px;
-  left:2px;
-  height: 30px;
-}
+  margin-left: -20px; }
   .CMS-page-tabs.CMS-page-internalTabs {
     margin-left: 0px;
-    padding: 2px 2px 0 2px; }
+    padding: 10px 8px 0 8px; }
     .CMS-page-tabs.CMS-page-internalTabs ul li {
       min-width: 75px; }
       .CMS-page-tabs.CMS-page-internalTabs ul li:first-child {
@@ -579,7 +574,7 @@ body.CMS-sideMenu-open {
       border-radius: 4px 4px 0 0;
       border-bottom: 0; }
       .CMS-page-tabs ul li:first-child {
-        margin-left: 40px; }
+        margin-left: 20px; }
       .CMS-page-tabs ul li a {
         display: flex;
         align-items: center;
@@ -599,6 +594,57 @@ body.CMS-sideMenu-open {
         .CMS-page-tabs ul li.active a {
           color: #000;
           font-weight: 600; }
+
+.CMS-page-subTabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  border-bottom: solid 1px #ccc; }
+  .CMS-page-subTabs ul {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    height: 100%; }
+    .CMS-page-subTabs ul li {
+      white-space: nowrap;
+      vertical-align: middle;
+      border: solid 1px #ccc;
+      border-bottom: 0;
+      margin: 15px 5px 0 5px; }
+      .CMS-page-subTabs ul li:first-child {
+        margin-left: 15px; }
+      .CMS-page-subTabs ul li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 4px 10px;
+        color: #000;
+        height: 35px; }
+      .CMS-page-subTabs ul li.active {
+        border: 1px solid #2f8ff1;
+        border-bottom: 0;
+        background-color: #2f8ff1; }
+        .CMS-page-subTabs ul li.active a {
+          color: #fff;
+          font-weight: 600; }
+
+.CMS-tabContent .CMS-box-content {
+  padding: 0 15px; }
+.CMS-tabContent .CMS-userDetails {
+  display: flex;
+  align-items: center;
+  line-height: 35px; }
+  .CMS-tabContent .CMS-userDetails .userLabel {
+    font-weight: 400; }
+  .CMS-tabContent .CMS-userDetails .userData {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    justify-content: space-between; }
+    .CMS-tabContent .CMS-userDetails .userData .CMS-formControl {
+      width: 100%; }
 
 /* Tabs ----- */
 .CMS-tabs-data {
@@ -730,13 +776,15 @@ body.CMS-sideMenu-open {
       align-items: center;
       justify-content: center;
       height: 34px;
-      padding: 4px 10px;
-      background-color: #f6f6f6; }
+      padding: 4px 10px; }
     .CMS-box-tabs ul li i.CMS-icon-ticket {
       font-size: 16px; }
-    .CMS-box-tabs ul li.active a {
-      background-color: #FFF;
-      font-weight: 500; }
+    .CMS-box-tabs ul li.active {
+      border: solid 1px #2f8ff1; }
+      .CMS-box-tabs ul li.active a {
+        background-color: #2f8ff1;
+        font-weight: 500;
+        color: #fff; }
     .CMS-box-tabs ul li:not(.active) {
       border-bottom: 1px solid #dadada; }
 
@@ -805,6 +853,12 @@ body.CMS-sideMenu-open {
   .CMS-table .textLeft {
     text-align: left;
     min-width: 100px; }
+  .CMS-table .CMS-tablePlain tbody th:first-child {
+    text-align: left; }
+  .CMS-table .CMS-tablePlain tbody td:first-child {
+    text-align: left; }
+  .CMS-table .CMS-tablePlain tbody tr:nth-child(even) {
+    background-color: #fff; }
 
 .CMS-hr {
   margin: 20px 0;
@@ -855,9 +909,9 @@ body.CMS-sideMenu-open {
     .CMS-box.CMS-box-content .CMS-box__header {
       padding: 0px 5px 10px;
       margin-bottom: 10px; }
-  .CMS-box .CMS-box__tableHeader {
+  .CMS-box .CMS-box__Header {
     background-color: #192239;
-    color: #1c9cd8;
+    color: #fff;
     height: auto;
     font-size: 18px;
     font-weight: 600;
@@ -868,7 +922,7 @@ body.CMS-sideMenu-open {
     border-radius: 6px 6px 0 0; }
 
 .CMS-box-content {
-  padding: 20px 10px; }
+  padding: 20px 15px; }
 
 .CMS-page-header {
   font-size: 24px;
@@ -1014,1078 +1068,563 @@ body.CMS-sideMenu-open {
 
 /* Sprite image flags */
 .CMS-flags {
-  background-image: url(../images/country_flags/spritesheet.png);
+  background-image: url(/images/country_flags/spritesheet.png);
   background-repeat: no-repeat;
-  display: inline-block; }
-  .CMS-flags.CMS-001-ethiopia {
-    width: 30px;
-    height: 20px;
+  display: inline-block;
+  border-radius: 4px;
+  width: 30px;
+  height: 20px; }
+  .CMS-flags.et {
     background-position: -5px -5px; }
-  .CMS-flags.CMS-002-oman {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.om {
     background-position: -5px -35px; }
-  .CMS-flags.CMS-003-tanzania {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.tz {
     background-position: -5px -65px; }
-  .CMS-flags.CMS-004-slovenia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sl {
     background-position: -5px -95px; }
-  .CMS-flags.CMS-005-puerto-rico {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.pr {
     background-position: -5px -125px; }
-  .CMS-flags.CMS-006-mozambique {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.mz {
     background-position: -5px -155px; }
-  .CMS-flags.CMS-007-iraq {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.iq {
     background-position: -5px -185px; }
-  .CMS-flags.CMS-008-lebanon {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.lb {
     background-position: -5px -215px; }
-  .CMS-flags.CMS-009-uganda {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ug {
     background-position: -5px -245px; }
-  .CMS-flags.CMS-010-nigeria {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ng {
     background-position: -5px -275px; }
-  .CMS-flags.CMS-011-italy {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.it {
     background-position: -5px -305px; }
-  .CMS-flags.CMS-012-malta {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.mt {
     background-position: -5px -335px; }
-  .CMS-flags.CMS-013-tunisia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.tn {
     background-position: -5px -365px; }
-  .CMS-flags.CMS-014-nicaragua {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ni {
     background-position: -5px -395px; }
-  .CMS-flags.CMS-015-el-salvador {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sv {
     background-position: -5px -425px; }
-  .CMS-flags.CMS-016-zambia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.zm {
     background-position: -5px -455px; }
-  .CMS-flags.CMS-017-wales {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.wales {
     background-position: -5px -485px; }
-  .CMS-flags.CMS-018-dominican-republic {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.do {
     background-position: -5px -515px; }
-  .CMS-flags.CMS-019-qatar {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.qa {
     background-position: -5px -545px; }
-  .CMS-flags.CMS-020-namibia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.na {
     background-position: -5px -575px; }
-  .CMS-flags.CMS-021-mauritius {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.mu {
     background-position: -5px -605px; }
-  .CMS-flags.CMS-022-european-union {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.european-union {
     background-position: -5px -635px; }
-  .CMS-flags.CMS-023-luxembourg {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.lu {
     background-position: -5px -665px; }
-  .CMS-flags.CMS-024-hawaii {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.hawaii {
     background-position: -5px -695px; }
-  .CMS-flags.CMS-025-lithuania {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.lt {
     background-position: -5px -725px; }
-  .CMS-flags.CMS-026-jamaica {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.jm {
     background-position: -5px -755px; }
-  .CMS-flags.CMS-027-honduras {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.hn {
     background-position: -5px -785px; }
-  .CMS-flags.CMS-028-myanmar {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.mm {
     background-position: -5px -815px; }
-  .CMS-flags.CMS-029-kenya {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ke {
     background-position: -5px -845px; }
-  .CMS-flags.CMS-030-cyprus {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.cy {
     background-position: -5px -875px; }
-  .CMS-flags.CMS-031-pakistan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.pk {
     background-position: -5px -905px; }
-  .CMS-flags.CMS-032-latvia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.lv {
     background-position: -5px -935px; }
-  .CMS-flags.CMS-033-japan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.jp {
     background-position: -5px -965px; }
-  .CMS-flags.CMS-034-kazakhstan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.kz {
     background-position: -5px -995px; }
-  .CMS-flags.CMS-035-serbia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.rs {
     background-position: -5px -1025px; }
-  .CMS-flags.CMS-036-scotland {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.scotland {
     background-position: -5px -1055px; }
-  .CMS-flags.CMS-037-north-korea {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.kp {
     background-position: -5px -1085px; }
-  .CMS-flags.CMS-038-uruguay {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.uy {
     background-position: -5px -1115px; }
-  .CMS-flags.CMS-039-syria {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sy {
     background-position: -5px -1145px; }
-  .CMS-flags.CMS-040-guatemala {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.gt {
     background-position: -5px -1175px; }
-  .CMS-flags.CMS-041-iceland {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.is {
     background-position: -5px -1205px; }
-  .CMS-flags.CMS-042-jordan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.jo {
     background-position: -5px -1235px; }
-  .CMS-flags.CMS-043-monaco {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.mc {
     background-position: -5px -1265px; }
-  .CMS-flags.CMS-044-spain {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.es {
     background-position: -5px -1295px; }
-  .CMS-flags.CMS-045-slovakia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sk {
     background-position: -5px -1325px; }
-  .CMS-flags.CMS-046-united-nations {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.united-nations {
     background-position: -5px -1355px; }
-  .CMS-flags.CMS-047-panama {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.pa {
     background-position: -5px -1385px; }
-  .CMS-flags.CMS-048-new-zealand {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.nz {
     background-position: -5px -1415px; }
-  .CMS-flags.CMS-049-ecuador {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ec {
     background-position: -5px -1445px; }
-  .CMS-flags.CMS-050-romania {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ro {
     background-position: -5px -1475px; }
-  .CMS-flags.CMS-051-chile {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.cl {
     background-position: -5px -1505px; }
-  .CMS-flags.CMS-052-finland {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.fl {
     background-position: -5px -1535px; }
-  .CMS-flags.CMS-053-hungary {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.hu {
     background-position: -5px -1565px; }
-  .CMS-flags.CMS-054-belgium {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.be {
     background-position: -5px -1595px; }
-  .CMS-flags.CMS-055-south-korea {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.kr {
     background-position: -5px -1625px; }
-  .CMS-flags.CMS-056-malaysia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.my {
     background-position: -5px -1655px; }
-  .CMS-flags.CMS-057-venezuela {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ve {
     background-position: -5px -1685px; }
-  .CMS-flags.CMS-058-norway {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.no {
     background-position: -5px -1715px; }
-  .CMS-flags.CMS-059-saudi-arabia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sa {
     background-position: -5px -1745px; }
-  .CMS-flags.CMS-060-israel {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.il {
     background-position: -5px -1775px; }
-  .CMS-flags.CMS-061-czech-republic {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.cz {
     background-position: -5px -1805px; }
-  .CMS-flags.CMS-062-colombia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.co {
     background-position: -5px -1835px; }
-  .CMS-flags.CMS-063-iran {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ir {
     background-position: -5px -1865px; }
-  .CMS-flags.CMS-064-argentina {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ar {
     background-position: -5px -1895px; }
-  .CMS-flags.CMS-065-ukraine {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ua {
     background-position: -5px -1925px; }
-  .CMS-flags.CMS-066-germany {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.de {
     background-position: -5px -1955px; }
-  .CMS-flags.CMS-067-hong-kong {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.hk {
     background-position: -5px -1985px; }
-  .CMS-flags.CMS-068-united-arab-emirates {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ae {
     background-position: -5px -2015px; }
-  .CMS-flags.CMS-069-laos {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.la {
     background-position: -5px -2045px; }
-  .CMS-flags.CMS-070-ireland {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ie {
     background-position: -5px -2075px; }
-  .CMS-flags.CMS-071-greece {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.gr {
     background-position: -5px -2105px; }
-  .CMS-flags.CMS-072-denmark {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.dk {
     background-position: -5px -2135px; }
-  .CMS-flags.CMS-073-sweden {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.se {
     background-position: -5px -2165px; }
-  .CMS-flags.CMS-074-peru {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.pe {
     background-position: -5px -2195px; }
-  .CMS-flags.CMS-075-south-africa {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.za {
     background-position: -5px -2225px; }
-  .CMS-flags.CMS-076-philippines {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ph {
     background-position: -5px -2255px; }
-  .CMS-flags.CMS-077-france {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.fr {
     background-position: -5px -2285px; }
-  .CMS-flags.CMS-078-indonesia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.id {
     background-position: -5px -2315px; }
-  .CMS-flags.CMS-079-egypt {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.eg {
     background-position: -5px -2345px; }
-  .CMS-flags.CMS-080-taiwan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.tw {
     background-position: -5px -2375px; }
-  .CMS-flags.CMS-081-cook-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ck {
     background-position: -5px -2405px; }
-  .CMS-flags.CMS-082-cocos-island {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.cc {
     background-position: -5px -2435px; }
-  .CMS-flags.CMS-083-christmas-island {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.cx {
     background-position: -5px -2465px; }
-  .CMS-flags.CMS-084-ceuta {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ceuta {
     background-position: -5px -2495px; }
-  .CMS-flags.CMS-085-american-samoa {
-    width: 29px;
-    height: 20px;
+  .CMS-flags.as {
     background-position: -5px -2525px; }
-  .CMS-flags.CMS-086-morocco {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ma {
     background-position: -5px -2555px; }
-  .CMS-flags.CMS-087-anguilla {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.al {
     background-position: -5px -2585px; }
-  .CMS-flags.CMS-088-corsica {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.corsica {
     background-position: -5px -2615px; }
-  .CMS-flags.CMS-089-canary-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.canary-islands {
     background-position: -5px -2645px; }
-  .CMS-flags.CMS-090-comoros {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.km {
     background-position: -5px -2675px; }
-  .CMS-flags.CMS-091-central-african-republic {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.cf {
     background-position: -5px -2705px; }
-  .CMS-flags.CMS-092-cayman-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ky {
     background-position: -5px -2735px; }
-  .CMS-flags.CMS-093-british-indian-ocean-territory {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.io {
     background-position: -5px -2765px; }
-  .CMS-flags.CMS-094-bhutan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.bt {
     background-position: -5px -2795px; }
-  .CMS-flags.CMS-095-chad {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.td {
     background-position: -5px -2825px; }
-  .CMS-flags.CMS-096-cape-verde {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.cv {
     background-position: -5px -2855px; }
-  .CMS-flags.CMS-097-switzerland {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ch {
     background-position: -5px -2885px; }
-  .CMS-flags.CMS-098-benin {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.benin {
     background-position: -5px -2915px; }
-  .CMS-flags.CMS-099-aruba {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.aruba {
     background-position: -5px -2945px; }
-  .CMS-flags.CMS-101-balearic-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.balearic-islands {
     background-position: -5px -2975px; }
-  .CMS-flags.CMS-102-andorra {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ad {
     background-position: -5px -3005px; }
-  .CMS-flags.CMS-103-burundi {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.burundi {
     background-position: -5px -3035px; }
-  .CMS-flags.CMS-104-antigua-and-barbuda {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.antigua-and-barbuda {
     background-position: -5px -3065px; }
-  .CMS-flags.CMS-105-aland-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ax {
     background-position: -5px -3095px; }
-  .CMS-flags.CMS-106-cameroon {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.cameroon {
     background-position: -5px -3125px; }
-  .CMS-flags.CMS-107-brunei {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.brunei {
     background-position: -5px -3155px; }
-  .CMS-flags.CMS-108-poland {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.poland {
     background-position: -5px -3185px; }
-  .CMS-flags.CMS-109-bonaire {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.bonaire {
     background-position: -5px -3215px; }
-  .CMS-flags.CMS-110-belarus {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.belarus {
     background-position: -5px -3245px; }
-  .CMS-flags.CMS-111-barbados {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.barbados {
     background-position: -5px -3275px; }
-  .CMS-flags.CMS-112-british-virgin-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.british-virgin-islands {
     background-position: -5px -3305px; }
-  .CMS-flags.CMS-113-bosnia-and-herzegovina {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.bosnia-and-herzegovina {
     background-position: -5px -3335px; }
-  .CMS-flags.CMS-114-bermuda {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.bermuda {
     background-position: -5px -3365px; }
-  .CMS-flags.CMS-115-belize {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.belize {
     background-position: -5px -3395px; }
-  .CMS-flags.CMS-116-bahrain {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.bahrain {
     background-position: -5px -3425px; }
-  .CMS-flags.CMS-117-albania {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.al {
     background-position: -5px -3455px; }
-  .CMS-flags.CMS-118-burkina-faso {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.burkina-faso {
     background-position: -5px -3485px; }
-  .CMS-flags.CMS-119-turkey {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.turkey {
     background-position: -5px -3515px; }
-  .CMS-flags.CMS-120-basque-country {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.basque-country {
     background-position: -5px -3545px; }
-  .CMS-flags.CMS-121-armenia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.armenia {
     background-position: -5px -3575px; }
-  .CMS-flags.CMS-122-afghanistan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.afghanistan {
     background-position: -5px -3605px; }
-  .CMS-flags.CMS-123-british-columbia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.british-columbia {
     background-position: -5px -3635px; }
-  .CMS-flags.CMS-124-angola {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ao {
     background-position: -5px -3665px; }
-  .CMS-flags.CMS-125-azerbaijan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.azerbaijan {
     background-position: -5px -3695px; }
-  .CMS-flags.CMS-126-algeria {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.dz {
     background-position: -5px -3725px; }
-  .CMS-flags.CMS-127-botswana {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.botswana {
     background-position: -5px -3755px; }
-  .CMS-flags.CMS-128-bangladesh {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.bangladesh {
     background-position: -5px -3785px; }
-  .CMS-flags.CMS-129-cuba {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.cuba {
     background-position: -5px -3815px; }
-  .CMS-flags.CMS-130-australia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.australia {
     background-position: -5px -3845px; }
-  .CMS-flags.CMS-131-costa-rica {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.costa-rica {
     background-position: -5px -3875px; }
-  .CMS-flags.CMS-132-cambodia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.cambodia {
     background-position: -5px -3905px; }
-  .CMS-flags.CMS-133-bolivia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.bolivia {
     background-position: -5px -3935px; }
-  .CMS-flags.CMS-134-croatia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.croatia {
     background-position: -5px -3965px; }
-  .CMS-flags.CMS-135-bulgaria {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.bulgaria {
     background-position: -5px -3995px; }
-  .CMS-flags.CMS-136-galapagos-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.galapagos-islands {
     background-position: -5px -4025px; }
-  .CMS-flags.CMS-137-martinique {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.martinique {
     background-position: -5px -4055px; }
-  .CMS-flags.CMS-138-tonga {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.tonga {
     background-position: -5px -4085px; }
-  .CMS-flags.CMS-139-st-lucia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.st-lucia {
     background-position: -5px -4115px; }
-  .CMS-flags.CMS-140-rapa-nui {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.rapa-nui {
     background-position: -5px -4145px; }
-  .CMS-flags.CMS-141-singapore {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.singapore {
     background-position: -5px -4175px; }
-  .CMS-flags.CMS-142-palau {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.palau {
     background-position: -5px -4205px; }
-  .CMS-flags.CMS-143-niue {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.niue {
     background-position: -5px -4235px; }
-  .CMS-flags.CMS-144-macao {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.macao {
     background-position: -5px -4265px; }
-  .CMS-flags.CMS-145-fiji {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.fiji {
     background-position: -5px -4295px; }
-  .CMS-flags.CMS-146-faroe-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.faroe-islands {
     background-position: -5px -4325px; }
-  .CMS-flags.CMS-147-dominica {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.dominica {
     background-position: -5px -4355px; }
-  .CMS-flags.CMS-148-vanuatu {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.vanuatu {
     background-position: -5px -4385px; }
-  .CMS-flags.CMS-149-sierra-leone {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sierra-leone {
     background-position: -5px -4415px; }
-  .CMS-flags.CMS-150-seychelles {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.seychelles {
     background-position: -5px -4445px; }
-  .CMS-flags.CMS-151-kosovo {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.kosovo {
     background-position: -5px -4475px; }
-  .CMS-flags.CMS-152-england {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.england {
     background-position: -5px -4505px; }
-  .CMS-flags.CMS-153-united-states-of-america {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.united-states-of-america {
     background-position: -5px -4535px; }
-  .CMS-flags.CMS-154-guinea {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.guinea {
     background-position: -5px -4565px; }
-  .CMS-flags.CMS-155-orkney-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.orkney-islands {
     background-position: -5px -4595px; }
-  .CMS-flags.CMS-156-turks-and-caicos {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.turks-and-caicos {
     background-position: -5px -4625px; }
-  .CMS-flags.CMS-157-transnistria {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.transnistria {
     background-position: -5px -4655px; }
-  .CMS-flags.CMS-158-tokelau {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.tokelau {
     background-position: -5px -4685px; }
-  .CMS-flags.CMS-159-gambia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.gambia {
     background-position: -5px -4715px; }
-  .CMS-flags.CMS-160-st-vincent-and-the-grenadines {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.st-vincent-and-the-grenadines {
     background-position: -5px -4745px; }
-  .CMS-flags.CMS-161-south-sudan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.south-sudan {
     background-position: -5px -4775px; }
-  .CMS-flags.CMS-162-somaliland {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.somaliland {
     background-position: -5px -4805px; }
-  .CMS-flags.CMS-163-solomon-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.solomon-islands {
     background-position: -5px -4835px; }
-  .CMS-flags.CMS-164-vietnam {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.vietnam {
     background-position: -5px -4865px; }
-  .CMS-flags.CMS-165-sint-maarten {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sint-maarten {
     background-position: -5px -4895px; }
-  .CMS-flags.CMS-166-sint-eustatius {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sint-eustatius {
     background-position: -5px -4925px; }
-  .CMS-flags.CMS-167-saint-kitts-and-nevis {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.saint-kitts-and-nevis {
     background-position: -5px -4955px; }
-  .CMS-flags.CMS-168-saba-island {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.saba-island {
     background-position: -5px -4985px; }
-  .CMS-flags.CMS-169-pitcairn-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.pitcairn-islands {
     background-position: -5px -5015px; }
-  .CMS-flags.CMS-170-palestine {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.palestine {
     background-position: -5px -5045px; }
-  .CMS-flags.CMS-171-ossetia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ossetia {
     background-position: -5px -5075px; }
-  .CMS-flags.CMS-172-northern-marianas-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.northern-marianas-islands {
     background-position: -5px -5105px; }
-  .CMS-flags.CMS-173-nauru {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.nauru {
     background-position: -5px -5135px; }
-  .CMS-flags.CMS-174-portugal {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.portugal {
     background-position: -5px -5165px; }
-  .CMS-flags.CMS-175-montserrat {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.montserrat {
     background-position: -5px -5195px; }
-  .CMS-flags.CMS-176-melilla {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.melilla {
     background-position: -5px -5225px; }
-  .CMS-flags.CMS-177-mauritania {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.mauritania {
     background-position: -5px -5255px; }
-  .CMS-flags.CMS-178-kuwait {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.kuwait {
     background-position: -5px -5285px; }
-  .CMS-flags.CMS-179-kiribati {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.kiribati {
     background-position: -5px -5315px; }
-  .CMS-flags.CMS-180-guernsey {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.guernsey {
     background-position: -5px -5345px; }
-  .CMS-flags.CMS-181-guam {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.guam {
     background-position: -5px -5375px; }
-  .CMS-flags.CMS-182-grenada {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.grenada {
     background-position: -5px -5405px; }
-  .CMS-flags.CMS-183-greenland {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.greenland {
     background-position: -5px -5435px; }
-  .CMS-flags.CMS-184-thailand {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.thailand {
     background-position: -5px -5465px; }
-  .CMS-flags.CMS-185-gibraltar {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.gibraltar {
     background-position: -5px -5495px; }
-  .CMS-flags.CMS-186-gabon {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.gabon {
     background-position: -5px -5525px; }
-  .CMS-flags.CMS-187-falkland-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.falkland-islands {
     background-position: -5px -5555px; }
-  .CMS-flags.CMS-188-virgin-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.virgin-islands {
     background-position: -5px -5585px; }
-  .CMS-flags.CMS-189-austria {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.austria {
     background-position: -5px -5615px; }
-  .CMS-flags.CMS-190-vatican-city {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.vatican-city {
     background-position: -5px -5645px; }
-  .CMS-flags.CMS-191-tubalu {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.tubalu {
     background-position: -5px -5675px; }
-  .CMS-flags.CMS-192-turkmenistan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.turkmenistan {
     background-position: -5px -5705px; }
-  .CMS-flags.CMS-193-togo {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.togo {
     background-position: -5px -5735px; }
-  .CMS-flags.CMS-194-bahamas {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.bahamas {
     background-position: -5px -5765px; }
-  .CMS-flags.CMS-195-netherlands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.netherlands {
     background-position: -5px -5795px; }
-  .CMS-flags.CMS-196-azores-islands {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.azores-islands {
     background-position: -5px -5825px; }
-  .CMS-flags.CMS-197-suriname {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.suriname {
     background-position: -5px -5855px; }
-  .CMS-flags.CMS-198-somalia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.somalia {
     background-position: -5px -5885px; }
-  .CMS-flags.CMS-199-sicily {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sicily {
     background-position: -5px -5915px; }
-  .CMS-flags.CMS-200-sardinia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sardinia {
     background-position: -5px -5945px; }
-  .CMS-flags.CMS-201-sao-tome-and-principe {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sao-tome-and-principe {
     background-position: -5px -5975px; }
-  .CMS-flags.CMS-202-norfolk-island {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.norfolk-island {
     background-position: -5px -6005px; }
-  .CMS-flags.CMS-203-niger {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.niger {
     background-position: -5px -6035px; }
-  .CMS-flags.CMS-204-micronesia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.micronesia {
     background-position: -5px -6065px; }
-  .CMS-flags.CMS-205-marshall-island {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.marshall-island {
     background-position: -5px -6095px; }
-  .CMS-flags.CMS-206-canada {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.canada {
     background-position: -5px -6125px; }
-  .CMS-flags.CMS-207-mali {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.mali {
     background-position: -5px -6155px; }
-  .CMS-flags.CMS-208-kyrgyzstan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.kyrgyzstan {
     background-position: -5px -6185px; }
-  .CMS-flags.CMS-209-guinea-bissau {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.guinea-bissau {
     background-position: -5px -6215px; }
-  .CMS-flags.CMS-210-eritrea {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.eritrea {
     background-position: -5px -6245px; }
-  .CMS-flags.CMS-211-djibouti {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.djibouti {
     background-position: -5px -6275px; }
-  .CMS-flags.CMS-212-curacao {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.curacao {
     background-position: -5px -6305px; }
-  .CMS-flags.CMS-213-st-barts {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.st-barts {
     background-position: -5px -6335px; }
-  .CMS-flags.CMS-214-san-marino {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.san-marino {
     background-position: -5px -6365px; }
-  .CMS-flags.CMS-215-northen-cyprus {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.northen-cyprus {
     background-position: -5px -6395px; }
-  .CMS-flags.CMS-216-liechtenstein {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.liechtenstein {
     background-position: -5px -6425px; }
-  .CMS-flags.CMS-217-india {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.india {
     background-position: -5px -6455px; }
-  .CMS-flags.CMS-218-liberia {
+  .CMS-flags.liberia {
     width: 29px;
     height: 20px;
     background-position: -5px -6485px; }
-  .CMS-flags.CMS-219-yemen {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.yemen {
     background-position: -5px -6515px; }
-  .CMS-flags.CMS-220-uzbekistn {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.uzbekistn {
     background-position: -5px -6545px; }
-  .CMS-flags.CMS-221-sudan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sudan {
     background-position: -5px -6575px; }
-  .CMS-flags.CMS-222-sahrawi-arab-democratic-republic {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sahrawi-arab-democratic-republic {
     background-position: -5px -6605px; }
-  .CMS-flags.CMS-223-republic-of-macedonia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.republic-of-macedonia {
     background-position: -5px -6635px; }
-  .CMS-flags.CMS-224-otan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.otan {
     background-position: -5px -6665px; }
-  .CMS-flags.CMS-225-libya {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.libya {
     background-position: -5px -6695px; }
-  .CMS-flags.CMS-226-east-timor {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.east-timor {
     background-position: -5px -6725px; }
-  .CMS-flags.CMS-227-tibet {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.tibet {
     background-position: -5px -6755px; }
-  .CMS-flags.CMS-228-russia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.russia {
     background-position: -5px -6785px; }
-  .CMS-flags.CMS-229-papua-new-guinea {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.papua-new-guinea {
     background-position: -5px -6815px; }
-  .CMS-flags.CMS-230-montenegro {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.montenegro {
     background-position: -5px -6845px; }
-  .CMS-flags.CMS-231-moldova {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.moldova {
     background-position: -5px -6875px; }
-  .CMS-flags.CMS-232-maldives {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.maldives {
     background-position: -5px -6905px; }
-  .CMS-flags.CMS-233-madeira {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.madeira {
     background-position: -5px -6935px; }
-  .CMS-flags.CMS-234-french-polynesia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.french-polynesia {
     background-position: -5px -6965px; }
-  .CMS-flags.CMS-235-trinidad-and-tobago {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.trinidad-and-tobago {
     background-position: -5px -6995px; }
-  .CMS-flags.CMS-236-tajikistan {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.tajikistan {
     background-position: -5px -7025px; }
-  .CMS-flags.CMS-237-swaziland {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.swaziland {
     background-position: -5px -7055px; }
-  .CMS-flags.CMS-238-sri-lanka {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.sri-lanka {
     background-position: -5px -7085px; }
-  .CMS-flags.CMS-239-mexico {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.mexico {
     background-position: -5px -7115px; }
-  .CMS-flags.CMS-240-republic-of-the-congo {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.republic-of-the-congo {
     background-position: -5px -7145px; }
-  .CMS-flags.CMS-241-equatorial-guinea {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.equatorial-guinea {
     background-position: -5px -7175px; }
-  .CMS-flags.CMS-242-zimbabwe {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.zimbabwe {
     background-position: -5px -7205px; }
-  .CMS-flags.CMS-243-rwanda {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.rwanda {
     background-position: -5px -7235px; }
-  .CMS-flags.CMS-244-lesotho {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.lesotho {
     background-position: -5px -7265px; }
-  .CMS-flags.CMS-245-ivory-coast {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ivory-coast {
     background-position: -5px -7295px; }
-  .CMS-flags.CMS-246-isle-of-man {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.isle-of-man {
     background-position: -5px -7325px; }
-  .CMS-flags.CMS-247-haiti {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.haiti {
     background-position: -5px -7355px; }
-  .CMS-flags.CMS-248-samoa {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.samoa {
     background-position: -5px -7385px; }
-  .CMS-flags.CMS-249-nepal {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.nepal {
     background-position: -5px -7415px; }
-  .CMS-flags.CMS-250-brazil {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.brazil {
     background-position: -5px -7445px; }
-  .CMS-flags.CMS-251-mongolia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.mongolia {
     background-position: -5px -7475px; }
-  .CMS-flags.CMS-252-malawi {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.malawi {
     background-position: -5px -7505px; }
-  .CMS-flags.CMS-253-madagascar {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.madagascar {
     background-position: -5px -7535px; }
-  .CMS-flags.CMS-254-jersey {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.jersey {
     background-position: -5px -7565px; }
-  .CMS-flags.CMS-255-ghana {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.ghana {
     background-position: -5px -7595px; }
-  .CMS-flags.CMS-256-georgia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.georgia {
     background-position: -5px -7625px; }
-  .CMS-flags.CMS-257-estonia {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.estonia {
     background-position: -5px -7655px; }
-  .CMS-flags.CMS-258-democratic-republic-of-congo {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.democratic-republic-of-congo {
     background-position: -5px -7685px; }
-  .CMS-flags.CMS-259-senegal {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.senegal {
     background-position: -5px -7715px; }
-  .CMS-flags.CMS-261-china {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.china {
     background-position: -5px -7745px; }
-  .CMS-flags.CMS-262-united-kingdom {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.gb {
     background-position: -5px -7775px; }
-  .CMS-flags.CMS-Chinese--Taipei {
-    width: 30px;
-    height: 20px;
+  .CMS-flags.Chinese--Taipei {
     background-position: -5px -7805px; }
-  .CMS-flags.CMS-github {
+  .CMS-flags.github {
     width: 30px;
     height: 30px;
     background-position: -5px -7835px; }
-  .CMS-flags.CMS-gmail {
+  .CMS-flags.gmail {
     width: 30px;
     height: 30px;
     background-position: -5px -7875px; }
-  .CMS-flags.CMS-linkedin {
+  .CMS-flags.linkedin {
     width: 30px;
     height: 30px;
     background-position: -5px -7915px; }
-  .CMS-flags.CMS-stackoverflow {
+  .CMS-flags.stackoverflow {
     width: 30px;
     height: 30px;
     background-position: -5px -7955px; }
-  .CMS-flags.CMS-tumblr {
+  .CMS-flags.tumblr {
     width: 30px;
     height: 30px;
     background-position: -5px -7995px; }
-  .CMS-flags.CMS-twitter {
+  .CMS-flags.twitter {
     width: 30px;
     height: 30px;
     background-position: -5px -8035px; }
 
+#CMS-generalDetails .CMS-checkbox {
+  padding-left: 0; }
 #CMS-generalDetails .CMS-tabContent {
   padding: 0; }
   #CMS-generalDetails .CMS-tabContent .CMS-box-content {
@@ -2095,16 +1634,15 @@ body.CMS-sideMenu-open {
     border-radius: 0 0 4px 4px;
     display: flex;
     align-items: center;
-    border-top: solid 1px #2f8ff1; }
+    border-top: solid 3px #2f8ff1;
+    min-height: 50px; }
     #CMS-generalDetails .CMS-tabContent .general-detailsFooter .CMS-form-group .CMS-checkbox label {
       padding: 0 20px 0 0; }
 
-#CMS-loginHistory .CMS-tabContent {
-  padding: 0; }
-  #CMS-loginHistory .CMS-tabContent .CMS-box__header {
-    padding: 10px 6px !important; }
-  #CMS-loginHistory .CMS-tabContent .CMS-box-content {
-    padding: 20px 10px 3px 10px; }
+#CMS-bettingHistory .CMS-checkbox {
+  padding-left: 0; }
+#CMS-bettingHistory .CMS-userDetails {
+  padding: 0 3px; }
 
 .CMS-page.CMS-login {
   margin: 0 auto;
@@ -2131,6 +1669,45 @@ body.CMS-sideMenu-open {
           text-decoration: underline;
           color: #000; }
 
+.ui-widget-header {
+  background-color: #192239 !important;
+  color: #fff !important; }
+
+.ui-dialog .ui-dialog-content {
+  padding: 0 !important; }
+
+.CMS-calenderGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  .CMS-calenderGroup .CMS-calender {
+    width: auto; }
+  .CMS-calenderGroup .CMS-calenderCheckbox {
+    width: auto; }
+
+.CMS-msgBox {
+  padding: 10px 0;
+  font-weight: 600; }
+  .CMS-msgBox .CMS-msgBox-container {
+    min-height: 20px; }
+  .CMS-msgBox.CMS-success .CMS-msgBox-container {
+    background-color: #FFF;
+    border: 1px solid #33c45a;
+    color: #33c45a;
+    padding: 10px;
+    border-radius: 4px; }
+  .CMS-msgBox.CMS-error .CMS-msgBox-container {
+    background-color: #FFF;
+    color: #d92100;
+    padding: 0px 7px;
+    border-radius: 4px; }
+  .CMS-msgBox.CMS-noRecords .CMS-msgBox-container {
+    background-color: #FFF;
+    border: solid 1px #FF8300;
+    color: #FF8300;
+    padding: 10px;
+    border-radius: 4px; }
+
 input[type="text"],
 select,
 textarea {
@@ -2150,7 +1727,12 @@ label {
   margin-bottom: 15px; }
   .CMS-formGroup.formGroup-inline {
     flex-direction: row;
-    align-items: center; }
+    align-items: center;
+    line-height: 25px; }
+
+.CMS-form-errorMsg {
+  color: #d92100;
+  min-height: 20px; }
 
 .CMS-formLabel {
   margin: 0 10px 2px 0;
@@ -2161,6 +1743,11 @@ label {
   display: flex;
   align-items: center; }
 
+.CMS-formControl.CMS-errorField {
+  border: soid 1px #d92100;
+  border-radius: 4px; }
+  .CMS-formControl.CMS-errorField input, .CMS-formControl.CMS-errorField select {
+    border: solid 1px #d92100; }
 .CMS-formControl input {
   border: 1px solid #d7d7d7;
   border-radius: 4px;
@@ -2189,7 +1776,7 @@ label {
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
-    right: 8px;
+    right: 2px;
     border: 0;
     pointer-events: none;
     color: #c6c6c6;
@@ -2209,13 +1796,13 @@ label {
 .CMS-formControl-group {
   position: relative; }
   .CMS-formControl-group .CMS-formAddon {
-    min-width: 30px;
-    max-width: 30px;
+    min-width: 28px;
+    max-width: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    right: 5px;
+    right: 0px;
     top: 0;
     bottom: 0; }
   .CMS-formControl-group .CMS-formControl {
@@ -2264,6 +1851,7 @@ input[type="submit"]:hover {
     .CMS-form-group .CMS-checkbox label {
       width: 16px;
       height: 16px;
+      position: relative;
       padding: 0; }
       .CMS-form-group .CMS-checkbox label::before {
         content: "";
@@ -2375,6 +1963,7 @@ input[type="submit"]:hover {
   align-items: center;
   font-weight: 600;
   min-width: 100px;
+  max-width: 150px;
   color: #000;
   cursor: default;
   padding: 2px 6px;
@@ -2434,7 +2023,7 @@ input[type="submit"]:hover {
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
-    right: 8px;
+    right: 2px;
     border: 0;
     pointer-events: none;
     color: #c6c6c6;
@@ -2452,10 +2041,10 @@ input[type="submit"]:hover {
 .CMS-dropdown {
   position: relative; }
 
-/* .CMS-dropdown > .CMS-dropdown-menu {
+.CMS-dropdown > .CMS-dropdown-menu {
   display: none;
   position: absolute;
-  z-index: 999; } */
+  z-index: 999; }
 
 .CMS-dropdown.active > .CMS-dropdown-menu {
   display: block; }
@@ -2490,7 +2079,7 @@ input[type="submit"]:hover {
   width: 100%;
   cursor: pointer;
   display: inline-block;
-  padding: 6px 50px 6px 10px;
+  padding: 6px 25px 6px 10px;
   border: 1px solid #d7d7d7;
   border-radius: 4px;
   background-color: #fff;
@@ -2501,7 +2090,7 @@ input[type="submit"]:hover {
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
-    right: 8px;
+    right: 2px;
     border: 0;
     pointer-events: none;
     color: #444;
@@ -2665,11 +2254,7 @@ i {
   flex-wrap: nowrap;
   align-items: center;
   box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.2);
-  min-width: calc(1280px - 290px); 
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-}
+  min-width: calc(1280px - 290px); }
   .CMS-layout-header .CMS-header-right {
     flex: 1 1 auto; }
   .CMS-layout-header .CMS-header-left {
@@ -2678,7 +2263,7 @@ i {
     .CMS-layout-header .CMS-header-left .cms-icon_hamburger {
       padding: 20px;
       margin-right: 5px;
-      font-size: 24px;
+      font-size: 30px;
       cursor: pointer;
       color: #2f8ff1; }
     .CMS-layout-header .CMS-header-left .CMS-header-logo .CMS-header-logo__brand {
@@ -2714,6 +2299,9 @@ i {
     padding: 0 8px 0 50px;
     min-height: 44px;
     max-height: 44px; }
+
+.CMS-greyOut {
+  color: #ccc !important; }
 
 .CMS-sideMenu {
   background-color: #192239;
@@ -2753,8 +2341,6 @@ i {
   .CMS-categoryListItem i {
     margin-right: 5px;
     font-size: 22px; }
-  .CMS-categoryListItem span {
-    margin-right: 5px; }
   .CMS-categoryListItem.active {
     color: #2f8ff1 !important; }
   .CMS-categoryListItem .CMS-categoryListItem-content {
@@ -2764,7 +2350,10 @@ i {
     .CMS-categoryListItem .CMS-categoryListItem-content .CMS-menuHeading {
       display: flex;
       justify-content: space-between;
-      width: 100%; }
+      width: 100%;
+      align-items: center; }
+      .CMS-categoryListItem .CMS-categoryListItem-content .CMS-menuHeading .CMS-categoryListItem-title {
+        margin-left: 5px; }
 
 .CMS-accordion .CMS-accordion-header {
   background-color: #2a354d;
@@ -2836,10 +2425,8 @@ i {
   overflow: auto;
   min-width: calc(1280px - 290px); }
 
-  .CMS-page {
-    padding: 20px; 
-  position: relative;
-  top:95px;}
+.CMS-page {
+  padding: 20px; }
 
 .CMS-page-content {
   display: flex; }

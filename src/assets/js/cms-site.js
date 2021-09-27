@@ -1,7 +1,7 @@
 ﻿window.addEventListener("load", function () {
 
     // store tabs variable
-    var myTabs = document.querySelectorAll(".CMS-filterBtnList >ul >li , .CMS-page-tabs >ul >li, .CMS-filter-tabs >ul >li, .CMS-box-tabs>ul>li");
+    var myTabs = document.querySelectorAll(".CMS-filterBtnList >ul >li , .CMS-page-tabs >ul >li, .CMS-filter-tabs >ul >li, .CMS-page-subTabs >ul >li, .CMS-box-tabs >ul >li");
     function myTabClicks(tabClickEvent) {
         //debugger
         var myTabs1 = tabClickEvent.currentTarget.parentElement.children;

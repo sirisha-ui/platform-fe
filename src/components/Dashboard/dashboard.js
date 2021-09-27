@@ -299,121 +299,21 @@ class Dashboard extends Component{
                                     </div>
                                 </div>
                             </div>
-                            <div className="CMS-page-filters">
-                                <div className="CMS-dropdown CMS-manage-dropdown">
-                                    <div className="CMS-dropdown-btn">Manage Graphs</div>
-                                    <ul className="CMS-dropdown-menu">
-                                        <li>
-                                            <div className="CMS-formGroup">
-                                                <div className="CMS-formLabel">Select Data for Graph:</div>
-
-                                                <div className="CMS-select">
-                                                    <select>
-                                                        <option>Cash Stakes by Sport </option>
-                                                        <option>Bet Count by Sport</option>
-                                                        <option>Free Bet Costs </option>
-                                                        <option>Cash Revenue by Sport</option>
-                                                        <option>Margin Report </option>
-                                                        <option>Bet Count </option>
-                                                        <option>Revenue by Competition</option>
-                                                        <option>Revenue by Stake Factor</option>
-                                                        <option>Revenue by Brand</option>
-                                                    </select>
-                                                </div>
-
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="CMS-formGroup">
-                                                <div className="CMS-formLabel">Brand:</div>
-                                                <div className="CMS-dropdown CMS-brands-dropdown CMS-formControl">
-                                                    <div className="CMS-dropdown-btn">Brand</div>
-                                                    <div className="CMS-dropdown-menu CMS-form-group dashBoard">
-
-                                                        <div className="CMS-checkbox">
-                                                            <input id="Kenya1" type="checkbox" value="value2"/>
-                                                            <label for="Kenya1"></label>
-                                                            <span className="SB-checkboxLabel">Ken</span>
-                                                        </div>
-                                                        <div className="CMS-checkbox">
-                                                            <input id="UG1" type="checkbox" value="value2"/>
-                                                            <label for="UG1"></label>
-                                                            <span className="SB-checkboxLabel">UG</span>
-                                                        </div>
-                                                        <div className="CMS-checkbox">
-                                                            <input id="NG1" type="checkbox" value="value2"/>
-                                                            <label for="NG1"></label>
-                                                            <span className="SB-checkboxLabel">NG</span>
-                                                        </div>
-                                                        <div className="CMS-checkbox">
-                                                            <input id="ZM1" type="checkbox" value="value2"/>
-                                                            <label for="ZM1"></label>
-                                                            <span className="SB-checkboxLabel">ZM</span>
-                                                        </div>
-                                                        <div className="CMS-checkbox">
-                                                            <input id="TZ1" type="checkbox" value="value2"/>
-                                                            <label for="TZ1"></label>
-                                                            <span className="SB-checkboxLabel">TZ</span>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                         {/* <li>
-                                                <div className="row">
-                                                    <div className="col">Start:</div>
-                                                    <div className="col">
-                                                        20/07/2021 13:47:36
-                                                    </div>
-                                                </div>
-                                            </li>  */}
-                                         {/* <li>
-                                                <div className="row">
-                                                    <div className="col">End:</div>
-                                                    <div className="col">
-                                                        23/07/2021 13:47:36
-                                                    </div>
-                                                </div>
-                                            </li>  */}
-                                        <li>
-                                            <div className="CMS-formGroup">
-                                                <div className="CMS-formLabel">Select Chart Type:</div>
-                                                <div className="">
-                                                    <div className="CMS-select">
-                                                        <select>
-                                                            <option>Bar</option>
-                                                            <option>Donut</option>
-                                                            <option>Lines</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="CMS-formGroup">
-                                                <div className="CMS-formLabel">Period:</div>
-                                                <div className="">
-                                                    <div className="CMS-select">
-                                                        <select>
-                                                            <option>Daily</option>
-                                                            <option>Weekly</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="CMS-formGroup">
-                                                <div className="">
-                                                    <button className="CMS-btn CMS-btnSecondary active CMS-btnMedium">Create
-                                                        Graph</button>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                            
+                            <div className="CMS-dropdown-btn CMS-select">Manage Graphs 
+                                    <select>
+                                       {brandOptions.map((item,index)=>{
+                                           return(
+                                          
+                                           <option>{item.name}
+                                           </option>
+                                       
+                                           )
+                                        })}
+                                        </select>
+                                    
                                 </div>
-                            </div>
+
                             <div className="row">
                                 <div className="col"> <BasicLineChart /><br/></div>
                                 
