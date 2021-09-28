@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 // import sidebar from "../sidebar";
 import { bindActionCreators } from "redux";
 import { setdisplayValue } from '../Reports/reportSlice';
+import { Link } from "react-router-dom";
 class Reports extends Component{
 // function Reports() {
   render(){
-      console.log("llink",this.props.sidebarTabs)
+     // console.log("llink",this.props.sidebarTabs)
   return (
     <>
 
@@ -53,10 +54,8 @@ class Reports extends Component{
                                                 <tbody>
                                                     <tr>
                                                         <td>Sports Overview Report </td>
-                                                        <td><button
-                                                                onclick="window.location.href='sports-overview.html'"
-                                                                className="CMS-btn CMS-btnSecondary active CMS-btnMedium"
-                                                                type="button">Details of Report</button> </td>
+                                                        <td><Link  className="CMS-btn CMS-btnSecondary active CMS-btnMedium" to ="/sportoverviewReport">Details of Report</Link>
+                                                                 </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Biggest Winning and Losing Customers</td>

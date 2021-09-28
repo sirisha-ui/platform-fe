@@ -16,7 +16,8 @@ import Dashboard from "./components/Dashboard/dashboard";
  import Inplay from './components/Dashboard/inplay';
 import MainDashbord  from './components/MainDashbord';
 import { getEvenId} from '../src/components/AppSlice';
-
+import SportoverviewReport from './components/Reports/sportsoverviewReport';
+import BetHistory from './components/BetHistory/betHistory';
 class App extends React.Component {
 	constructor(props) {
 		super(props)
@@ -47,7 +48,8 @@ return (
 		<Route path="/playerActivity" render={props => <PlayerActivity {...props} />}/>
 		<Route path="/prematch" render={props => <Prematch {...props} />}/>
 		<Route path="/inplay" render={props => <Inplay {...props} />}/>
-		prematch
+		<Route path="/sportoverviewReport" render={props => <SportoverviewReport {...props} />}/>
+		<Route path="/bettingHistory" render={props=><BetHistory {...props}/>}/>
 	</Switch> 
 	</div>
 	</Router> 

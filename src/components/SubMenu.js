@@ -86,6 +86,10 @@ subTabsClick(SidebarData,sidebarTabs) {
             case '/playerActivity' :
             this.props.dispatch(setSidebarTabs(tabs));
             // SidebarData.push(sidebarTabs)
+            break;  
+            case '/bettingHistory' :
+            this.props.dispatch(setSidebarTabs(tabs));
+            // SidebarData.push(sidebarTabs)
             break;   
     }
     console.log(sidebarTabs,'data')

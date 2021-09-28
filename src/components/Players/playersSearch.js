@@ -119,6 +119,9 @@ class playerSearch extends React.Component{
          this.props.dispatch(getPlayerSearchList(this.props.paginationFirstValue,e.target.value,this.state.data))
           
       }
+      pageClickAction(){
+
+      }
         onSubmit(e) {
             e.preventDefault()
             // e.target.resetButton();
@@ -199,11 +202,13 @@ class playerSearch extends React.Component{
             <div className="CMS-tabs-content">
                
             <div class="CMS-tabs-content">
+            {this.props.errorMessage !=''?
             <div class="CMS-msgBox CMS-noRecords">
                                     <div class="CMS-msgBox-container">
+                                       {/* No Records founds */}
                                         {this.props.errorMessage}
                                     </div>
-                                </div>
+                                </div>: ""}
                <div className="CMS-tab-panel active" id="CMS-betting">
                   {/* 
                   <div className="CMS-box__header">

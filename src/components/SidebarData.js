@@ -110,7 +110,7 @@ export const SidebarData = [
 	subNav: [ 
 		{ 
 			subtitle: "Betting History", 
-			path: "/", 
+			path: "/bettingHistory", 
 		}, 
 		{ 
 			subtitle: "Betting Ticker", 
