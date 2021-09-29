@@ -10,6 +10,7 @@ import { IconContext } from "react-icons/lib";
 import profileIcon from "../assets/images/user.png";
 import { bindActionCreators } from "redux";
 import { connect } from 'react-redux';
+
 const Nav = styled.div` 
 height: 80px; 
 display: flex; 
@@ -100,12 +101,12 @@ count =0;
 } 
  }
  render() {
-    localStorage.setItem("display",false)
+    console.log("disvalue",this.props.displayValue)
 return (
 	<> 
 	
-		<div className="CMS-sideMenu"> 
-		<div className="CMS-layout-header" style ={{width: this.state.display ? '100%':'80%', left: this.state.display?'0px':'290px'}}>
+		<div> 
+		<div className="CMS-layout-header" style ={{width: this.props.displayValue ? '100%':'80%', marginLeft: this.props.displayValue ?'0px':'290px'}}>
                 <div className="CMS-header-left">
                     <div className="material-icons cms-icon_hamburger"  data-icon="menu" id="CMS-hamburgerMenu" onClick={()=>this.buttonclick()}>
 					{/* <NavIcon to="#"> 
@@ -154,6 +155,7 @@ return (
 function mapStateToProps(state) {
     return {
        sidebarTabs: state.sidebar.sidebarTabs,
+       displayValue: state.sidebar.displayValue,
     };
 }
 function mapDispatchToProps(dispatch) {
@@ -164,4 +166,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(mapDispatchToProps)(Sidebar);
+export default connect(mapStateToProps,mapDispatchToProps)(Sidebar);

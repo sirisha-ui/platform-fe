@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 class Reports extends Component{
 // function Reports() {
   render(){
+      
+    console.log("disvalue",this.props.displayValue)
      // console.log("llink",this.props.sidebarTabs)
   return (
     <>

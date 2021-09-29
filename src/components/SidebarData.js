@@ -114,11 +114,11 @@ export const SidebarData = [
 		}, 
 		{ 
 			subtitle: "Betting Ticker", 
-			path: "/", 
+			path: "/betTicker", 
 		}, 
 		{ 
 			subtitle: "Liability", 
-			path: "/", 
+			path: "/betLiability", 
 			
 		}, 
 		], 

@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PlayerSeachTable from '../playerTable/playerSearchTable';
 import { playerapi } from '../../sharedfiles/EndpointConfig'
-import { getplayerList,getPlayerSearchList,setPaginationSecondValue } from '../playerTable/playerSearchTableSlice';
+import { getplayerList,getPlayerSearchList,setPaginationFirstValue,setPaginationSecondValue } from '../playerTable/playerSearchTableSlice';
 class playerSearch extends React.Component{
     constructor(props){
         
@@ -120,7 +120,7 @@ class playerSearch extends React.Component{
           
       }
       pageClickAction(){
-
+    this.props.dispatch(setPaginationFirstValue());
       }
         onSubmit(e) {
             e.preventDefault()
@@ -431,7 +431,7 @@ class playerSearch extends React.Component{
 
                                        })
                                        } */}
-                                    <li><a className="active" href="#">1</a></li>
+                                    <li onClick={()=>this.pageClickAction()}><a className="active" href="#">1</a></li>
                                     {/* <li><a href="#">2</a></li>
                                     <li><a href="#">3</a></li> */}</ul>
                                     <ul>
