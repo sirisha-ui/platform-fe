@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 // import { playerapi} from '../../sharedfiles/EndpointConfig';
 // import { getplayerList,getPlayerSearchList } from '../playerTable/playerSearchTableSlice';
 import {Link} from 'react-router-dom';
-
-class PlayerSeachTable extends React.Component{
+import loginHistoryTableSlice from './loginHistoryTableSlice';
+class LoginHistoryTable extends React.Component{
 //  constructor (props){
 //      super(props);
 //      this.state = [{
@@ -95,54 +95,38 @@ class PlayerSeachTable extends React.Component{
 
     render(){
         let array =[];
-        array.push(this.props.playerData)
-        let data = this.state;
-        var responseData = this.props.playerData.data
+        //array.push(this.props.userData)
+        //let data = this.state;
+       // var responseData = this.props.userData.data
        //let filterData =  this.filterByReference(data, array)
-       //console.log("hii",responseData)
+       console.log("hii1",this.props.userData.data)
 
         return(
             <>
             <div className="CMS-box CMS-table CMS-table-triped" style ={{width: this.props.displayValue ? '100%':'80%', marginLeft: this.props.displayValue ?'0px':'290px'}}>
                                                     <table>
-                                                        {responseData != undefined && responseData.length> 0 &&
+                                                        {this.props.userData.data != undefined && this.props.userData.data.length> 0 &&
                                                         <thead>
                                                             <tr>
-                                                                <th>Customer Id</th>
-                                                                <th>Username</th>
-                                                                <th>First Name</th>
-                                                                <th>Second Name </th>
-                                                                <th>Email</th>
-                                                                <th>Phone</th>
-                                                                <th>Country</th>
-                                                                <th>Currency</th>
-                                                                <th>Player Segment</th>
-                                                                <th>Stake Factor</th>
-                                                                <th>Deposits</th>
-                                                                <th>GGR</th>
-                                                                <th>Account Status</th>
+                                                                            <th>ID</th>
+                                                                            <th>Time / Date Created</th>
+                                                                            <th>Action</th>
+                                                                            <th>IP</th>
+                                                                            <th>IP Country</th>
+                                                               
                                                             </tr>
                                                         </thead>}
                                                         <tbody>
                                                             
-                                                           { responseData != undefined  && responseData.map((item,index)=>{
+                                                           { this.props.userData.data != undefined  && this.props.userData.data.map((item,index)=>{
                                                                  return (<tr key={item}>
-                                                                      <td><Link to ="/primaryPlayer">{item.userId}</Link></td>
-                                                                      <td>{item.userName}</td>
-                                                                      <td>{item.firstName}</td>
-                                                                      <td>{item.lastName}</td>
-                                                                      <td>{item.email}</td>
-                                                                      <td>{item.phone}</td>
-                                                                      <td>{item.country}
-                                                                      {/* <i class="CMS-flags CMS-262-united-kingdom"></i> */}
-                                                                      </td>
-                                                                      <td>{item.currency}</td>
-                                                                      <td>{item.playerSegment}</td>
-                                                                      <td>{item.stakeFactor}</td>
-                                                                      <td>{item.deposit}</td>
-                                                                      <td>{item.ggr}</td>
-                                                                      <td>{item.accountStatus}<div class="CMS-btnStatus CMS-statusActive"></div></td>
-
+                                                                      <td>{item.id}</td>
+                                                                      <td>{item.createdDate}</td>
+                                                                      <td>{item.activity}</td>
+                                                                      <td>{item.ip}</td>
+                                                                      <td>{item.ipCountry}</td>
+                                                                      
+                                                                     
                                                                  </tr>)
                                                             })
                                                         }
@@ -160,9 +144,9 @@ class PlayerSeachTable extends React.Component{
 function mapStateToProps(state) {
     return {
         displayValue: state.sidebar.displayValue,
-        playerData: state.playersearch.playerData,
+        userData: state.loginHistorySlice.userData,
         paginationFirstValue: state.playersearch.paginationFirstValue,
         paginationSecondValue: state.playersearch.paginationSecondValue
     };
  }
-export default connect(mapStateToProps)(PlayerSeachTable);
+export default connect(mapStateToProps)(LoginHistoryTable);

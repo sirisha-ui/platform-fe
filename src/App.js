@@ -20,6 +20,12 @@ import SportoverviewReport from './components/Reports/sportsoverviewReport';
 import BetHistory from './components/BetHistory/betHistory';
 import BetTicker from './components/BetTicker/betTicker';
 import BetLiability from './components/BetLiability/betLiability';
+import LoginHistory from './components/LoginHistory/loginHistory';
+import PrimaryPlayer from './components/primaryplayer/PrimaryPlayer';
+import GeneralDetail from './components/primaryplayer/GeneralDetail';
+import PaymentHistory from './components/paymentHistory/paymentHistory';
+
+
 class App extends React.Component {
 	constructor(props) {
 		super(props)
@@ -54,6 +60,11 @@ return (
 		<Route path="/bettingHistory" render={props=><BetHistory {...props}/>}/>
 		<Route path="/betTicker" render={props=><BetTicker {...props}/>}/>
         <Route path="/betLiability" render={props=><BetLiability {...props}/>}/>
+		<Route path="/loginHistory" render={props=><LoginHistory {...props}/>}/>
+		<Route path="/primaryPlayer" render={props=><PrimaryPlayer {...props}/>}/>
+        <Route path="/generaldetail" render={props=><GeneralDetail {...props}/>}/>
+		<Route path="/paymentHistory" render={props=><PaymentHistory {...props}/>}/>
+		
 	</Switch> 
 	</div>
 	</Router> 

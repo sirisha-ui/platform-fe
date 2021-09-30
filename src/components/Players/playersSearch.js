@@ -3,12 +3,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PlayerSeachTable from '../playerTable/playerSearchTable';
 import { playerapi } from '../../sharedfiles/EndpointConfig'
-import { getplayerList,getPlayerSearchList,setPaginationFirstValue,setPaginationSecondValue } from '../playerTable/playerSearchTableSlice';
+import { setPlayerSearch,getplayerList,getPlayerSearchList,setPaginationFirstValue,setPaginationSecondValue } from '../playerTable/playerSearchTableSlice';
 class playerSearch extends React.Component{
     constructor(props){
         
         super(props);
         this.state = {
+           required: false,
          pageNumber:[],
          itemsperpage: '',
             username: '',
@@ -50,6 +51,7 @@ class playerSearch extends React.Component{
             
         }
         resetButton() {
+        this.props.dispatch(setPlayerSearch(''))
          this.setState({ username: '',firstName: '',
          lastName: '',
          email: '',
@@ -124,12 +126,14 @@ class playerSearch extends React.Component{
       }
         onSubmit(e) {
             e.preventDefault()
+              if(this.state.username == '' || this.state.firstName == '' || this.state.lastName == '' || this.state.email == '' || this.state.customerId == ''
+             || this.state.ipAddress == '' || this.state.phoneNumber == '' || this.state.country == '' ||  this.state.datepicker == '' || this.state.referCode == '' ||
+             this.state.cgr == '' || this.state.AccountSatus == ''){
+              this.setState({required: true})
+            }
             // e.target.resetButton();
             //this.props.dispatch(getPlayerSearchList)(this.props)
-            debugger
-            // if(this.state.username != '' || this.state.firstName != '' || this.state.lastName != '' || this.state.email != '' || this.state.customerId != ''
-            // || this.state.ipAddress != '' || this.state.phoneNumber != '' || this.state.country != '' ||  this.state.datepicker != '' || this.state.referCode != '' ||
-            // this.state.cgr != '' || this.state.AccountSatus != ''){
+           
                this.setState({data:{ username: this.state.username,
                   firstName: this.state.firstName,
                   lastName: this.state.lastName,
@@ -217,11 +221,13 @@ class playerSearch extends React.Component{
                   */}
                   <div className="CMS-tabContent">
                      <div className="CMS-box CMS-box-content" >
+                        {this.state.required? 
                      <div class="CMS-msgBox CMS-error">
                                                 <div class="CMS-msgBox-container">
                                                     Atleast one field required for your search
                                                 </div>
                                             </div>
+ :''}
                         <div className="row">
                            <div className="col-2">
                               <div className="CMS-formGroup">
@@ -426,14 +432,10 @@ class playerSearch extends React.Component{
                                     <li><a href="#"><span className="material-icons" data-icon="first_page"></span></a></li>
                                     <li><a href="#"><span className="material-icons" data-icon="navigate_before"></span></a></li></ul>
                                     <ul>
-                                       {/* {
-                                       pageNumber.map((item, index)=>{
-
-                                       })
-                                       } */}
+                                       
                                     <li onClick={()=>this.pageClickAction()}><a className="active" href="#">1</a></li>
-                                    {/* <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li> */}</ul>
+                                     <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li> </ul>
                                     <ul>
                                     <li><a href="#"><span className="material-icons" data-icon="navigate_next"></span></a></li>
                                     <li><a href="#"><span className="material-icons" data-icon="last_page"></span></a></li>
