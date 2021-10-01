@@ -22,7 +22,7 @@ export const playerapi={
 	"getPlayer":endPoint+"player",
      "getPlayerSearch": endPoint+"player/search",
 	 "getLoginHistory": endPoint+"player/login/",
-     "getPaymentHistory": endPoint+"user/{userId}/",
+     "getPaymentHistory": endPoint+"user/",
 	
 }
 

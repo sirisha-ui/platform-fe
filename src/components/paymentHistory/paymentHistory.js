@@ -2,33 +2,34 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import PaymentHistoryTable from './paymentHistoryTable';
-import {getPaymentHistorytableList,setPaginationSecondValue} from './paymentHistoryTableSlice';
+import {getPaymentHistorytableList,setPaginationSecondValue,setPaginationFirstValue} from './paymentHistoryTableSlice';
 class PaymentHistory extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             id: '',
-        createdDate: '',
-        actionType: '',
-        ipAddress: '',
+        paymentType: '',
             data: [],
         }
-
-        this.onChangeId = this.onChangeId.bind(this);
-        this.onChangeCreatedDate = this.onChangeCreatedDate.bind(this);
-        this.onChangeActionType = this.onChangeActionType.bind(this);
-        this.onChangeIpAddress = this.onChangeIpAddress.bind(this);
+       this.onChangeId = this.onChangeId.bind(this);
+        this.onChangePaymentHistory = this.onChangePaymentHistory.bind(this);
        this.onChangeItemperpage = this.onChangeItemperpage.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
                
         }
-
+        pageClickAction(){
+            this.props.dispatch(setPaginationFirstValue());
+              }
+              onChangeItemperpage(e){
+                this.setState({itemsperpage: e.target.value})
+                this.props.dispatch(setPaginationSecondValue(e.target.value))
+                this.props.dispatch(getPaymentHistorytableList(this.props.paginationFirstValue,e.target.value,this.state.data))
+                 
+             }
     resetButton() {
         this.setState({
             id: '',
-            createdDate: '',
-            actionType: '',
-            ipAddress: '',
+            paymentType: '',
        
         data: [],})
         this.setState({data:[]})
@@ -36,16 +37,10 @@ class PaymentHistory extends React.Component{
        onChangeId(e){
         this.setState({ id: e.target.value }) 
        }
-       onChangeCreatedDate(e) {
-        this.setState({ currency: e.target.value })
-    }
-   
-      onChangeActionType(e){
-        this.setState({actionType: e.target.value})
-    }
-    onChangeIpAddress(e){
-        this.setState({ipAddress: e.target.value})
-     }
+       onChangePaymentHistory(e){
+        this.setState({ paymentType: e.target.value }) 
+       }
+     
     onChangeItemperpage(e){
         this.setState({itemsperpage: e.target.value})
         this.props.dispatch(setPaginationSecondValue(e.target.value))
@@ -60,22 +55,12 @@ class PaymentHistory extends React.Component{
         // || this.state.ipAddress != '' || this.state.phoneNumber != '' || this.state.country != '' ||  this.state.datepicker != '' || this.state.referCode != '' ||
         // this.state.cgr != '' || this.state.AccountSatus != ''){
            this.setState({data:{ id: this.state.id,
-            ip: this.state.ip,
-            ipCountry: this.state.ipAddress,
-            activity: this.state.actionType,
-            createdDate: this.state.createdDate,
            
               }
          })
 //var  playerserachdata =[];
 console.log("userid",this.state.id)
-var playerserachdata=  { id: this.state.id,
-    ip: this.state.ip,
-    ipCountry: this.state.ipAddress,
-    activity: this.state.actionType,
-    createdDate: this.state.createdDate,
-
-        }
+var playerserachdata=  { id: this.state.id }
         this.props.dispatch(getPaymentHistorytableList(this.props.paginationFirstValue,this.props.paginationSecondValue,playerserachdata))
         
         //}
@@ -102,10 +87,11 @@ var playerserachdata=  { id: this.state.id,
                                                                                     19772</b></span></td>
                                                                         <td><span>Debit Total:</span> <span><b>KES
                                                                                     -19535</b></span></td>
-
+                                                    
                                                                         <td>
+
                                                                             <div class="CMS-select">
-                                                                                <select id="country" name="File">
+                                                                                <select id="country" name="File" value={this.state.paymentType} onChange={this.onChangePaymentHistory}>
                                                                                     <option value="">Payments</option>
                                                                                     <option value="">Withdrawals
                                                                                     </option>
@@ -115,6 +101,17 @@ var playerserachdata=  { id: this.state.id,
                                                                                 </select>
                                                                             </div>
                                                                         </td>
+                                                                        <td>
+                                                              <div className="CMS-formGroup">
+                                                                    <div className="CMS-formLabel">ID</div>
+                                                                    <div className="CMS-formControl-group">
+                                                                        <div className="CMS-formControl">
+                                                                            <input type="number" name="" placeholder="ID"  onChange={this.onChangeId}/>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </td>
                                                                     </tr>
                                                                     <tr>
 
@@ -127,7 +124,23 @@ var playerserachdata=  { id: this.state.id,
 
                                                                         <td colspan="7"></td>
                                                                     </tr>
+                                                                    <tr>
 
+<td>
+<div className="row">
+                                                            <div className="col-md-12 col-lg-12 col-xl-12">
+                                                                <div className="CMS-btnContainer">
+                                                                    <button onClick={(e)=> this.onSubmit(e)}
+                                                                        className="CMS-btn CMS-btnSecondary active CMS-btnMedium"
+                                                                        type="button">Search</button>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+</td>
+
+<td colspan="7"></td>
+</tr>
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -143,34 +156,29 @@ var playerserachdata=  { id: this.state.id,
                                                                 <div class="CMS-pagination-container">
 
                                                                     <div class="CMS-pagination-list">
-                                                                        <ul>
-                                                                            <li><a href="#"><span class="material-icons"
-                                                                                        data-icon="first_page"></span></a>
-                                                                            </li>
-                                                                            <li><a href="#"><span class="material-icons"
-                                                                                        data-icon="navigate_before"></span></a>
-                                                                            </li>
-                                                                            <li><a class="active" href="#">1</a></li>
-                                                                            <li><a href="#">2</a></li>
-                                                                            <li><a href="#">3</a></li>
-                                                                            <li><a href="#"><span class="material-icons"
-                                                                                        data-icon="navigate_next"></span></a>
-                                                                            </li>
-                                                                            <li><a href="#"><span class="material-icons"
-                                                                                        data-icon="last_page"></span>
-                                                                                        </a></li>
-                                                                        </ul>
+                                                                    <ul>
+                                    <li><a href="#"><span className="material-icons" data-icon="first_page"></span></a></li>
+                                    <li><a href="#"><span className="material-icons" data-icon="navigate_before"></span></a></li></ul>
+                                    <ul>
+                                       
+                                    <li onClick={()=>this.pageClickAction()}><a className="active" href="#">1</a></li>
+                                     <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li> </ul>
+                                    <ul>
+                                    <li><a href="#"><span className="material-icons" data-icon="navigate_next"></span></a></li>
+                                    <li><a href="#"><span className="material-icons" data-icon="last_page"></span></a></li>
+                                 </ul>
                                                                     </div>
 
                                                                     <div class="CMS-page-slection">
                                                                         <div class="CMS-number-of-files CMS-select">
-                                                                            <select id="country" name="File">
-                                                                                <option value="PDF">25</option>
-                                                                                <option value="CSV">50</option>
-                                                                                <option value="XLS">100</option>
-                                                                                <option value="XLS">200</option>
-                                                                                <option value="XLS">500</option>
-                                                                            </select>
+                                                                        <select id="country" name="File" value={this.state.itemsperpage} onChange={this.onChangeItemperpage}>
+                                       <option value="25">25</option>
+                                       <option value="50">50</option>
+                                       <option value="100">100</option>
+                                       <option value="200">200</option>
+                                       <option value="500">500</option>
+                                    </select>
                                                                         </div>
                                                                         <div class="CMS-file-type CMS-select">
                                                                             <select id="country" name="File">
@@ -187,9 +195,9 @@ var playerserachdata=  { id: this.state.id,
 
 
 
-                                                                    <div class="CMS-page-results">
-                                                                        Results 1-100 of 108
-                                                                    </div>
+                                                                    <div className="CMS-page-results">
+                                 Results {this.props.paginationFirstValue}-{this.props.paginationSecondValue} of {this.props.paginationSecondValue} 
+                              </div>
 
 
                                                                 </div>

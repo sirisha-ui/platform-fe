@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import paymentHistoryTableSlice from './paymentHistoryTableSlice';
 class PaymentHistoryTable extends React.Component{
-
+    
     
 
     render(){

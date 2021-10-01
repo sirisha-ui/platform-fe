@@ -24,8 +24,7 @@ import LoginHistory from './components/LoginHistory/loginHistory';
 import PrimaryPlayer from './components/primaryplayer/PrimaryPlayer';
 import GeneralDetail from './components/primaryplayer/GeneralDetail';
 import PaymentHistory from './components/paymentHistory/paymentHistory';
-
-
+import BettingHistory from './components/BettingHistory/bettingHistory';
 class App extends React.Component {
 	constructor(props) {
 		super(props)
@@ -64,7 +63,7 @@ return (
 		<Route path="/primaryPlayer" render={props=><PrimaryPlayer {...props}/>}/>
         <Route path="/generaldetail" render={props=><GeneralDetail {...props}/>}/>
 		<Route path="/paymentHistory" render={props=><PaymentHistory {...props}/>}/>
-		
+		<Route path="/bettingHistory" render={props=><BettingHistory {...props}/>}/>
 	</Switch> 
 	</div>
 	</Router> 

@@ -18,7 +18,7 @@ class PrimaryTabs extends Component {
                             <a href="CMS-generalDetails" onClick={this.navigateToGeneralDetail}>General Details</a>
                         </li>
                         <li>
-                            <a href="CMS-bettingHistory">Betting History</a>
+                            <Link to="/bettingHistory">Betting History</Link>
                         </li>
                         <li>
                             <Link to ="/paymentHistory">Payment History</Link>

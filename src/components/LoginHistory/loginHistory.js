@@ -125,7 +125,13 @@ var playerserachdata=  { id: this.state.id,
 
                                 </ul>
                             </div>
-
+                            {this.props.errorMessage !=''?
+            <div class="CMS-msgBox CMS-noRecords">
+                                    <div class="CMS-msgBox-container">
+                                       {/* No Records founds */}
+                                        {this.props.errorMessage}
+                                    </div>
+                                </div>: ""}
                                             <div className="CMS-tab-panel" id="CMS-loginHistory">
                                                     <div className="CMS-box CMS-box-content">
 
@@ -384,7 +390,8 @@ function mapStateToProps(state) {
         displayValue: state.sidebar.displayValue,
         sidebarTabs: state.sidebar.sidebarTabs,
         paginationFirstValue: state.playersearch.paginationFirstValue,
-        paginationSecondValue: state.playersearch.paginationSecondValue
+        paginationSecondValue: state.playersearch.paginationSecondValue,
+        errorMessage: state.playersearch.errorMessage
     };
 }
 function mapDispatchToProps(dispatch) {

@@ -39,12 +39,12 @@ export const { setPaymentHistorySearch,setPaginationFirstValue,setPaginationSeco
        //var url = `${playerapi.getPlayerSearch}search=%7B%22userName%22%3A%22edellabbate6%22%7D`;
        var obj={
         
-        "activity": params.activity,
-         "pageNumber": params.pagenumbervalue,
+        "paymentType": params.activity,
+         "status": params.pagenumbervalue,
          "itemsPerPage": params.itemperpagevalue,
       }
      // var url = `${playerapi.getLoginHistory}`+"?itemsPerPage ="+pagenumbervalue+"&pageNumber="+itemperpagevalue;
-      var url = `${playerapi.getPaymentHistory}`+params.id+"/activity"+"?&pageNumber="+pagenumbervalue+"&itemsPerPage="+itemperpagevalue;
+      var url = `${playerapi.getPaymentHistory}`+params.id+"?&pageNumber="+pagenumbervalue+"&itemsPerPage="+itemperpagevalue;
      
       apiCaller(url,'POST',obj)
       .then((response)=>{
